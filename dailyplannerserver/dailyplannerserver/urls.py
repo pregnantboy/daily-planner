@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^getLocations', views.getLocations),
+    url(r'^getDayEvents', views.getEvents),
+    url(r'^editEvent', views.editEvent),
+    url(r'^createEvent', views.createEvent)
 ]
