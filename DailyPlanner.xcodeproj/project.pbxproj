@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C060ED01B9E9FEA003AE123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C060ECF1B9E9FEA003AE123 /* main.m */; };
+		3C060ED31B9E9FEA003AE123 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C060ED21B9E9FEA003AE123 /* AppDelegate.m */; };
+		3C060ED91B9E9FEA003AE123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C060ED71B9E9FEA003AE123 /* Main.storyboard */; };
+		3C060EDB1B9E9FEA003AE123 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C060EDA1B9E9FEA003AE123 /* Images.xcassets */; };
+		3C060EDE1B9E9FEA003AE123 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */; };
+		3C060EEA1B9E9FEA003AE123 /* DailyPlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C060EE91B9E9FEA003AE123 /* DailyPlannerTests.m */; };
+		3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C060EFA1B9EA1E3003AE123 /* WeatherViewController.m */; };
+		3C060EFD1B9EA21D003AE123 /* mainBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C060EFC1B9EA21D003AE123 /* mainBackground.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3C060EE41B9E9FEA003AE123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C060EC21B9E9FE9003AE123 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C060EC91B9E9FEA003AE123;
+			remoteInfo = DailyPlanner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3C060ECA1B9E9FEA003AE123 /* DailyPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C060ECE1B9E9FEA003AE123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C060ECF1B9E9FEA003AE123 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C060ED11B9E9FEA003AE123 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3C060ED21B9E9FEA003AE123 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3C060ED81B9E9FEA003AE123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3C060EDA1B9E9FEA003AE123 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3C060EDD1B9E9FEA003AE123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3C060EE31B9E9FEA003AE123 /* DailyPlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyPlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C060EE81B9E9FEA003AE123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C060EE91B9E9FEA003AE123 /* DailyPlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyPlannerTests.m; sourceTree = "<group>"; };
+		3C060EF91B9EA1E3003AE123 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		3C060EFA1B9EA1E3003AE123 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		3C060EFC1B9EA21D003AE123 /* mainBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mainBackground.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C060EC71B9E9FEA003AE123 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C060EE01B9E9FEA003AE123 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C060EC11B9E9FE9003AE123 = {
+			isa = PBXGroup;
+			children = (
+				3C060ECC1B9E9FEA003AE123 /* DailyPlanner */,
+				3C060EE61B9E9FEA003AE123 /* DailyPlannerTests */,
+				3C060ECB1B9E9FEA003AE123 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C060ECB1B9E9FEA003AE123 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C060ECA1B9E9FEA003AE123 /* DailyPlanner.app */,
+				3C060EE31B9E9FEA003AE123 /* DailyPlannerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C060ECC1B9E9FEA003AE123 /* DailyPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				3C060ED11B9E9FEA003AE123 /* AppDelegate.h */,
+				3C060ED21B9E9FEA003AE123 /* AppDelegate.m */,
+				3C060EF91B9EA1E3003AE123 /* WeatherViewController.h */,
+				3C060EFA1B9EA1E3003AE123 /* WeatherViewController.m */,
+				3C060ED71B9E9FEA003AE123 /* Main.storyboard */,
+				3C060EDA1B9E9FEA003AE123 /* Images.xcassets */,
+				3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */,
+				3C060ECD1B9E9FEA003AE123 /* Supporting Files */,
+			);
+			path = DailyPlanner;
+			sourceTree = "<group>";
+		};
+		3C060ECD1B9E9FEA003AE123 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C060EFC1B9EA21D003AE123 /* mainBackground.jpg */,
+				3C060ECE1B9E9FEA003AE123 /* Info.plist */,
+				3C060ECF1B9E9FEA003AE123 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3C060EE61B9E9FEA003AE123 /* DailyPlannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				3C060EE91B9E9FEA003AE123 /* DailyPlannerTests.m */,
+				3C060EE71B9E9FEA003AE123 /* Supporting Files */,
+			);
+			path = DailyPlannerTests;
+			sourceTree = "<group>";
+		};
+		3C060EE71B9E9FEA003AE123 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C060EE81B9E9FEA003AE123 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C060EC91B9E9FEA003AE123 /* DailyPlanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C060EED1B9E9FEA003AE123 /* Build configuration list for PBXNativeTarget "DailyPlanner" */;
+			buildPhases = (
+				3C060EC61B9E9FEA003AE123 /* Sources */,
+				3C060EC71B9E9FEA003AE123 /* Frameworks */,
+				3C060EC81B9E9FEA003AE123 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DailyPlanner;
+			productName = DailyPlanner;
+			productReference = 3C060ECA1B9E9FEA003AE123 /* DailyPlanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3C060EE21B9E9FEA003AE123 /* DailyPlannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C060EF01B9E9FEA003AE123 /* Build configuration list for PBXNativeTarget "DailyPlannerTests" */;
+			buildPhases = (
+				3C060EDF1B9E9FEA003AE123 /* Sources */,
+				3C060EE01B9E9FEA003AE123 /* Frameworks */,
+				3C060EE11B9E9FEA003AE123 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C060EE51B9E9FEA003AE123 /* PBXTargetDependency */,
+			);
+			name = DailyPlannerTests;
+			productName = DailyPlannerTests;
+			productReference = 3C060EE31B9E9FEA003AE123 /* DailyPlannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C060EC21B9E9FE9003AE123 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Ian Chen";
+				TargetAttributes = {
+					3C060EC91B9E9FEA003AE123 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					3C060EE21B9E9FEA003AE123 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 3C060EC91B9E9FEA003AE123;
+					};
+				};
+			};
+			buildConfigurationList = 3C060EC51B9E9FE9003AE123 /* Build configuration list for PBXProject "DailyPlanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3C060EC11B9E9FE9003AE123;
+			productRefGroup = 3C060ECB1B9E9FEA003AE123 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C060EC91B9E9FEA003AE123 /* DailyPlanner */,
+				3C060EE21B9E9FEA003AE123 /* DailyPlannerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C060EC81B9E9FEA003AE123 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C060ED91B9E9FEA003AE123 /* Main.storyboard in Resources */,
+				3C060EDE1B9E9FEA003AE123 /* LaunchScreen.xib in Resources */,
+				3C060EFD1B9EA21D003AE123 /* mainBackground.jpg in Resources */,
+				3C060EDB1B9E9FEA003AE123 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C060EE11B9E9FEA003AE123 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C060EC61B9E9FEA003AE123 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C060ED31B9E9FEA003AE123 /* AppDelegate.m in Sources */,
+				3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */,
+				3C060ED01B9E9FEA003AE123 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C060EDF1B9E9FEA003AE123 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C060EEA1B9E9FEA003AE123 /* DailyPlannerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C060EE51B9E9FEA003AE123 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C060EC91B9E9FEA003AE123 /* DailyPlanner */;
+			targetProxy = 3C060EE41B9E9FEA003AE123 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3C060ED71B9E9FEA003AE123 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C060ED81B9E9FEA003AE123 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C060EDD1B9E9FEA003AE123 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3C060EEB1B9E9FEA003AE123 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3C060EEC1B9E9FEA003AE123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C060EEE1B9E9FEA003AE123 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DailyPlanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3C060EEF1B9E9FEA003AE123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DailyPlanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3C060EF11B9E9FEA003AE123 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DailyPlannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyPlanner.app/DailyPlanner";
+			};
+			name = Debug;
+		};
+		3C060EF21B9E9FEA003AE123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DailyPlannerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyPlanner.app/DailyPlanner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C060EC51B9E9FE9003AE123 /* Build configuration list for PBXProject "DailyPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C060EEB1B9E9FEA003AE123 /* Debug */,
+				3C060EEC1B9E9FEA003AE123 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C060EED1B9E9FEA003AE123 /* Build configuration list for PBXNativeTarget "DailyPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C060EEE1B9E9FEA003AE123 /* Debug */,
+				3C060EEF1B9E9FEA003AE123 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3C060EF01B9E9FEA003AE123 /* Build configuration list for PBXNativeTarget "DailyPlannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C060EF11B9E9FEA003AE123 /* Debug */,
+				3C060EF21B9E9FEA003AE123 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C060EC21B9E9FE9003AE123 /* Project object */;
+}
