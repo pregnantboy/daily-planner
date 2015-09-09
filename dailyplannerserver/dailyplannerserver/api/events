@@ -1,0 +1,9 @@
+# events
+from abc import ABCMeta, abstractmethod
+
+class EventsFetcher:
+	def 
+
+
+
+class GoogleEventsFetcher(EventsFetcher):

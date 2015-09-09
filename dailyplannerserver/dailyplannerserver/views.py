@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 
 
-
 def getLocations():
 	return HttpResponse('ok')
 
