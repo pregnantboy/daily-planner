@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "WeatherTableViewCell.h"
 
 @interface WeatherViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *clockLabel;

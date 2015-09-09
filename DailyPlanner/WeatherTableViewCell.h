@@ -10,6 +10,8 @@
 
 @interface WeatherTableViewCell : UITableViewCell
 
-
+@property (weak, nonatomic) IBOutlet UILabel *hourLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
+@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
 
 @end

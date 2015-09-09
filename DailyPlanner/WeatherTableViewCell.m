@@ -11,7 +11,9 @@
 @implementation WeatherTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.3]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

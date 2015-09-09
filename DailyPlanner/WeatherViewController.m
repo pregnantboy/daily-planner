@@ -29,7 +29,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"hh:mm"];
     [ampmFormatter setDateFormat:@"a"];
-    [dateFormatter setDateFormat: @"d MMM YY EEEE"];
+    [dateFormatter setDateFormat: @"d MMM YY - EEEE"];
     NSDate *currentDate = [NSDate date];
     self.clockLabel.text =[formatter stringFromDate:currentDate];
     self.ampmLabel.text = [ampmFormatter stringFromDate:currentDate];
@@ -37,12 +37,34 @@
 }
 
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
+    return 12;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"WeatherCell";
+    
+    WeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
+    {
+       cell = [[WeatherTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    
+    // Display what you want to display in each cell
+    cell.tempLabel.text = @"sucks";
+    
+    
+    return cell;
+}
 
 
 @end
