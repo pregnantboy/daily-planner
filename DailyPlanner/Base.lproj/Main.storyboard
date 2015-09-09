@@ -78,33 +78,49 @@
                                     <constraint firstAttribute="height" constant="110" id="nf9-Sk-3kQ"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8Eb-mL-xzH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8Eb-mL-xzH">
                                 <rect key="frame" x="16" y="350" width="343" height="297"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="81" id="cXJ-42-OVX" customClass="WeatherTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="WeatherCell" rowHeight="100" id="cXJ-42-OVX" customClass="WeatherTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cXJ-42-OVX" id="Uby-cP-0zN">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAz-KC-BdA">
-                                                    <rect key="frame" x="102" y="3" width="80" height="72.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dAz-KC-BdA">
+                                                    <rect key="frame" x="136" y="15" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="jgX-dT-eU0"/>
+                                                        <constraint firstAttribute="width" secondItem="dAz-KC-BdA" secondAttribute="height" multiplier="1:1" id="uAf-4w-Hkz"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zi-aI-cRZ">
-                                                    <rect key="frame" x="15" y="17" width="72" height="42"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zi-aI-cRZ">
+                                                    <rect key="frame" x="14" y="32" width="90" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="zbX-8z-lQb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Un5-jI-xZC">
-                                                    <rect key="frame" x="234" y="17" width="87" height="50"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Un5-jI-xZC">
+                                                    <rect key="frame" x="235" y="32" width="69.5" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="dAz-KC-BdA" secondAttribute="centerY" id="JNJ-Yw-r5g"/>
+                                                <constraint firstAttribute="centerY" secondItem="Un5-jI-xZC" secondAttribute="centerY" id="j1S-iV-yaM"/>
+                                                <constraint firstItem="3zi-aI-cRZ" firstAttribute="leading" secondItem="Uby-cP-0zN" secondAttribute="leadingMargin" constant="6" id="lpU-9g-Rhd"/>
+                                                <constraint firstAttribute="centerY" secondItem="3zi-aI-cRZ" secondAttribute="centerY" id="mPI-x2-e51"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Un5-jI-xZC" secondAttribute="trailing" constant="15" id="wTi-3c-3Rh"/>
+                                                <constraint firstAttribute="centerX" secondItem="dAz-KC-BdA" secondAttribute="centerX" id="yt8-3a-NRu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="hourLabel" destination="3zi-aI-cRZ" id="OCz-ex-UbE"/>
                                             <outlet property="tempLabel" destination="Un5-jI-xZC" id="Kre-Ld-Cqo"/>

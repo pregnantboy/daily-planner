@@ -21,6 +21,7 @@
 		3C060F061B9EB452003AE123 /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C060F011B9EB452003AE123 /* sunny.png */; };
 		3C060F071B9EB452003AE123 /* thunderstorm.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C060F021B9EB452003AE123 /* thunderstorm.png */; };
 		3C060F0D1B9F01A5003AE123 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */; };
+		3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCBE1BA08E410058F42A /* WeatherObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		3C060F021B9EB452003AE123 /* thunderstorm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thunderstorm.png; sourceTree = "<group>"; };
 		3C060F0B1B9F01A5003AE123 /* WeatherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTableViewCell.h; sourceTree = "<group>"; };
 		3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTableViewCell.m; sourceTree = "<group>"; };
+		3C64BCBD1BA08E410058F42A /* WeatherObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherObject.h; sourceTree = "<group>"; };
+		3C64BCBE1BA08E410058F42A /* WeatherObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 			children = (
 				3C060ED11B9E9FEA003AE123 /* AppDelegate.h */,
 				3C060ED21B9E9FEA003AE123 /* AppDelegate.m */,
+				3C64BCBD1BA08E410058F42A /* WeatherObject.h */,
+				3C64BCBE1BA08E410058F42A /* WeatherObject.m */,
 				3C060F0B1B9F01A5003AE123 /* WeatherTableViewCell.h */,
 				3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */,
 				3C060EF91B9EA1E3003AE123 /* WeatherViewController.h */,
@@ -250,6 +255,7 @@
 			files = (
 				3C060F0D1B9F01A5003AE123 /* WeatherTableViewCell.m in Sources */,
 				3C060ED31B9E9FEA003AE123 /* AppDelegate.m in Sources */,
+				3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */,
 				3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */,
 				3C060ED01B9E9FEA003AE123 /* main.m in Sources */,
 			);
@@ -448,6 +454,7 @@
 				3C060EEF1B9E9FEA003AE123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C060EF01B9E9FEA003AE123 /* Build configuration list for PBXNativeTarget "DailyPlannerTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +463,7 @@
 				3C060EF21B9E9FEA003AE123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

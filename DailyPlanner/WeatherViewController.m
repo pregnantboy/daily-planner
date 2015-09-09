@@ -43,7 +43,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 100;
 }
 
 
@@ -58,9 +58,21 @@
        cell = [[WeatherTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
+    // Set hourly time
+    NSDate *timeToSet = [NSDate date];
+    NSTimeInterval secondsToAdd = (indexPath.row + 1) * 60 * 60;
+    timeToSet = [timeToSet dateByAddingTimeInterval:secondsToAdd];
+    NSDateFormatter *hourFormatter = [[NSDateFormatter alloc] init];
+    [hourFormatter setDateFormat:@"h a"];
+    cell.hourLabel.text = [[hourFormatter stringFromDate:timeToSet] lowercaseString];
     
-    // Display what you want to display in each cell
-    cell.tempLabel.text = @"sucks";
+    // Set weather icon
+    WeatherObject *weather = [[WeatherObject alloc] initWithWeatherType:WTRainy];
+    [cell.weatherIcon setImage:[weather imageIcon]];
+    
+    // Set temperature
+    NSInteger randomTemp = 26 + rand() % (34 - 26);
+    cell.tempLabel.text = [NSString stringWithFormat:@"%ld%@", randomTemp , @"\u00B0"];
     
     
     return cell;
