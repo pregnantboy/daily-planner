@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GTMOAuth2ViewControllerTouch.h"
+#import "GTLCalendar.h"
 
 @interface EventViewController : UIViewController
 

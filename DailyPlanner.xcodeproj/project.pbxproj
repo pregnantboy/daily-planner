@@ -23,6 +23,11 @@
 		3C060F0D1B9F01A5003AE123 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */; };
 		3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCBE1BA08E410058F42A /* WeatherObject.m */; };
 		3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCC11BA0AC1B0058F42A /* EventViewController.m */; };
+		3C64BCD21BA12D1B0058F42A /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C64BCCD1BA12CDE0058F42A /* libGTLTouchStaticLib.a */; };
+		3C64BCD41BA12D240058F42A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C64BCD31BA12D240058F42A /* Security.framework */; };
+		3C64BCD61BA12D2B0058F42A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C64BCD51BA12D2B0058F42A /* SystemConfiguration.framework */; };
+		3C64BCD81BA134AE0058F42A /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCD71BA134AE0058F42A /* GTMOAuth2ViewTouch.xib */; };
+		3C64BCDB1BA134E90058F42A /* GTLCalendar_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 3C060EC91B9E9FEA003AE123;
 			remoteInfo = DailyPlanner;
+		};
+		3C64BCCA1BA12CDE0058F42A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C64BCC31BA12CDE0058F42A /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F38F6A60B66E91D00B24B81;
+			remoteInfo = GTLFramework;
+		};
+		3C64BCCC1BA12CDE0058F42A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C64BCC31BA12CDE0058F42A /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F12027C11A4CA2F00BEB470;
+			remoteInfo = GTLTouchStaticLib;
+		};
+		3C64BCCE1BA12CDE0058F42A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C64BCC31BA12CDE0058F42A /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F12027D11A4CA2F00BEB470;
+			remoteInfo = GTLUnitTests;
+		};
+		3C64BCD01BA12CDE0058F42A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C64BCC31BA12CDE0058F42A /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
+			remoteInfo = DevelopmentTestTool;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -61,6 +94,12 @@
 		3C64BCBE1BA08E410058F42A /* WeatherObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherObject.m; sourceTree = "<group>"; };
 		3C64BCC01BA0AC1B0058F42A /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		3C64BCC11BA0AC1B0058F42A /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		3C64BCC31BA12CDE0058F42A /* GTL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GTL.xcodeproj; path = "google-api-objectivec-client/Source/GTL.xcodeproj"; sourceTree = "<group>"; };
+		3C64BCD31BA12D240058F42A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3C64BCD51BA12D2B0058F42A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3C64BCD71BA134AE0058F42A /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "google-api-objectivec-client/Source/OAuth2/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = SOURCE_ROOT; };
+		3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLCalendar_Sources.m; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar_Sources.m"; sourceTree = SOURCE_ROOT; };
+		3C64BCDA1BA134E90058F42A /* GTLCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLCalendar.h; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +107,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C64BCD61BA12D2B0058F42A /* SystemConfiguration.framework in Frameworks */,
+				3C64BCD41BA12D240058F42A /* Security.framework in Frameworks */,
+				3C64BCD21BA12D1B0058F42A /* libGTLTouchStaticLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +126,9 @@
 		3C060EC11B9E9FE9003AE123 = {
 			isa = PBXGroup;
 			children = (
+				3C64BCD51BA12D2B0058F42A /* SystemConfiguration.framework */,
+				3C64BCD31BA12D240058F42A /* Security.framework */,
+				3C64BCC31BA12CDE0058F42A /* GTL.xcodeproj */,
 				3C060ECC1B9E9FEA003AE123 /* DailyPlanner */,
 				3C060EE61B9E9FEA003AE123 /* DailyPlannerTests */,
 				3C060ECB1B9E9FEA003AE123 /* Products */,
@@ -102,6 +147,8 @@
 		3C060ECC1B9E9FEA003AE123 /* DailyPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */,
+				3C64BCDA1BA134E90058F42A /* GTLCalendar.h */,
 				3C060ED11B9E9FEA003AE123 /* AppDelegate.h */,
 				3C060ED21B9E9FEA003AE123 /* AppDelegate.m */,
 				3C64BCBD1BA08E410058F42A /* WeatherObject.h */,
@@ -123,6 +170,7 @@
 		3C060ECD1B9E9FEA003AE123 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C64BCD71BA134AE0058F42A /* GTMOAuth2ViewTouch.xib */,
 				3C060EFE1B9EB452003AE123 /* cloudy.png */,
 				3C060EFF1B9EB452003AE123 /* partlyCloudy.png */,
 				3C060F001B9EB452003AE123 /* rainy.png */,
@@ -150,6 +198,17 @@
 				3C060EE81B9E9FEA003AE123 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3C64BCC41BA12CDE0058F42A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C64BCCB1BA12CDE0058F42A /* GTL.framework */,
+				3C64BCCD1BA12CDE0058F42A /* libGTLTouchStaticLib.a */,
+				3C64BCCF1BA12CDE0058F42A /* GTLUnitTests.xctest */,
+				3C64BCD11BA12CDE0058F42A /* DevelopmentTestTool */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +278,12 @@
 			mainGroup = 3C060EC11B9E9FE9003AE123;
 			productRefGroup = 3C060ECB1B9E9FEA003AE123 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3C64BCC41BA12CDE0058F42A /* Products */;
+					ProjectRef = 3C64BCC31BA12CDE0058F42A /* GTL.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3C060EC91B9E9FEA003AE123 /* DailyPlanner */,
@@ -227,11 +292,43 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		3C64BCCB1BA12CDE0058F42A /* GTL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTL.framework;
+			remoteRef = 3C64BCCA1BA12CDE0058F42A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3C64BCCD1BA12CDE0058F42A /* libGTLTouchStaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGTLTouchStaticLib.a;
+			remoteRef = 3C64BCCC1BA12CDE0058F42A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3C64BCCF1BA12CDE0058F42A /* GTLUnitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GTLUnitTests.xctest;
+			remoteRef = 3C64BCCE1BA12CDE0058F42A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3C64BCD11BA12CDE0058F42A /* DevelopmentTestTool */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = DevelopmentTestTool;
+			remoteRef = 3C64BCD01BA12CDE0058F42A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		3C060EC81B9E9FEA003AE123 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C64BCD81BA134AE0058F42A /* GTMOAuth2ViewTouch.xib in Resources */,
 				3C060ED91B9E9FEA003AE123 /* Main.storyboard in Resources */,
 				3C060F061B9EB452003AE123 /* sunny.png in Resources */,
 				3C060EDE1B9E9FEA003AE123 /* LaunchScreen.xib in Resources */,
@@ -261,6 +358,7 @@
 				3C060F0D1B9F01A5003AE123 /* WeatherTableViewCell.m in Sources */,
 				3C060ED31B9E9FEA003AE123 /* AppDelegate.m in Sources */,
 				3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */,
+				3C64BCDB1BA134E90058F42A /* GTLCalendar_Sources.m in Sources */,
 				3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */,
 				3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */,
 				3C060ED01B9E9FEA003AE123 /* main.m in Sources */,
@@ -393,7 +491,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DailyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$PROJECT_DIR/google-api-objectivec-client/Source/**";
 			};
 			name = Debug;
 		};
@@ -403,7 +506,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DailyPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$PROJECT_DIR/google-api-objectivec-client/Source/**";
 			};
 			name = Release;
 		};
