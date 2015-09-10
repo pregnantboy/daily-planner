@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>123FA028-716D-4ED2-84F1-3D40BC104AC4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DailyPlanner</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0C5CB30686E63166AD6B9E9FD34BD87630EC8637</key>
+		<string>https://github.com/pregnantboy/daily-planner</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DailyPlanner.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0C5CB30686E63166AD6B9E9FD34BD87630EC8637</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/pregnantboy/daily-planner</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0C5CB30686E63166AD6B9E9FD34BD87630EC8637</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0C5CB30686E63166AD6B9E9FD34BD87630EC8637</string>
+			<key>IDESourceControlWCCName</key>
+			<string>daily-planner</string>
+		</dict>
+	</array>
+</dict>
+</plist>
