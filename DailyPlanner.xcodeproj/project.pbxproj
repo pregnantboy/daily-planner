@@ -28,6 +28,8 @@
 		3C64BCD61BA12D2B0058F42A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C64BCD51BA12D2B0058F42A /* SystemConfiguration.framework */; };
 		3C64BCD81BA134AE0058F42A /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCD71BA134AE0058F42A /* GTMOAuth2ViewTouch.xib */; };
 		3C64BCDB1BA134E90058F42A /* GTLCalendar_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */; };
+		3C64BCDD1BA13A470058F42A /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCDC1BA13A470058F42A /* settings.png */; };
+		3C64BCDF1BA158340058F42A /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCDE1BA158340058F42A /* backButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		3C64BCD71BA134AE0058F42A /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "google-api-objectivec-client/Source/OAuth2/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = SOURCE_ROOT; };
 		3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLCalendar_Sources.m; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar_Sources.m"; sourceTree = SOURCE_ROOT; };
 		3C64BCDA1BA134E90058F42A /* GTLCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLCalendar.h; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar.h"; sourceTree = SOURCE_ROOT; };
+		3C64BCDC1BA13A470058F42A /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		3C64BCDE1BA158340058F42A /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +174,10 @@
 		3C060ECD1B9E9FEA003AE123 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C64BCDC1BA13A470058F42A /* settings.png */,
 				3C64BCD71BA134AE0058F42A /* GTMOAuth2ViewTouch.xib */,
 				3C060EFE1B9EB452003AE123 /* cloudy.png */,
+				3C64BCDE1BA158340058F42A /* backButton.png */,
 				3C060EFF1B9EB452003AE123 /* partlyCloudy.png */,
 				3C060F001B9EB452003AE123 /* rainy.png */,
 				3C060F011B9EB452003AE123 /* sunny.png */,
@@ -331,12 +337,14 @@
 				3C64BCD81BA134AE0058F42A /* GTMOAuth2ViewTouch.xib in Resources */,
 				3C060ED91B9E9FEA003AE123 /* Main.storyboard in Resources */,
 				3C060F061B9EB452003AE123 /* sunny.png in Resources */,
+				3C64BCDD1BA13A470058F42A /* settings.png in Resources */,
 				3C060EDE1B9E9FEA003AE123 /* LaunchScreen.xib in Resources */,
 				3C060EFD1B9EA21D003AE123 /* mainBackground.jpg in Resources */,
 				3C060F041B9EB452003AE123 /* partlyCloudy.png in Resources */,
 				3C060F031B9EB452003AE123 /* cloudy.png in Resources */,
 				3C060F051B9EB452003AE123 /* rainy.png in Resources */,
 				3C060F071B9EB452003AE123 /* thunderstorm.png in Resources */,
+				3C64BCDF1BA158340058F42A /* backButton.png in Resources */,
 				3C060EDB1B9E9FEA003AE123 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

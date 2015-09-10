@@ -23,6 +23,8 @@
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateClock) userInfo:nil repeats:YES];
 }
 
+#pragma mark - Main Clock
+
 - (void)updateClock {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     NSDateFormatter *ampmFormatter = [[NSDateFormatter alloc] init];
@@ -36,6 +38,7 @@
     self.dateLabel.text = [dateFormatter stringFromDate:currentDate];
 }
 
+#pragma mark - UITableView delegates
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
     return 12;

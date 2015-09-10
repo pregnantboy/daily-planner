@@ -17,6 +17,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *ampmLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
+// google calendar api
+@property (nonatomic, strong) GTLServiceCalendar *service;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
+@property (retain, nonatomic) UIAlertController *popupSettings;
 
 @end
