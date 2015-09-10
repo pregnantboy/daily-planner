@@ -22,6 +22,7 @@
 		3C060F071B9EB452003AE123 /* thunderstorm.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C060F021B9EB452003AE123 /* thunderstorm.png */; };
 		3C060F0D1B9F01A5003AE123 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */; };
 		3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCBE1BA08E410058F42A /* WeatherObject.m */; };
+		3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCC11BA0AC1B0058F42A /* EventViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTableViewCell.m; sourceTree = "<group>"; };
 		3C64BCBD1BA08E410058F42A /* WeatherObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherObject.h; sourceTree = "<group>"; };
 		3C64BCBE1BA08E410058F42A /* WeatherObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherObject.m; sourceTree = "<group>"; };
+		3C64BCC01BA0AC1B0058F42A /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		3C64BCC11BA0AC1B0058F42A /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */,
 				3C060EF91B9EA1E3003AE123 /* WeatherViewController.h */,
 				3C060EFA1B9EA1E3003AE123 /* WeatherViewController.m */,
+				3C64BCC01BA0AC1B0058F42A /* EventViewController.h */,
+				3C64BCC11BA0AC1B0058F42A /* EventViewController.m */,
 				3C060ED71B9E9FEA003AE123 /* Main.storyboard */,
 				3C060EDA1B9E9FEA003AE123 /* Images.xcassets */,
 				3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */,
@@ -256,6 +261,7 @@
 				3C060F0D1B9F01A5003AE123 /* WeatherTableViewCell.m in Sources */,
 				3C060ED31B9E9FEA003AE123 /* AppDelegate.m in Sources */,
 				3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */,
+				3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */,
 				3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */,
 				3C060ED01B9E9FEA003AE123 /* main.m in Sources */,
 			);

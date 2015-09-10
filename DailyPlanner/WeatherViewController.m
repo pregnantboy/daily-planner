@@ -29,7 +29,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"hh:mm"];
     [ampmFormatter setDateFormat:@"a"];
-    [dateFormatter setDateFormat: @"d MMM YY - EEEE"];
+    [dateFormatter setDateFormat: @"d MMM YY | EEEE"];
     NSDate *currentDate = [NSDate date];
     self.clockLabel.text =[formatter stringFromDate:currentDate];
     self.ampmLabel.text = [ampmFormatter stringFromDate:currentDate];

@@ -11,6 +11,8 @@
 #include "WeatherObject.h"
 
 @interface WeatherViewController : UIViewController
+
+// main clock
 @property (strong, nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ampmLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
