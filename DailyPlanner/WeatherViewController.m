@@ -34,6 +34,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     _weatherForecast = [_weatherManager prettyForecast];
     [self.weatherTable reloadData];
+    [self updateNowcast];
 }
 
 #pragma mark - Main Clock
@@ -49,6 +50,20 @@
     self.clockLabel.text =[formatter stringFromDate:currentDate];
     self.ampmLabel.text = [ampmFormatter stringFromDate:currentDate];
     self.dateLabel.text = [dateFormatter stringFromDate:currentDate];
+}
+
+#pragma mark - Current Weather Conditions
+
+- (void)updateNowcast {
+    NSDictionary *hiLo = [_weatherManager hiLoTemp];
+    self.hiTemp.text = [NSString stringWithFormat:@"%d%@", [[hiLo objectForKey:@"high"] intValue], @"\u00B0"];
+    self.loTemp.text = [NSString stringWithFormat:@"%d%@", [[hiLo objectForKey:@"low"] intValue], @"\u00B0"];
+    
+    NSDictionary *nowcast = [_weatherManager prettyNowcast];
+    self.currentTemp.text = [NSString stringWithFormat:@"%d%@", [[nowcast objectForKey:@"temp"] intValue], @"\u00B0"];
+    WeatherObject *currWeather = (WeatherObject *)[nowcast objectForKey:@"weather"];
+
+    [self.currWeatherIcon setImage:[currWeather imageIcon]];
 }
 
 #pragma mark - UITableView delegates
@@ -74,16 +89,10 @@
        cell = [[WeatherTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
+    
     NSDictionary *hourlyWeatherData = [_weatherForecast objectAtIndex:indexPath.row];
     
-    // Set hourly time
-//    NSDate *timeToSet = [NSDate date];
-//    NSTimeInterval secondsToAdd = (indexPath.row + 1) * 60 * 60;
-//    timeToSet = [timeToSet dateByAddingTimeInterval:secondsToAdd];
-//    NSDateFormatter *hourFormatter = [[NSDateFormatter alloc] init];
-//    [hourFormatter setDateFormat:@"h a"];
-//    cell.hourLabel.text = [[hourFormatter stringFromDate:timeToSet] lowercaseString];
-   
+    // Set hourly time  
     cell.hourLabel.text = [NSString stringWithFormat:@"%d %@", [[hourlyWeatherData objectForKey:@"hour"] intValue], [[hourlyWeatherData objectForKey:@"ampm"] lowercaseString]];
     
     // Set weather icon

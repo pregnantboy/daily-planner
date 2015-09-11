@@ -16,5 +16,7 @@
 + (id)sharedManager;
 
 - (NSMutableArray *)prettyForecast;
+- (NSDictionary *)hiLoTemp;
+- (NSDictionary *)prettyNowcast;
 
 @end

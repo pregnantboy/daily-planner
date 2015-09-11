@@ -8,17 +8,25 @@
 
 #import "WeatherManager.h"
 
-@interface WeatherManager() {
+@interface WeatherManager() <NSXMLParserDelegate> {
     NSString *_forecastPath;
-    NSDictionary *_nowcast;
+    NSString *_hiLoTempPath;
+    NSString *_nowcastPath;
+    NSDictionary *_rawNowcast;
     NSDictionary *_rawForecast;
     NSMutableArray *_prettyForecast;
+    NSMutableDictionary *_prettyNowcast;
+    NSDictionary *_hiLoTemp;
     NSDate *_forecastLastUpdated;
+    NSDate *_nowcastLastUpdated;
+    NSXMLParser *_neaForecastParser;
 }
 
 @end
 
 static WeatherManager *_sharedManager;
+static NSString *neaForecastUrl = @"http://www.nea.gov.sg/api/WebAPI/?dataset=12hrs_forecast&keyref=781CF461BB6606AD19AA45F38E88F174F0E3E9D8D4FF2BF7";
+static NSString *nowcastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d80/conditions/q/SG/Singapore.json";
 static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d80/hourly/q/SG/Singapore.json";
 
 @implementation WeatherManager
@@ -29,10 +37,14 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         if ([paths count] > 0) {
             _forecastPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"forecast.out"];
-            NSLog(@"%@", _forecastPath);
+            _hiLoTempPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"hilo.out"];
+            _nowcastPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"nowcast.out"];
         } else {
             NSLog(@"application document path not found");
         }
+        _neaForecastParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:neaForecastUrl]];
+        [_neaForecastParser setDelegate:self];
+        [self tryUpdateNowcast];
         [self tryUpdateForecast];
     }
     return self;
@@ -61,6 +73,28 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
     }
 }
 
+- (void)updateNowcast {
+    [_neaForecastParser parse];
+    NSData *nowcastData = [NSData dataWithContentsOfURL:[NSURL URLWithString:nowcastUrl]];
+    NSError *errorJson =  nil;
+    _rawNowcast = [NSJSONSerialization JSONObjectWithData:nowcastData options:kNilOptions error:&errorJson];
+    if (errorJson) {
+        NSLog(@"hourly forecast error %@", errorJson);
+    } else {
+        [_rawNowcast writeToFile:_nowcastPath atomically:YES];
+        _nowcastLastUpdated = [NSDate date];
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    if (parser == _neaForecastParser) {
+        if ([elementName isEqualToString:@"temperature"]) {
+            _hiLoTemp = attributeDict;
+            [_hiLoTemp writeToFile:_forecastPath atomically:YES];
+        }
+    }
+}
+
 - (BOOL)isOutdated:(NSDate *)lastUpdated {
     NSCalendar *cal = [NSCalendar currentCalendar];
     if (lastUpdated) {
@@ -78,12 +112,24 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
     return NO;
 }
 
+- (void)tryUpdateNowcast {
+    BOOL hiLoFileExists = [[NSFileManager defaultManager] fileExistsAtPath:_hiLoTempPath];
+    BOOL nowcastFileExists = [[NSFileManager defaultManager] fileExistsAtPath:_nowcastPath];
+    if (nowcastFileExists && hiLoFileExists && [self isOutdated:_nowcastLastUpdated]) {
+        _rawNowcast = [NSDictionary dictionaryWithContentsOfFile:_nowcastPath];
+        _hiLoTemp = [NSDictionary dictionaryWithContentsOfFile:_hiLoTempPath];
+    } else {
+        [self updateNowcast];
+    }
+    [self parseNowcast];
+}
+
 - (void)tryUpdateForecast {
     BOOL forecastFileExists = [[NSFileManager defaultManager] fileExistsAtPath:_forecastPath];
     if (forecastFileExists && [self isOutdated:_forecastLastUpdated]) {
         _rawForecast = [NSDictionary dictionaryWithContentsOfFile:_forecastPath];
     } else {
-        [self updateForecast];
+       [self updateForecast];
     }
     [self parseForecast];
 }
@@ -101,7 +147,7 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
         [hourDict setObject:[[objectForHour objectForKey:@"temp"] objectForKey:@"metric"] forKey:@"temp"];
         [hourDict setObject:[objectForHour objectForKey:@"fctcode"] forKey:@"code"];
 
-        [hourDict setObject:[self weatherTypeForDict:hourDict] forKey:@"weather"];
+        [hourDict setObject:[self weatherObjectForDict:hourDict] forKey:@"weather"];
         int tempHour = [[hourDict objectForKey:@"hour" ]intValue] % 12;
         if (tempHour == 0) {
             tempHour = 12;
@@ -112,8 +158,25 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
     }
 }
 
+- (void)parseNowcast {
+    _prettyNowcast = [[NSMutableDictionary alloc] init];
+    NSDictionary* conditions = [_rawNowcast objectForKey:@"current_observation"];
+    [_prettyNowcast setObject:[conditions objectForKey:@"temp_c"] forKey:@"temp"];
+    NSLog(@"%@ ", [conditions objectForKey:@"icon"]);
+    WeatherObject *weatherObj = [self weatherObjectForString:[conditions objectForKey:@"icon"]];
+    [_prettyNowcast setObject:weatherObj forKey:@"weather"];
+}
+
 - (NSMutableArray *)prettyForecast {
     return _prettyForecast;
+}
+
+- (NSDictionary *)prettyNowcast {
+    return _prettyNowcast;
+}
+
+- (NSDictionary *)hiLoTemp {
+    return _hiLoTemp;
 }
 
 - (BOOL)isNightWithHour:(int)hour andAmPm:(NSString *)ampm {
@@ -132,7 +195,18 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
     }
 }
 
-- (WeatherObject *)weatherTypeForDict:(NSDictionary *)hourDict {
+- (BOOL)isNightNow {
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDate *now = [NSDate date];
+    NSInteger hour = [cal component:NSCalendarUnitHour fromDate:now];
+    if (hour < 7 || hour >= 19) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (WeatherObject *)weatherObjectForDict:(NSDictionary *)hourDict {
     int fctcode = [[hourDict objectForKey:@"code"] intValue];
     int hour = [[hourDict objectForKey:@"hour"] intValue];
     NSString *ampm = [hourDict objectForKey:@"ampm"];
@@ -178,6 +252,37 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
             break;
     }
     return [[WeatherObject alloc] initWithWeatherType:weatherType];
+}
+
+- (WeatherObject *)weatherObjectForString:(NSString *)iconName {
+    NSLog(@"iconname %@", iconName);
+    BOOL isNight = [self isNightNow];
+    WeatherType weatherType;
+    if ([iconName isEqualToString:@"clear"] || [iconName isEqualToString:@"sunny"]) {
+        if (!isNight) {
+            weatherType = WTSunny;
+        } else {
+            weatherType = WTClearNight;
+        }
+    } else if ([iconName isEqualToString:@"partlycloudy"] || [iconName isEqualToString:@"partlysunny"]) {
+        if (!isNight) {
+            weatherType = WTPartlyCloudy;
+        } else {
+            weatherType = WTPartlyCloudyNight;
+        }
+    } else if ([iconName isEqualToString:@"mostlycloudy"] || [iconName isEqualToString:@"cloudy"]) {
+        weatherType = WTCloudy;
+    } else if ([iconName isEqualToString:@"fog"] || [iconName isEqualToString:@"hazy"]) {
+        weatherType = WTHazy;
+    } else if ([iconName isEqualToString:@"chancerain"] || [iconName isEqualToString:@"rain"]) {
+        weatherType = WTRainy;
+    } else if ([iconName isEqualToString:@"tstorms"] || [iconName isEqualToString:@"chancetstorms"]) {
+        weatherType = WTThunderstorm;
+    } else {
+        weatherType = WTCloudy;
+    }
+    return [[WeatherObject alloc] initWithWeatherType:weatherType];
+    
 }
 
 @end
