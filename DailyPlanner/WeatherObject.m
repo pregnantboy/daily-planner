@@ -38,6 +38,15 @@
             case WTThunderstorm:
                 filename = @"thunderstorm.png";
                 break;
+            case WTClearNight:
+                filename = @"clearNight.png";
+                break;
+            case WTPartlyCloudyNight:
+                filename = @"partlyCloudyNight.png";
+                break;
+            case WTHazy:
+                filename = @"hazy.png";
+                break;
             default:
                 filename = @"cloudy.png";
                 break;

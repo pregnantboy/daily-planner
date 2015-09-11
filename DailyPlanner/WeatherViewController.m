@@ -8,7 +8,10 @@
 
 #import "WeatherViewController.h"
 
-@interface WeatherViewController ()
+@interface WeatherViewController () {
+    WeatherManager *_weatherManager;
+    NSArray *_weatherForecast;
+}
 
 @end
 
@@ -21,6 +24,16 @@
     // set up clock label
     [self updateClock];
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateClock) userInfo:nil repeats:YES];
+    
+    
+    // Instantiate Weather Manager
+    _weatherManager = [WeatherManager sharedManager];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    _weatherForecast = [_weatherManager prettyForecast];
+    [self.weatherTable reloadData];
 }
 
 #pragma mark - Main Clock
@@ -61,22 +74,24 @@
        cell = [[WeatherTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
+    NSDictionary *hourlyWeatherData = [_weatherForecast objectAtIndex:indexPath.row];
+    
     // Set hourly time
-    NSDate *timeToSet = [NSDate date];
-    NSTimeInterval secondsToAdd = (indexPath.row + 1) * 60 * 60;
-    timeToSet = [timeToSet dateByAddingTimeInterval:secondsToAdd];
-    NSDateFormatter *hourFormatter = [[NSDateFormatter alloc] init];
-    [hourFormatter setDateFormat:@"h a"];
-    cell.hourLabel.text = [[hourFormatter stringFromDate:timeToSet] lowercaseString];
+//    NSDate *timeToSet = [NSDate date];
+//    NSTimeInterval secondsToAdd = (indexPath.row + 1) * 60 * 60;
+//    timeToSet = [timeToSet dateByAddingTimeInterval:secondsToAdd];
+//    NSDateFormatter *hourFormatter = [[NSDateFormatter alloc] init];
+//    [hourFormatter setDateFormat:@"h a"];
+//    cell.hourLabel.text = [[hourFormatter stringFromDate:timeToSet] lowercaseString];
+   
+    cell.hourLabel.text = [NSString stringWithFormat:@"%d %@", [[hourlyWeatherData objectForKey:@"hour"] intValue], [[hourlyWeatherData objectForKey:@"ampm"] lowercaseString]];
     
     // Set weather icon
-    WeatherObject *weather = [[WeatherObject alloc] initWithWeatherType:WTRainy];
+    WeatherObject *weather = (WeatherObject *)[hourlyWeatherData objectForKey:@"weather"];
     [cell.weatherIcon setImage:[weather imageIcon]];
     
     // Set temperature
-    NSInteger randomTemp = 26 + rand() % (34 - 26);
-    cell.tempLabel.text = [NSString stringWithFormat:@"%ld%@", randomTemp , @"\u00B0"];
-    
+    cell.tempLabel.text = [NSString stringWithFormat:@"%@%@", [hourlyWeatherData objectForKey:@"temp"] , @"\u00B0"];
     
     return cell;
 }

@@ -30,6 +30,11 @@
 		3C64BCDB1BA134E90058F42A /* GTLCalendar_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */; };
 		3C64BCDD1BA13A470058F42A /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCDC1BA13A470058F42A /* settings.png */; };
 		3C64BCDF1BA158340058F42A /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCDE1BA158340058F42A /* backButton.png */; };
+		3C64BCE21BA15CCF0058F42A /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCE11BA15CCF0058F42A /* EventTableViewCell.m */; };
+		3C64BCE51BA1A0960058F42A /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCE41BA1A0960058F42A /* WeatherManager.m */; };
+		3C64BCEC1BA3244B0058F42A /* clearNight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCEB1BA3244B0058F42A /* clearNight.png */; };
+		3C64BCEE1BA325070058F42A /* partlyCloudyNight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCED1BA325070058F42A /* partlyCloudyNight.png */; };
+		3C64BCF01BA325E80058F42A /* hazy.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCEF1BA325E80058F42A /* hazy.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +109,13 @@
 		3C64BCDA1BA134E90058F42A /* GTLCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLCalendar.h; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar.h"; sourceTree = SOURCE_ROOT; };
 		3C64BCDC1BA13A470058F42A /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		3C64BCDE1BA158340058F42A /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
+		3C64BCE01BA15CCF0058F42A /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
+		3C64BCE11BA15CCF0058F42A /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
+		3C64BCE31BA1A0960058F42A /* WeatherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherManager.h; sourceTree = "<group>"; };
+		3C64BCE41BA1A0960058F42A /* WeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherManager.m; sourceTree = "<group>"; };
+		3C64BCEB1BA3244B0058F42A /* clearNight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearNight.png; sourceTree = "<group>"; };
+		3C64BCED1BA325070058F42A /* partlyCloudyNight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partlyCloudyNight.png; sourceTree = "<group>"; };
+		3C64BCEF1BA325E80058F42A /* hazy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hazy.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,21 +163,25 @@
 		3C060ECC1B9E9FEA003AE123 /* DailyPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */,
-				3C64BCDA1BA134E90058F42A /* GTLCalendar.h */,
 				3C060ED11B9E9FEA003AE123 /* AppDelegate.h */,
 				3C060ED21B9E9FEA003AE123 /* AppDelegate.m */,
+				3C64BCE01BA15CCF0058F42A /* EventTableViewCell.h */,
+				3C64BCE11BA15CCF0058F42A /* EventTableViewCell.m */,
+				3C64BCC01BA0AC1B0058F42A /* EventViewController.h */,
+				3C64BCC11BA0AC1B0058F42A /* EventViewController.m */,
+				3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */,
+				3C64BCDA1BA134E90058F42A /* GTLCalendar.h */,
 				3C64BCBD1BA08E410058F42A /* WeatherObject.h */,
 				3C64BCBE1BA08E410058F42A /* WeatherObject.m */,
+				3C64BCE31BA1A0960058F42A /* WeatherManager.h */,
+				3C64BCE41BA1A0960058F42A /* WeatherManager.m */,
 				3C060F0B1B9F01A5003AE123 /* WeatherTableViewCell.h */,
 				3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */,
 				3C060EF91B9EA1E3003AE123 /* WeatherViewController.h */,
 				3C060EFA1B9EA1E3003AE123 /* WeatherViewController.m */,
-				3C64BCC01BA0AC1B0058F42A /* EventViewController.h */,
-				3C64BCC11BA0AC1B0058F42A /* EventViewController.m */,
 				3C060ED71B9E9FEA003AE123 /* Main.storyboard */,
-				3C060EDA1B9E9FEA003AE123 /* Images.xcassets */,
 				3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */,
+				3C060EDA1B9E9FEA003AE123 /* Images.xcassets */,
 				3C060ECD1B9E9FEA003AE123 /* Supporting Files */,
 			);
 			path = DailyPlanner;
@@ -177,10 +193,13 @@
 				3C64BCDC1BA13A470058F42A /* settings.png */,
 				3C64BCD71BA134AE0058F42A /* GTMOAuth2ViewTouch.xib */,
 				3C060EFE1B9EB452003AE123 /* cloudy.png */,
+				3C64BCEB1BA3244B0058F42A /* clearNight.png */,
 				3C64BCDE1BA158340058F42A /* backButton.png */,
+				3C64BCED1BA325070058F42A /* partlyCloudyNight.png */,
 				3C060EFF1B9EB452003AE123 /* partlyCloudy.png */,
 				3C060F001B9EB452003AE123 /* rainy.png */,
 				3C060F011B9EB452003AE123 /* sunny.png */,
+				3C64BCEF1BA325E80058F42A /* hazy.png */,
 				3C060F021B9EB452003AE123 /* thunderstorm.png */,
 				3C060EFC1B9EA21D003AE123 /* mainBackground.jpg */,
 				3C060ECE1B9E9FEA003AE123 /* Info.plist */,
@@ -336,6 +355,7 @@
 			files = (
 				3C64BCD81BA134AE0058F42A /* GTMOAuth2ViewTouch.xib in Resources */,
 				3C060ED91B9E9FEA003AE123 /* Main.storyboard in Resources */,
+				3C64BCEE1BA325070058F42A /* partlyCloudyNight.png in Resources */,
 				3C060F061B9EB452003AE123 /* sunny.png in Resources */,
 				3C64BCDD1BA13A470058F42A /* settings.png in Resources */,
 				3C060EDE1B9E9FEA003AE123 /* LaunchScreen.xib in Resources */,
@@ -344,6 +364,8 @@
 				3C060F031B9EB452003AE123 /* cloudy.png in Resources */,
 				3C060F051B9EB452003AE123 /* rainy.png in Resources */,
 				3C060F071B9EB452003AE123 /* thunderstorm.png in Resources */,
+				3C64BCF01BA325E80058F42A /* hazy.png in Resources */,
+				3C64BCEC1BA3244B0058F42A /* clearNight.png in Resources */,
 				3C64BCDF1BA158340058F42A /* backButton.png in Resources */,
 				3C060EDB1B9E9FEA003AE123 /* Images.xcassets in Resources */,
 			);
@@ -367,6 +389,8 @@
 				3C060ED31B9E9FEA003AE123 /* AppDelegate.m in Sources */,
 				3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */,
 				3C64BCDB1BA134E90058F42A /* GTLCalendar_Sources.m in Sources */,
+				3C64BCE21BA15CCF0058F42A /* EventTableViewCell.m in Sources */,
+				3C64BCE51BA1A0960058F42A /* WeatherManager.m in Sources */,
 				3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */,
 				3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */,
 				3C060ED01B9E9FEA003AE123 /* main.m in Sources */,

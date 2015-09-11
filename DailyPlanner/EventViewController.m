@@ -16,6 +16,7 @@ static NSString *const kKeychainItemName = @"Google Calendar API";
 static NSString *const kClientID = @"216231891570-usfj63n5edd0r30iv9hbjcnbq3ututo5.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"fbfkhRPW-5ZAPlRRRMdPaHi3";
 BOOL loginPageDismissed;
+static BOOL shouldShowLoginPageOnLoad = NO;
 
 @implementation EventViewController
 
@@ -35,7 +36,7 @@ BOOL loginPageDismissed;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    if (!self.service.authorizer.canAuthorize && !loginPageDismissed) {
+    if (!self.service.authorizer.canAuthorize && !loginPageDismissed && shouldShowLoginPageOnLoad) {
         // Not yet authorized, request authorization by pushing the login UI onto the UI stack.
         [self loginGoogle];
     } else {
@@ -60,6 +61,47 @@ BOOL loginPageDismissed;
     
 }
 
+#pragma mark - UITableView delegates
+
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 130;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"EventCell";
+    
+    EventTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[EventTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    // Set event title
+    cell.eventTitle.text = @"BLAH BLAH BLAH";
+    
+    // Set event location
+    cell.location.text = @"woof woof";
+    
+    // Set event start time and end time
+    cell.startEndTime.text = @"12:00pm to 4:00pm";
+    
+    // Set weather icon
+    WeatherObject *weather = [[WeatherObject alloc] initWithWeatherType:WTRainy];
+    [cell.weatherIcon setImage:[weather imageIcon]];
+    
+    return cell;
+}
+
+# pragma mark - Settings
+
 - (IBAction)settingsButton:(id)sender {
     self.popupSettings = [UIAlertController alertControllerWithTitle:@"Google Account Settings" message: nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *defaultButton = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
@@ -74,7 +116,7 @@ BOOL loginPageDismissed;
         [self.popupSettings addAction:switchAccountButton];
         [self.popupSettings addAction:logoutButton];
     } else {
-         [self.popupSettings addAction:loginButton];
+        [self.popupSettings addAction:loginButton];
     }
     [self.popupSettings addAction:defaultButton];
     
@@ -83,6 +125,7 @@ BOOL loginPageDismissed;
 
 
 #pragma mark - Google Calendar API
+
 // Construct a query and get a list of upcoming events from the user calendar.
 - (void)fetchEvents {
     GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"primary"];
@@ -117,7 +160,7 @@ BOOL loginPageDismissed;
             [eventString appendString:@"No upcoming events found."];
         }
         NSLog(@"%@", eventString);
-    } else if (!loginPageDismissed) {
+    } else if (!loginPageDismissed && shouldShowLoginPageOnLoad) {
         [self showAlert:@"Error" message:error.localizedDescription];
     }
 }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #include "WeatherTableViewCell.h"
-#include "WeatherObject.h"
+#include "WeatherManager.h"
 
 @interface WeatherViewController : UIViewController
 

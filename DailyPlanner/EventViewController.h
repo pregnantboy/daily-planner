@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "GTMOAuth2ViewControllerTouch.h"
 #import "GTLCalendar.h"
+#import "WeatherObject.h"
+#import "EventTableViewCell.h"
 
 @interface EventViewController : UIViewController
 
@@ -19,8 +21,13 @@
 
 // google calendar api
 @property (nonatomic, strong) GTLServiceCalendar *service;
-@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
+// settings button
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (retain, nonatomic) UIAlertController *popupSettings;
+
+// Events table view
+@property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
+
 
 @end

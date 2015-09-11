@@ -16,7 +16,9 @@ typedef NS_ENUM(NSUInteger, WeatherType) {
     WTCloudy,
     WTRainy,
     WTThunderstorm,
-    WTHazy
+    WTHazy,
+    WTClearNight,
+    WTPartlyCloudyNight
 };
 
 - (id)initWithWeatherType:(WeatherType)weatherType;
