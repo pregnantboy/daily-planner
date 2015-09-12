@@ -179,19 +179,11 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
     return _hiLoTemp;
 }
 
-- (BOOL)isNightWithHour:(int)hour andAmPm:(NSString *)ampm {
-    if ([ampm caseInsensitiveCompare:@"AM"] == NSOrderedSame) {
-        if (hour < 7) {
-            return YES;
-        } else {
-            return NO;
-        }
+- (BOOL)isNightWithHour:(int)hour {
+    if (hour < 7 || hour >= 19) {
+        return YES;
     } else {
-        if (hour < 7) {
-            return NO;
-        } else {
-            return YES;
-        }
+        return NO;
     }
 }
 
@@ -209,8 +201,8 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
 - (WeatherObject *)weatherObjectForDict:(NSDictionary *)hourDict {
     int fctcode = [[hourDict objectForKey:@"code"] intValue];
     int hour = [[hourDict objectForKey:@"hour"] intValue];
-    NSString *ampm = [hourDict objectForKey:@"ampm"];
-    BOOL isNight = [self isNightWithHour:hour andAmPm:ampm];
+    BOOL isNight = [self isNightWithHour:hour]
+    ;
     WeatherType weatherType;
     switch(fctcode) {
         case 1:
