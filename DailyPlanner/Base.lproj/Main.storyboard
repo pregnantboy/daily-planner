@@ -175,6 +175,9 @@
                                 <exclude reference="JZM-TC-Mj7"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="okg-QT-R1u" appends="YES" id="0sS-0B-0ui"/>
+                        </connections>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -190,6 +193,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="okg-QT-R1u">
+                    <connections>
+                        <segue destination="Uvh-S5-tbH" kind="presentation" id="0U9-16-sqf"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="244.5" y="314.5"/>
         </scene>
@@ -329,6 +337,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="DX9-W9-vY5" secondAttribute="centerY" id="5GG-si-wYO"/>
                             <constraint firstAttribute="centerX" secondItem="d79-e8-TOo" secondAttribute="centerX" constant="10" id="5Ko-4b-YMQ"/>
@@ -347,6 +356,9 @@
                             <constraint firstItem="DX9-W9-vY5" firstAttribute="height" secondItem="FPC-qp-J8h" secondAttribute="height" id="ddK-yu-O0a"/>
                             <constraint firstAttribute="centerX" secondItem="ZZu-DS-cOt" secondAttribute="centerX" id="lan-Je-Xpj"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="iqA-wC-aHJ" appends="YES" id="k1g-VV-E6i"/>
+                        </connections>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -359,6 +371,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXu-im-YMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="iqA-wC-aHJ">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" id="6QD-Iy-csN"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="756.5" y="314.5"/>
         </scene>

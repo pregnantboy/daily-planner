@@ -36,6 +36,7 @@
     
     // Notification Center Observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTable) name:eventsReceivedNotification object:nil];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -131,8 +132,6 @@
     
     [self presentViewController:self.popupSettings animated:YES completion:nil];
 }
-
-
 
 
 @end
