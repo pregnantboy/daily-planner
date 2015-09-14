@@ -135,6 +135,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4a9-YW-Zez" firstAttribute="top" secondItem="lhV-Qf-EWd" secondAttribute="bottom" constant="-10" id="3aT-c1-PSx"/>
                             <constraint firstItem="lhV-Qf-EWd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="160" id="6BI-0Z-2wU"/>
@@ -206,6 +207,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DX9-W9-vY5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d79-e8-TOo">
                                 <rect key="frame" x="77" y="55" width="200" height="80"/>

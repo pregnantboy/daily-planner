@@ -34,6 +34,7 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
 - (id)init {
     self = [super init];
     if (self) {
+        // Set save paths for all data
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         if ([paths count] > 0) {
             _forecastPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"forecast.out"];
