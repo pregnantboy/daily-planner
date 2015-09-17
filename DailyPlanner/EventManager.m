@@ -229,7 +229,11 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 
 - (void)logoutGoogle {
     NSLog(@"logging out");
-    [GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:kKeychainItemName];
+    self.service.authorizer= NULL;
+    //[GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:kKeychainItemName];
+    
+    [[NSFileManager defaultManager] removeItemAtPath:_eventsPath error:NULL];
+    
     [self postLoggedOutNotification];
 }
 
