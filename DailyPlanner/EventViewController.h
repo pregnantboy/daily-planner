@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *ampmLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
+// last updated 
+@property (weak, nonatomic) IBOutlet UILabel *lastUpdated;
+
 
 // settings button
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;

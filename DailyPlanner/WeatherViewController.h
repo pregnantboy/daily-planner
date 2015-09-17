@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ampmLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastUpdated;
 
 // current weather objects
 @property (weak, nonatomic) IBOutlet UILabel *currentTemp;

@@ -20,6 +20,7 @@
     NSDate *_forecastLastUpdated;
     NSDate *_nowcastLastUpdated;
     NSXMLParser *_neaForecastParser;
+    NSUserDefaults *_defaults;
 }
 
 @end
@@ -28,6 +29,9 @@ static WeatherManager *_sharedManager;
 static NSString *neaForecastUrl = @"http://www.nea.gov.sg/api/WebAPI/?dataset=12hrs_forecast&keyref=781CF461BB6606AD19AA45F38E88F174F0E3E9D8D4FF2BF7";
 static NSString *nowcastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d80/conditions/q/SG/Singapore.json";
 static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d80/hourly/q/SG/Singapore.json";
+static NSString *const ForecastLastUpdatedUserDefault = @"ForecastLastUpdatedUserDefault";
+static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserDefault";
+
 
 @implementation WeatherManager
 
@@ -45,6 +49,15 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
         }
         _neaForecastParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:neaForecastUrl]];
         [_neaForecastParser setDelegate:self];
+        
+        _defaults = [NSUserDefaults standardUserDefaults];
+        if ([_defaults objectForKey:ForecastLastUpdatedUserDefault]) {
+            _forecastLastUpdated = [_defaults objectForKey:ForecastLastUpdatedUserDefault];
+        }
+        if ([_defaults objectForKey:NowcastLastUpdatedUserDefault]) {
+            _nowcastLastUpdated = [_defaults objectForKey:NowcastLastUpdatedUserDefault];
+        }
+        
         [self tryUpdateNowcast];
         [self tryUpdateForecast];
     }
@@ -71,10 +84,12 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
     } else {
         [_rawForecast writeToFile:_forecastPath atomically:YES];
         _forecastLastUpdated = [NSDate date];
+        [_defaults setObject:_forecastLastUpdated forKey:ForecastLastUpdatedUserDefault];
     }
 }
 
 - (void)updateNowcast {
+    NSLog(@"updating nowcast");
     [_neaForecastParser parse];
     NSData *nowcastData = [NSData dataWithContentsOfURL:[NSURL URLWithString:nowcastUrl]];
     NSError *errorJson =  nil;
@@ -84,6 +99,7 @@ static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d8
     } else {
         [_rawNowcast writeToFile:_nowcastPath atomically:YES];
         _nowcastLastUpdated = [NSDate date];
+        [_defaults setObject:_nowcastLastUpdated forKey:NowcastLastUpdatedUserDefault];
     }
 }
 

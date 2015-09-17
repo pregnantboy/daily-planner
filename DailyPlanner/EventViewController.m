@@ -35,7 +35,7 @@
     
     
     // Notification Center Observer
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTable) name:eventsReceivedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newEventsData) name:eventsReceivedNotification object:nil];
     
 }
 
@@ -58,9 +58,14 @@
     self.dateLabel.text = [dateFormatter stringFromDate:currentDate];
 }
 
-#pragma mark - Public Methods
-- (void)reloadTable {
-    NSLog(@"called");
+#pragma mark - NSNotification handler
+- (void)newEventsData {
+    NSDateFormatter *lastUpdatedFormatter = [[NSDateFormatter alloc] init];
+    [lastUpdatedFormatter setDateFormat:@"d MMM, hh:mm a"];
+    NSString *dateString = [lastUpdatedFormatter stringFromDate:[_eventManager lastUpdated]];
+    if (dateString) {
+        self.lastUpdated.text = [@"Last updated: " stringByAppendingString:dateString];
+    }
     _events = [_eventManager events];
     [self.eventsTableView reloadData];
 }

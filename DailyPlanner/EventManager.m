@@ -11,12 +11,16 @@
 @interface EventManager() {
     UIViewController *_viewController;
     NSMutableArray *_events;
+    NSDate *_lastUpdated;
+    NSString *_eventsPath;
+    NSUserDefaults *_defaults;
 }
 @end
 
 static NSString *const kKeychainItemName = @"Google Calendar API";
 static NSString *const kClientID = @"216231891570-usfj63n5edd0r30iv9hbjcnbq3ututo5.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"fbfkhRPW-5ZAPlRRRMdPaHi3";
+static NSString *const EventsLastUpdatedUserDefaults = @"eventsLastUpdatedUserDefaults";
 
 // Public constant
 NSString *const eventsReceivedNotification = @"eventsReceivedNotification";
@@ -38,6 +42,10 @@ static BOOL shouldShowLoginPageOnLoad = NO;
     if (self) {
         _viewController = viewController;
         loginPageDismissed = NO;
+        _defaults = [NSUserDefaults standardUserDefaults];
+        if ([_defaults objectForKey:EventsLastUpdatedUserDefaults]) {
+            _lastUpdated = [_defaults objectForKey:EventsLastUpdatedUserDefaults];
+        }
         
         // initialize google calendar api service
         self.service = [[GTLServiceCalendar alloc] init];
@@ -45,6 +53,12 @@ static BOOL shouldShowLoginPageOnLoad = NO;
         [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
                                                               clientID:kClientID
                                                           clientSecret:kClientSecret];
+        
+        // Instantiate Events Path
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        if ([paths count] > 0) {
+            _eventsPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"events.out"];
+        }
     }
     return self;
 }
@@ -84,7 +98,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
              finishedWithObject:(GTLCalendarEvents *)events
                           error:(NSError *)error {
     if (error == nil) {
-        // ADD SPINNER TO STOP HERE
+        // TODO: ADD SPINNER TO STOP HERE
         _events = [[NSMutableArray alloc] init];
         NSMutableString *eventString = [[NSMutableString alloc] init];
         if (events.items.count > 0) {
@@ -123,6 +137,11 @@ static BOOL shouldShowLoginPageOnLoad = NO;
                                      }];
         }
         NSLog(@"%@", eventString);
+        _lastUpdated = [NSDate date];
+        [_defaults setObject:_lastUpdated forKey:EventsLastUpdatedUserDefaults];
+        
+        // write to file
+         [_events writeToFile:_eventsPath atomically:YES];
         [[NSNotificationCenter defaultCenter] postNotificationName:eventsReceivedNotification object:nil];
     } else if (!loginPageDismissed && shouldShowLoginPageOnLoad) {
         [self showAlert:@"Error" message:error.localizedDescription];
@@ -188,8 +207,12 @@ static BOOL shouldShowLoginPageOnLoad = NO;
         if (loginPageDismissed) {
             [self postLoggedOutNotification];
         } else {
-            [self postLoadingNotification];
-            [self fetchEvents];
+            [self loadOldData];
+            if ([self isOutdated]) {
+                [self fetchEvents];
+            } else {
+                // TODO: load from file
+            }
         }
     }
 }
@@ -218,6 +241,10 @@ static BOOL shouldShowLoginPageOnLoad = NO;
     return _events;
 }
 
+- (NSDate *)lastUpdated {
+    return _lastUpdated;
+}
+
 // Private helper methods
 - (void)showAlert:(NSString *)title message:(NSString *)message {
     UIAlertView *alert;
@@ -230,22 +257,41 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 }
 
 - (void)postLoggedOutNotification {
-    _events = [[NSMutableArray alloc] initWithObjects:@{@"start":@"",
+     _events = [[NSMutableArray alloc] initWithObjects:@{@"start":@"",
                                                         @"end":@"",
                                                         @"title":@"Not Logged In.",
                                                         @"location":@""
                                                         }, nil];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:eventsReceivedNotification object:nil];
 
 }
 
-- (void)postLoadingNotification {
-    _events = [[NSMutableArray alloc] initWithObjects:@{@"start":@"",
+- (void)loadOldData {
+    BOOL eventsExists = [[NSFileManager defaultManager] fileExistsAtPath:_eventsPath];
+    if (eventsExists) {
+        _events = [NSMutableArray arrayWithContentsOfFile:_eventsPath];
+    } else {
+        _events = [[NSMutableArray alloc] initWithObjects:@{@"start":@"",
                                                         @"end":@"",
                                                         @"title":@"Loading.",
                                                         @"location":@""
                                                         }, nil];
+    }
     [[NSNotificationCenter defaultCenter] postNotificationName:eventsReceivedNotification object:nil];
+}
+
+- (BOOL)isOutdated {
+    NSDate *now = [NSDate date];
+    if (_lastUpdated) {
+        if ([now timeIntervalSinceDate:_lastUpdated] > (60 * 60)) {
+            NSLog(@"outdated");
+            return YES;
+        } else {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 @end

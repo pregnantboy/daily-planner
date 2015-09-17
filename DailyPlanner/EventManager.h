@@ -22,6 +22,7 @@ extern NSString *const eventsReceivedNotification;
 - (void)loginGoogle;
 - (void)logoutGoogle;
 - (BOOL)isLoggedIn;
+- (NSDate *)lastUpdated;
 - (NSArray *)events;
 
 @end

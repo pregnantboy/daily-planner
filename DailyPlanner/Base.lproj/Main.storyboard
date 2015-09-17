@@ -133,6 +133,12 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last updated:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU0-3E-jAJ">
+                                <rect key="frame" x="253" y="324" width="106" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -146,6 +152,7 @@
                             <constraint firstItem="tfZ-TN-9yA" firstAttribute="top" secondItem="CMH-WS-3RS" secondAttribute="top" constant="160" id="Fim-Ie-OVd"/>
                             <constraint firstItem="8Eb-mL-xzH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FmN-zO-aLd"/>
                             <constraint firstItem="nhQ-we-5JZ" firstAttribute="leading" secondItem="4a9-YW-Zez" secondAttribute="trailing" constant="15" id="FsX-QO-uQI"/>
+                            <constraint firstItem="8Eb-mL-xzH" firstAttribute="top" secondItem="vU0-3E-jAJ" secondAttribute="bottom" constant="2" id="GX5-oY-tuR"/>
                             <constraint firstItem="lhV-Qf-EWd" firstAttribute="top" secondItem="TfK-mS-5ue" secondAttribute="bottom" constant="30" id="JZM-TC-Mj7"/>
                             <constraint firstItem="nhQ-we-5JZ" firstAttribute="centerY" secondItem="4a9-YW-Zez" secondAttribute="centerY" id="KQf-Xe-18V"/>
                             <constraint firstItem="8Eb-mL-xzH" firstAttribute="top" secondItem="4a9-YW-Zez" secondAttribute="bottom" constant="25" id="NBp-Hy-zA1"/>
@@ -155,6 +162,7 @@
                             <constraint firstItem="TfK-mS-5ue" firstAttribute="top" secondItem="yrH-Bx-WcX" secondAttribute="bottom" constant="5" id="YC4-wO-lKi"/>
                             <constraint firstItem="yrH-Bx-WcX" firstAttribute="centerX" secondItem="CMH-WS-3RS" secondAttribute="centerX" constant="-10" id="YQ0-Ly-vZ4"/>
                             <constraint firstItem="CMH-WS-3RS" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="aXZ-Zu-rON"/>
+                            <constraint firstItem="vU0-3E-jAJ" firstAttribute="trailing" secondItem="8Eb-mL-xzH" secondAttribute="trailing" id="b7m-5o-gWa"/>
                             <constraint firstAttribute="centerY" secondItem="CMH-WS-3RS" secondAttribute="centerY" id="dmv-hB-cDb"/>
                             <constraint firstItem="lhV-Qf-EWd" firstAttribute="centerX" secondItem="CMH-WS-3RS" secondAttribute="centerX" constant="75" id="fN3-Q9-NaG"/>
                             <constraint firstItem="yrH-Bx-WcX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="fVb-nG-orL"/>
@@ -188,6 +196,7 @@
                         <outlet property="currentTemp" destination="lhV-Qf-EWd" id="q6d-4f-hJH"/>
                         <outlet property="dateLabel" destination="TfK-mS-5ue" id="vJp-cR-vGt"/>
                         <outlet property="hiTemp" destination="9YV-0f-u9D" id="KpG-Uk-gl5"/>
+                        <outlet property="lastUpdated" destination="vU0-3E-jAJ" id="gTd-XL-ggf"/>
                         <outlet property="loTemp" destination="nhQ-we-5JZ" id="nam-Xh-MKL"/>
                         <outlet property="weatherTable" destination="8Eb-mL-xzH" id="A2L-5Z-Tqg"/>
                     </connections>
@@ -238,7 +247,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11 October | Friday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZu-DS-cOt">
-                                <rect key="frame" x="77.5" y="140" width="220" height="34.5"/>
+                                <rect key="frame" x="77" y="140" width="220" height="34.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -335,6 +344,12 @@
                                     <outlet property="delegate" destination="Uvh-S5-tbH" id="lQ4-Xh-SFd"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last updated:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sp0-eI-oxO">
+                                <rect key="frame" x="241" y="171" width="106" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -345,7 +360,9 @@
                             <constraint firstItem="ZZu-DS-cOt" firstAttribute="top" secondItem="d79-e8-TOo" secondAttribute="bottom" constant="5" id="Az0-JB-hz0"/>
                             <constraint firstItem="DX9-W9-vY5" firstAttribute="width" secondItem="FPC-qp-J8h" secondAttribute="width" id="D6Q-TT-l9X"/>
                             <constraint firstAttribute="centerX" secondItem="DX9-W9-vY5" secondAttribute="centerX" id="EUC-sn-WKK"/>
+                            <constraint firstItem="kjh-pc-buA" firstAttribute="top" secondItem="Sp0-eI-oxO" secondAttribute="bottom" constant="2" id="LSg-z5-viz"/>
                             <constraint firstItem="kjh-pc-buA" firstAttribute="leading" secondItem="FPC-qp-J8h" secondAttribute="leadingMargin" id="M1m-Lb-vaw"/>
+                            <constraint firstItem="Sp0-eI-oxO" firstAttribute="trailing" secondItem="kjh-pc-buA" secondAttribute="trailing" id="TY3-5V-uSU"/>
                             <constraint firstItem="d79-e8-TOo" firstAttribute="top" secondItem="TsK-m1-G7s" secondAttribute="bottom" constant="35" id="Tkr-j6-4sL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oJl-kw-Ghz" secondAttribute="trailing" constant="-10" id="Ujq-4k-fsl"/>
                             <constraint firstItem="kjh-pc-buA" firstAttribute="top" secondItem="ZZu-DS-cOt" secondAttribute="bottom" constant="20" id="YOH-yw-f4W"/>
@@ -367,6 +384,7 @@
                         <outlet property="clockLabel" destination="d79-e8-TOo" id="PHL-0P-ZNH"/>
                         <outlet property="dateLabel" destination="ZZu-DS-cOt" id="MR4-sj-mFM"/>
                         <outlet property="eventsTableView" destination="kjh-pc-buA" id="FWN-iT-PzG"/>
+                        <outlet property="lastUpdated" destination="Sp0-eI-oxO" id="cia-hM-ZvM"/>
                         <outlet property="settingsButton" destination="oJl-kw-Ghz" id="12G-ws-esw"/>
                     </connections>
                 </viewController>
