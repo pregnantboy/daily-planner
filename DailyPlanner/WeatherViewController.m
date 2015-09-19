@@ -25,7 +25,7 @@
     [self updateClock];
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateClock) userInfo:nil repeats:YES];
     
-    
+    // TODO: LOAD OLD DATA AND SHIFT THIS TO VIEW DID APPEAR
     // Instantiate Weather Manager
     _weatherManager = [WeatherManager sharedManager];
 

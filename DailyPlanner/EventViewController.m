@@ -58,6 +58,11 @@
     self.dateLabel.text = [dateFormatter stringFromDate:currentDate];
 }
 
+#pragma mark - Refresh button
+- (IBAction)refreshButton:(id)sender {
+    [_eventManager refreshEvents];
+}
+
 #pragma mark - NSNotification handler
 - (void)newEventsData {
     NSDateFormatter *lastUpdatedFormatter = [[NSDateFormatter alloc] init];
@@ -138,5 +143,8 @@
     [self presentViewController:self.popupSettings animated:YES completion:nil];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 @end

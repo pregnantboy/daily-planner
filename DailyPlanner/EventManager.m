@@ -120,11 +120,17 @@ static BOOL shouldShowLoginPageOnLoad = NO;
                 if (event.location) {
                     location = event.location;
                 }
+                NSString *description = @"None";
+                if (event.description) {
+                    description = event.descriptionProperty;
+                }
                 NSDictionary *aEvent = @{
                                          @"start":startString,
                                          @"end":endString,
                                          @"title":event.summary,
-                                         @"location":location
+                                         @"location":location,
+                                         @"description":description,
+                                         @"reminderMethod":event.reminders.useDefault
                                          };
                 [_events addObject:aEvent];
             }
@@ -136,7 +142,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
                                      @"location":@""
                                      }];
         }
-        NSLog(@"%@", eventString);
+        NSLog(@"%@", _events);
         _lastUpdated = [NSDate date];
         [_defaults setObject:_lastUpdated forKey:EventsLastUpdatedUserDefaults];
         
@@ -239,6 +245,10 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 
 - (BOOL)isLoggedIn {
     return self.service.authorizer.canAuthorize;
+}
+
+- (void)refreshEvents {
+    [self fetchEvents];
 }
 
 - (NSArray *)events {

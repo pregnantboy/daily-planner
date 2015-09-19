@@ -24,5 +24,6 @@ extern NSString *const eventsReceivedNotification;
 - (BOOL)isLoggedIn;
 - (NSDate *)lastUpdated;
 - (NSArray *)events;
+- (void)refreshEvents;
 
 @end

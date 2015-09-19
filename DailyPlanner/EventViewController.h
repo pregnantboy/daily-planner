@@ -18,8 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *ampmLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
-// last updated 
+// last updated
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdated;
+@property (weak, nonatomic) IBOutlet UIButton *refresh;
 
 
 // settings button
@@ -28,5 +29,6 @@
 
 // Events table view
 @property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
+@property (weak, nonatomic) IBOutlet UIView *detailedView;
 
 @end
