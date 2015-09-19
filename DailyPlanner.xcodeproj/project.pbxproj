@@ -36,6 +36,8 @@
 		3C64BCEC1BA3244B0058F42A /* clearNight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCEB1BA3244B0058F42A /* clearNight.png */; };
 		3C64BCEE1BA325070058F42A /* partlyCloudyNight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCED1BA325070058F42A /* partlyCloudyNight.png */; };
 		3C64BCF01BA325E80058F42A /* hazy.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCEF1BA325E80058F42A /* hazy.png */; };
+		40004EE01BAD9A7F00815C14 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40004EDF1BAD9A7F00815C14 /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B58355CE7F02F5D8600C4353 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B97A21FEA197AC65B32808B1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,11 @@
 		3C64BCEB1BA3244B0058F42A /* clearNight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearNight.png; sourceTree = "<group>"; };
 		3C64BCED1BA325070058F42A /* partlyCloudyNight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partlyCloudyNight.png; sourceTree = "<group>"; };
 		3C64BCEF1BA325E80058F42A /* hazy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hazy.png; sourceTree = "<group>"; };
+		40004EDE1BAD9A7F00815C14 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		40004EDF1BAD9A7F00815C14 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		87D94F7DBAB3BBCA0C2E179C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B97A21FEA197AC65B32808B1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0DF1FD10BFE0E8C78F43D5E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +136,7 @@
 				3C64BCD61BA12D2B0058F42A /* SystemConfiguration.framework in Frameworks */,
 				3C64BCD41BA12D240058F42A /* Security.framework in Frameworks */,
 				3C64BCD21BA12D1B0058F42A /* libGTLTouchStaticLib.a in Frameworks */,
+				B58355CE7F02F5D8600C4353 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +150,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37432A210AD67BCD7A7256FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87D94F7DBAB3BBCA0C2E179C /* Pods.debug.xcconfig */,
+				C0DF1FD10BFE0E8C78F43D5E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3C060EC11B9E9FE9003AE123 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +168,8 @@
 				3C060ECC1B9E9FEA003AE123 /* DailyPlanner */,
 				3C060EE61B9E9FEA003AE123 /* DailyPlannerTests */,
 				3C060ECB1B9E9FEA003AE123 /* Products */,
+				37432A210AD67BCD7A7256FB /* Pods */,
+				ACAD8355E168924B661E24F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +204,8 @@
 				3C060EF91B9EA1E3003AE123 /* WeatherViewController.h */,
 				3C060EFA1B9EA1E3003AE123 /* WeatherViewController.m */,
 				3C060ED71B9E9FEA003AE123 /* Main.storyboard */,
+				40004EDE1BAD9A7F00815C14 /* MapViewController.h */,
+				40004EDF1BAD9A7F00815C14 /* MapViewController.m */,
 				3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */,
 				3C060EDA1B9E9FEA003AE123 /* Images.xcassets */,
 				3C060ECD1B9E9FEA003AE123 /* Supporting Files */,
@@ -241,6 +262,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		ACAD8355E168924B661E24F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B97A21FEA197AC65B32808B1 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,9 +277,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C060EED1B9E9FEA003AE123 /* Build configuration list for PBXNativeTarget "DailyPlanner" */;
 			buildPhases = (
+				D246915F9C160EC339EC2CE6 /* Check Pods Manifest.lock */,
 				3C060EC61B9E9FEA003AE123 /* Sources */,
 				3C060EC71B9E9FEA003AE123 /* Frameworks */,
 				3C060EC81B9E9FEA003AE123 /* Resources */,
+				B2C7DDB14583141ADD9697CF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,7 +316,7 @@
 		3C060EC21B9E9FE9003AE123 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Ian Chen";
 				TargetAttributes = {
 					3C060EC91B9E9FEA003AE123 = {
@@ -386,6 +417,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B2C7DDB14583141ADD9697CF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D246915F9C160EC339EC2CE6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C060EC61B9E9FEA003AE123 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -401,6 +465,7 @@
 				3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */,
 				3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */,
 				3C060ED01B9E9FEA003AE123 /* main.m in Sources */,
+				40004EE01BAD9A7F00815C14 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +528,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -526,6 +592,7 @@
 		};
 		3C060EEE1B9E9FEA003AE123 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87D94F7DBAB3BBCA0C2E179C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -536,6 +603,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ian.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
@@ -546,6 +614,7 @@
 		};
 		3C060EEF1B9E9FEA003AE123 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0DF1FD10BFE0E8C78F43D5E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -556,6 +625,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ian.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
@@ -578,6 +648,7 @@
 				);
 				INFOPLIST_FILE = DailyPlannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ian.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyPlanner.app/DailyPlanner";
 			};
@@ -593,6 +664,7 @@
 				);
 				INFOPLIST_FILE = DailyPlannerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ian.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyPlanner.app/DailyPlanner";
 			};

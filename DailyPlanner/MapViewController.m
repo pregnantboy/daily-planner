@@ -16,13 +16,79 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.searchResultsView.delegate = self;
+    self.searchResultsView.dataSource = self;
+    self.searchResultsView.hidden = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+# pragma mark - Map Methods
+
+
+# pragma mark - SearchResultsView
+- (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.searchResultsView.hidden = YES; // hide search results
+    NSUInteger idx = indexPath.row;
+    GMSAutocompletePrediction *pred = (GMSAutocompletePrediction *)self.searchAutocompleteResults[idx];
+    GMSPlacesClient * places = [[GMSPlacesClient alloc] init];
+    [places lookUpPlaceID:pred.placeID callback:^(GMSPlace * _Nullable result, NSError * _Nullable error) {
+        [self.map clear];
+        [self placeMarkerAtPosition:result.coordinate];
+        [self goToPosition:result.coordinate];
+    }];
+}
+
+- (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position {
+    
+}
+
+- (void) goToPosition:(CLLocationCoordinate2D)coord {
+    
+}
+
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    return self.searchAutocompleteResults.count;
+}
+
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView
+                  cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
+    self.searchResultsView.hidden = YES;
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"searchResultCell"];
+    NSUInteger idx = indexPath.row;
+    GMSAutocompletePrediction *pred = self.searchAutocompleteResults[idx];
+    cell.textLabel.text = pred.attributedFullText.string;
+    return cell;
+}
+
+# pragma mark - Search
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    // show table view cell
+    self.searchResultsView.hidden = NO;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar
+    textDidChange:(NSString *)searchText {
+    if ([searchBar.text isEqualToString:@""]){
+        self.searchResultsView.hidden = YES; //hide if empty
+    } else {
+        // do the search
+        GMSPlacesClient * places = [[GMSPlacesClient alloc] init];
+        [places autocompleteQuery:searchBar.text
+                           bounds:nil
+                           filter:nil
+                         callback:^(NSArray * _Nullable results, NSError * _Nullable error) {
+                             self.searchAutocompleteResults = [results mutableCopy]; // save search results in array
+                         }];
+    }
+    
+}
+
 
 /*
 #pragma mark - Navigation
