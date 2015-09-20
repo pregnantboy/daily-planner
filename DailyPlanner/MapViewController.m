@@ -30,34 +30,37 @@
 
 
 # pragma mark - SearchResultsView
-- (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.searchResultsView.hidden = YES; // hide search results
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger idx = indexPath.row;
     GMSAutocompletePrediction *pred = (GMSAutocompletePrediction *)self.searchAutocompleteResults[idx];
     GMSPlacesClient * places = [[GMSPlacesClient alloc] init];
-    [places lookUpPlaceID:pred.placeID callback:^(GMSPlace * _Nullable result, NSError * _Nullable error) {
+    [places lookUpPlaceID:pred.placeID callback:^(GMSPlace *GMS_NULLABLE_PTR result, NSError *GMS_NULLABLE_PTR error){
         [self.map clear];
-        [self placeMarkerAtPosition:result.coordinate];
+        [self placeMarkerAtPosition:result.coordinate title:pred.attributedFullText.string];
         [self goToPosition:result.coordinate];
+        self.searchResultsView.hidden = YES; // hide search results
     }];
 }
 
-- (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position {
-    
+- (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title{
+    GMSMarker * marker = [GMSMarker markerWithPosition:position];
+    marker.title = title;
+    marker.map = self.map;
 }
 
 - (void) goToPosition:(CLLocationCoordinate2D)coord {
-    
+    [self.map moveCamera:[GMSCameraUpdate setTarget:coord]];
+    [self.map moveCamera:[GMSCameraUpdate zoomTo:13]];
 }
 
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView
+- (NSInteger)tableView:(UITableView * GMS_NULLABLE_PTR)tableView
  numberOfRowsInSection:(NSInteger)section {
+    printf("%lu\n", self.searchAutocompleteResults.count);
     return self.searchAutocompleteResults.count;
 }
 
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView
-                  cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath {
-    self.searchResultsView.hidden = YES;
+- (UITableViewCell *)tableView:(UITableView *)tableView
+                  cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"searchResultCell"];
     NSUInteger idx = indexPath.row;
     GMSAutocompletePrediction *pred = self.searchAutocompleteResults[idx];
@@ -67,23 +70,21 @@
 
 # pragma mark - Search
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    // show table view cell
-    self.searchResultsView.hidden = NO;
-}
 
 - (void)searchBar:(UISearchBar *)searchBar
     textDidChange:(NSString *)searchText {
     if ([searchBar.text isEqualToString:@""]){
         self.searchResultsView.hidden = YES; //hide if empty
     } else {
+        self.searchResultsView.hidden = NO;
         // do the search
         GMSPlacesClient * places = [[GMSPlacesClient alloc] init];
         [places autocompleteQuery:searchBar.text
                            bounds:nil
                            filter:nil
-                         callback:^(NSArray * _Nullable results, NSError * _Nullable error) {
+                         callback:^(NSArray * results, NSError * error) {
                              self.searchAutocompleteResults = [results mutableCopy]; // save search results in array
+                             [self.searchResultsView reloadData];
                          }];
     }
     

@@ -18,30 +18,30 @@
 @implementation GTMGatherInputStream
 
 + (NSInputStream *)streamWithArray:(NSArray *)dataArray {
-  return [[(GTMGatherInputStream*)[self alloc] initWithArray:dataArray] autorelease];
+  return [[[self alloc] initWithArray:dataArray] autorelease];
 }
 
-- (id)initWithArray:(NSArray *)dataArray {
-  self = [super init];
-  if (self) {
-    dataArray_ = [dataArray retain];
-    arrayIndex_ = 0;
-    dataOffset_ = 0;
-
-    [self setDelegate:self];  // An NSStream's default delegate should be self.
-
-    // We use a dummy input stream to handle all the various undocumented
-    // messages the system sends to an input stream.
-    //
-    // Contrary to documentation, inputStreamWithData neither copies nor
-    // retains the data in Mac OS X 10.4, so we must retain it.
-    // (Radar 5167591)
-
-    dummyData_ = [[NSData alloc] initWithBytes:"x" length:1];
-    dummyStream_ = [[NSInputStream alloc] initWithData:dummyData_];
-  }
-  return self;
-}
+//- (id)initWithArray:(NSArray *)dataArray {
+//  self = [super init];
+//  if (self) {
+//    dataArray_ = [dataArray retain];
+//    arrayIndex_ = 0;
+//    dataOffset_ = 0;
+//
+//    [self setDelegate:self];  // An NSStream's default delegate should be self.
+//
+//    // We use a dummy input stream to handle all the various undocumented
+//    // messages the system sends to an input stream.
+//    //
+//    // Contrary to documentation, inputStreamWithData neither copies nor
+//    // retains the data in Mac OS X 10.4, so we must retain it.
+//    // (Radar 5167591)
+//
+//    dummyData_ = [[NSData alloc] initWithBytes:"x" length:1];
+//    dummyStream_ = [[NSInputStream alloc] initWithData:dummyData_];
+//  }
+//  return self;
+//}
 
 - (void)dealloc {
   [dataArray_ release];
