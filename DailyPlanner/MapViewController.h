@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet GMSMapView *map;
 @property (strong) NSMutableArray* searchAutocompleteResults;
 - (void) goToPosition:(CLLocationCoordinate2D)coord;
+- (IBAction)categorySelector:(UISegmentedControl *)sender;
 - (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title;
 @end

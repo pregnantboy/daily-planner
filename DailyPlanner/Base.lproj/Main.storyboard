@@ -227,6 +227,16 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="f7D-HA-whb">
+                                <rect key="frame" x="0.0" y="80" width="375" height="29"/>
+                                <segments>
+                                    <segment title="Food"/>
+                                    <segment title="Sports"/>
+                                </segments>
+                                <connections>
+                                    <action selector="categorySelector:" destination="Jli-pN-stJ" eventType="valueChanged" id="5Is-3z-h6R"/>
+                                </connections>
+                            </segmentedControl>
                             <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for locations" translatesAutoresizingMaskIntoConstraints="NO" id="q4v-md-Dze">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>

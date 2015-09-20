@@ -13,17 +13,52 @@
 @end
 
 @implementation MapViewController
+BOOL locationUpdated_;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    locationUpdated_ = NO;
     self.searchResultsView.delegate = self;
     self.searchResultsView.dataSource = self;
     self.searchResultsView.hidden = YES;
+    
+    // Listen to the myLocation property of GMSMapView.
+    [self.map addObserver:self
+               forKeyPath:@"myLocation"
+                  options:NSKeyValueObservingOptionNew
+                  context:NULL];
+    
+    // Ask for My Location data after the map has already been added to the UI.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.map.myLocationEnabled = YES;
+        self.map.settings.myLocationButton = YES;
+    });
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    [self.map removeObserver:self
+                  forKeyPath:@"myLocation"
+                     context:NULL];
+}
+
+#pragma mark - Location KVO updates
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    if (!locationUpdated_) {
+        // If the first location update has not yet been recieved, then jump to that
+        // location.
+        locationUpdated_ = YES;
+        CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
+        [self goToPosition:location.coordinate];
+    }
 }
 
 # pragma mark - Map Methods
@@ -51,9 +86,20 @@
     marker.map = self.map;
 }
 
+- (void) placePOIMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title{
+    GMSMarker * marker = [GMSMarker markerWithPosition:position];
+    marker.title = title;
+//    marker.icon = (expects a UI image)
+    marker.map = self.map;
+}
+
 - (void) goToPosition:(CLLocationCoordinate2D)coord {
     [self.map moveCamera:[GMSCameraUpdate setTarget:coord]];
     [self.map moveCamera:[GMSCameraUpdate zoomTo:13]];
+}
+
+- (IBAction)categorySelector:(UISegmentedControl *)sender {
+    // put in logic to handle when category changes
 }
 
 - (NSInteger)tableView:(UITableView * GMS_NULLABLE_PTR)tableView
