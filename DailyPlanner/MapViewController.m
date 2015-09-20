@@ -28,6 +28,9 @@
 
 # pragma mark - Map Methods
 
+- (void) mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate{
+    NSLog(@"%f, %f", coordinate.latitude, coordinate.longitude);
+}
 
 # pragma mark - SearchResultsView
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
