@@ -102,20 +102,26 @@
         cell = [[EventTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    NSDictionary *event = [_events objectAtIndex:indexPath.row];
+    EventObject *event = (EventObject *)[_events objectAtIndex:indexPath.row];
     
     // Set event title
-    cell.eventTitle.text = [event valueForKey:@"title"];
+    cell.eventTitle.text = [event title];
     
-    // Set event location
-    cell.location.text = [event valueForKey:@"location"];
-    
-    // Set event start time and end time
-    cell.startEndTime.text = [NSString stringWithFormat:@"%@ - %@", [event valueForKey:@"start"], [event valueForKey:@"end"]];
-    
-    // Set weather icon
-    WeatherObject *weather = [[WeatherObject alloc] initWithWeatherType:WTRainy];
-    [cell.weatherIcon setImage:[weather imageIcon]];
+    if ([event isEvent]) {
+        // Set event location
+        cell.location.text = [event location];
+        
+        // Set event start time and end time
+        cell.startEndTime.text = [NSString stringWithFormat:@"%@ - %@", [event startString], [event endString]];
+        
+        // Set weather icon
+        WeatherObject *weather = [[WeatherObject alloc] initWithWeatherType:rand()%8];
+        [cell.weatherIcon setImage:[weather imageIcon]];
+    } else {
+        cell.location.text = @"";
+        cell.startEndTime.text = @"";
+        [cell.weatherIcon setImage:nil];
+    }
     
     return cell;
 }

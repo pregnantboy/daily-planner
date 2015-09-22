@@ -9,6 +9,7 @@
 @import Foundation;
 #import "GTMOAuth2ViewControllerTouch.h"
 #import "GTLCalendar.h"
+#import "EventObject.h"
 
 extern NSString *const eventsReceivedNotification;
 

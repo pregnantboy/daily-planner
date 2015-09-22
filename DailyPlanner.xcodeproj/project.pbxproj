@@ -22,6 +22,7 @@
 		3C060F071B9EB452003AE123 /* thunderstorm.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C060F021B9EB452003AE123 /* thunderstorm.png */; };
 		3C060F0D1B9F01A5003AE123 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */; };
 		3C0A2B241BAA7EE900D7E0B0 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C0A2B231BAA7EE900D7E0B0 /* refresh.png */; };
+		3C36202E1BB113FD00240340 /* EventObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C36202D1BB113FD00240340 /* EventObject.m */; };
 		3C479FA61BA47B2E0034D10E /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C479FA51BA47B2E0034D10E /* EventManager.m */; };
 		3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCBE1BA08E410058F42A /* WeatherObject.m */; };
 		3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCC11BA0AC1B0058F42A /* EventViewController.m */; };
@@ -100,6 +101,8 @@
 		3C060F0B1B9F01A5003AE123 /* WeatherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTableViewCell.h; sourceTree = "<group>"; };
 		3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTableViewCell.m; sourceTree = "<group>"; };
 		3C0A2B231BAA7EE900D7E0B0 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		3C36202C1BB113FD00240340 /* EventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventObject.h; sourceTree = "<group>"; };
+		3C36202D1BB113FD00240340 /* EventObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventObject.m; sourceTree = "<group>"; };
 		3C479FA41BA47B2E0034D10E /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
 		3C479FA51BA47B2E0034D10E /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
 		3C64BCBD1BA08E410058F42A /* WeatherObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherObject.h; sourceTree = "<group>"; };
@@ -172,23 +175,25 @@
 				3C060ED21B9E9FEA003AE123 /* AppDelegate.m */,
 				3C479FA41BA47B2E0034D10E /* EventManager.h */,
 				3C479FA51BA47B2E0034D10E /* EventManager.m */,
+				3C36202C1BB113FD00240340 /* EventObject.h */,
+				3C36202D1BB113FD00240340 /* EventObject.m */,
 				3C64BCE01BA15CCF0058F42A /* EventTableViewCell.h */,
 				3C64BCE11BA15CCF0058F42A /* EventTableViewCell.m */,
 				3C64BCC01BA0AC1B0058F42A /* EventViewController.h */,
 				3C64BCC11BA0AC1B0058F42A /* EventViewController.m */,
 				3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */,
 				3C64BCDA1BA134E90058F42A /* GTLCalendar.h */,
-				3C64BCBD1BA08E410058F42A /* WeatherObject.h */,
-				3C64BCBE1BA08E410058F42A /* WeatherObject.m */,
 				3C64BCE31BA1A0960058F42A /* WeatherManager.h */,
 				3C64BCE41BA1A0960058F42A /* WeatherManager.m */,
+				3C64BCBD1BA08E410058F42A /* WeatherObject.h */,
+				3C64BCBE1BA08E410058F42A /* WeatherObject.m */,
 				3C060F0B1B9F01A5003AE123 /* WeatherTableViewCell.h */,
 				3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */,
 				3C060EF91B9EA1E3003AE123 /* WeatherViewController.h */,
 				3C060EFA1B9EA1E3003AE123 /* WeatherViewController.m */,
-				3C060ED71B9E9FEA003AE123 /* Main.storyboard */,
-				3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */,
 				3C060EDA1B9E9FEA003AE123 /* Images.xcassets */,
+				3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */,
+				3C060ED71B9E9FEA003AE123 /* Main.storyboard */,
 				3C060ECD1B9E9FEA003AE123 /* Supporting Files */,
 			);
 			path = DailyPlanner;
@@ -400,6 +405,7 @@
 				3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */,
 				3C64BCDB1BA134E90058F42A /* GTLCalendar_Sources.m in Sources */,
 				3C479FA61BA47B2E0034D10E /* EventManager.m in Sources */,
+				3C36202E1BB113FD00240340 /* EventObject.m in Sources */,
 				3C64BCE21BA15CCF0058F42A /* EventTableViewCell.m in Sources */,
 				3C64BCE51BA1A0960058F42A /* WeatherManager.m in Sources */,
 				3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */,

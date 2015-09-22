@@ -29,7 +29,7 @@ NSString *const eventsReceivedNotification = @"eventsReceivedNotification";
 BOOL loginPageDismissed;
 #if DEBUG
 static BOOL shouldShowLoginPageOnLoad = YES;
-#else 
+#else
 static BOOL shouldShowLoginPageOnLoad = NO;
 #endif
 
@@ -68,9 +68,6 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 // Construct a query and get a list of upcoming events from the user calendar.
 - (void)fetchEvents {
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:eventsReceivedNotification object:nil];
-
-    
     GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"primary"];
     query.maxResults = 10;
     
@@ -87,7 +84,6 @@ static BOOL shouldShowLoginPageOnLoad = NO;
     
     query.singleEvents = YES;
     query.orderBy = kGTLCalendarOrderByStartTime;
-    
     [self.service executeQuery:query
                       delegate:self
              didFinishSelector:@selector(displayResultWithTicket:finishedWithObject:error:)];
@@ -102,47 +98,32 @@ static BOOL shouldShowLoginPageOnLoad = NO;
         _events = [[NSMutableArray alloc] init];
         NSMutableString *eventString = [[NSMutableString alloc] init];
         if (events.items.count > 0) {
-            [eventString appendString:@"Upcoming 10 events:\n"];
             for (GTLCalendarEvent *event in events) {
-                GTLDateTime *start = event.start.dateTime;
-                GTLDateTime *end = event.end.dateTime;
-                NSString *startString =
-                [NSDateFormatter localizedStringFromDate:[start date]
-                                               dateStyle:NSDateFormatterNoStyle
-                                               timeStyle:NSDateFormatterShortStyle];
-                NSString *endString =
-                [NSDateFormatter localizedStringFromDate:[end date]
-                                               dateStyle:NSDateFormatterNoStyle
-                                               timeStyle:NSDateFormatterShortStyle];
-                
-                [eventString appendFormat:@"%@ - %@: %@\n", startString, endString, event.summary];
-                NSString *location = @"Not Specified";
-                if (event.location) {
-                    location = event.location;
+                int minutesReminder;
+                if (event.reminders.useDefault == [NSNumber numberWithInt:1]) {
+                    minutesReminder = 30;
+                } else if (event.reminders.useDefault == [NSNumber numberWithInt:0]) {
+                    NSLog(@"%@", event.reminders.overrides);
+                    if ([event.reminders.overrides count] > 0) {
+                        minutesReminder = [[[event.reminders.overrides objectAtIndex:0] valueForKey:@"minutes"] intValue];
+                    }
                 }
-                NSString *description = @"None";
-                if (event.description) {
-                    description = event.descriptionProperty;
-                }
-                NSDictionary *aEvent = @{
-                                         @"start":startString,
-                                         @"end":endString,
-                                         @"title":event.summary,
-                                         @"location":location,
-                                         @"description":description,
-                                         @"reminderMethod":event.reminders.useDefault
-                                         };
+                EventObject *aEvent = [[EventObject alloc] initWithTitle:event.summary
+                                                               startTime:[event.start.dateTime date]
+                                                                 endTime:[event.end.dateTime date]
+                                                                location:event.location
+                                                                 details:event.descriptionProperty
+                                                         reminderMinutes:minutesReminder];
                 [_events addObject:aEvent];
             }
         } else {
-            [eventString appendString:@"No upcoming events found."];
+            NSLog(@"No upcoming events found.");
             [_events addObject:@{@"start":@"",
                                      @"end":@"",
                                      @"title":@"No upcoming events for today.",
                                      @"location":@""
                                      }];
         }
-        NSLog(@"%@", _events);
         _lastUpdated = [NSDate date];
         [_defaults setObject:_lastUpdated forKey:EventsLastUpdatedUserDefaults];
         
@@ -205,7 +186,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 // Public methods
 
 - (void)viewDidAppear {
-    if (!self.service.authorizer.canAuthorize && !loginPageDismissed && shouldShowLoginPageOnLoad) {
+    if (![self isLoggedIn] && !loginPageDismissed && shouldShowLoginPageOnLoad) {
         // Not yet authorized, request authorization by pushing the login UI onto the UI stack.
         [self postLoggedOutNotification];
         [self loginGoogle];
@@ -213,11 +194,12 @@ static BOOL shouldShowLoginPageOnLoad = NO;
         if (loginPageDismissed) {
             [self postLoggedOutNotification];
         } else {
-            [self loadOldData];
-            if ([self isOutdated]) {
-                [self fetchEvents];
+            if ([self loadOldData]) {
+                if ([self isOutdated]) {
+                    [self fetchEvents];
+                }
             } else {
-                // TODO: load from file
+                [self fetchEvents];
             }
         }
     }
@@ -236,7 +218,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 - (void)logoutGoogle {
     NSLog(@"logging out");
     self.service.authorizer= NULL;
-    //[GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:kKeychainItemName];
+    [GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:kKeychainItemName];
     
     [[NSFileManager defaultManager] removeItemAtPath:_eventsPath error:NULL];
     
@@ -271,28 +253,22 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 }
 
 - (void)postLoggedOutNotification {
-     _events = [[NSMutableArray alloc] initWithObjects:@{@"start":@"",
-                                                        @"end":@"",
-                                                        @"title":@"Not Logged In.",
-                                                        @"location":@""
-                                                        }, nil];
-    
+    EventObject *notLoggedInEvent = [[EventObject alloc ] initWithNotLoggedIn];
+    _events = [[NSMutableArray alloc] initWithObjects:notLoggedInEvent, nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:eventsReceivedNotification object:nil];
 
 }
 
-- (void)loadOldData {
+- (BOOL)loadOldData {
     BOOL eventsExists = [[NSFileManager defaultManager] fileExistsAtPath:_eventsPath];
     if (eventsExists) {
         _events = [NSMutableArray arrayWithContentsOfFile:_eventsPath];
     } else {
-        _events = [[NSMutableArray alloc] initWithObjects:@{@"start":@"",
-                                                        @"end":@"",
-                                                        @"title":@"Loading.",
-                                                        @"location":@""
-                                                        }, nil];
+        EventObject *loadingEvents = [[EventObject alloc ] initWithLoading];
+        _events = [[NSMutableArray alloc] initWithObjects:loadingEvents, nil];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:eventsReceivedNotification object:nil];
+    return eventsExists;
 }
 
 - (BOOL)isOutdated {
