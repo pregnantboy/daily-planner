@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ntu.gpx">
+   </FileRef>
+   <FileRef
       location = "group:DailyPlanner.xcodeproj">
    </FileRef>
    <FileRef

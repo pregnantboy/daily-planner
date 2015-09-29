@@ -13,14 +13,18 @@
 @end
 
 @implementation MapViewController
+BOOL markersPlaced_;
 BOOL locationUpdated_;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     locationUpdated_ = NO;
+    markersPlaced_ = NO;
+    self.map.delegate = self;
     self.searchResultsView.delegate = self;
     self.searchResultsView.dataSource = self;
     self.searchResultsView.hidden = YES;
+    self.locationManager = [[LocationManager alloc] init];
     
     // Listen to the myLocation property of GMSMapView.
     [self.map addObserver:self
@@ -67,6 +71,22 @@ BOOL locationUpdated_;
     NSLog(@"%f, %f", coordinate.latitude, coordinate.longitude);
 }
 
+- (void) mapView:(GMSMapView *) mapView
+didChangeCameraPosition:(GMSCameraPosition *) position  {
+    if (position.zoom < 10){  // remove markers if zoom is too low
+        [self.map clear];
+        markersPlaced_ = NO;
+        NSLog(@"removed markers");
+    } else if (!markersPlaced_){
+        NSLog(@"placed markers");
+        markersPlaced_ = YES;
+        for (LocationObject * loc in [self.locationManager getLocations]){
+            NSLog(@"Placed marker at %f,%f:: %@", loc.position.latitude, loc.position.longitude, loc.title);
+            [self placeMarkerAtPosition:loc.position title:loc.title icon:[UIImage imageNamed:[self.locationManager getLocationIcon]]];;
+        }
+    }
+}
+
 # pragma mark - SearchResultsView
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger idx = indexPath.row;
@@ -74,6 +94,7 @@ BOOL locationUpdated_;
     GMSPlacesClient * places = [[GMSPlacesClient alloc] init];
     [places lookUpPlaceID:pred.placeID callback:^(GMSPlace *GMS_NULLABLE_PTR result, NSError *GMS_NULLABLE_PTR error){
         [self.map clear];
+        markersPlaced_ = NO;
         [self placeMarkerAtPosition:result.coordinate title:pred.attributedFullText.string];
         [self goToPosition:result.coordinate];
         self.searchResultsView.hidden = YES; // hide search results
@@ -86,9 +107,11 @@ BOOL locationUpdated_;
     marker.map = self.map;
 }
 
-- (void) placePOIMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title{
+- (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title  icon:(UIImage *)icon{
     GMSMarker * marker = [GMSMarker markerWithPosition:position];
     marker.title = title;
+    marker.icon = icon;
+//    marker.icon = ;
 //    marker.icon = (expects a UI image)
     marker.map = self.map;
 }
@@ -104,7 +127,6 @@ BOOL locationUpdated_;
 
 - (NSInteger)tableView:(UITableView * GMS_NULLABLE_PTR)tableView
  numberOfRowsInSection:(NSInteger)section {
-    printf("%lu\n", self.searchAutocompleteResults.count);
     return self.searchAutocompleteResults.count;
 }
 

@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+<name>Kallang Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Kallang Practice Track Kallang Squash  Tennis  Netball Centre</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.879604251985,1.30529663543367</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Katong Swimming Complex</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Katong Swimming Complex</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.886081562372,1.30210597374675</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Pasir Ris Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Pasir Ris Outdoor Soccer Court Pasir Ris ClubFITT Gym Pasir Ris Sports Hall Pasir Ris Tennis Centre Pasir Ris Swimming Complex</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.951822176089,1.37444878829025</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Queenstown Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Queenstown Swimming Complex Queenstown Stadium</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.802434890665,1.2967275328698</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Sengkang Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Sengkang Hockey Field Sengkang ClubFITT Gym Sengkang Sports Hall Sengkang Swimming Complex</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.885788929913,1.39549691727196</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Serangoon Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Serangoon Stadium Serangoon Swimming Complex</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.87438364829,1.35594688177688</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>St Wilfrid Sports Complex</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - St Wilfrid Field St Wilfrid Tennis Centre</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.861718687774,1.32522722591794</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tampines Swimming Complex</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Tampines Swimming Complex Tampines ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.939635479807,1.35429543594652</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Toa Payoh Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Toa Payoh Sports Hall Toa Payoh Swimming Complex Toa Payoh Stadium Toa Payoh ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.851566027647,1.33028680222472</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Woodlands Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Woodlands Stadium Woodlands Swimming Complex Woodlands Sports Hall Woodlands ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.780306249374,1.43489571036755</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Yio Chu Kang Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Yio Chu Kang Squash and Tennis Centre  Yio Chu Kang Swimming Complex Yio Chu Kang Stadium Yio Chu Kang Sports Hall Yio Chu Kang ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.84586628382,1.38347115682692</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Yishun Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Yishun Sports Hall Yishun Stadium Yishun ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.831177071264,1.41201869907826</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Yishun Swimming Complex</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Yishun Swimming Complex</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.833692041905,1.42406365625967</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ang Mo Kio Swimming Complex</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Ang Mo Kio Swimming Complex</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.849851380716,1.36307928088065</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Bedok Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Bedok Sports Hall Bedok Stadium  Bedok ClubFITT Gym Bedok Swimming Complex  Bedok Tennis Centre</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.936715675629,1.32638113117832</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Bishan Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Bishan Swimming Complex Bishan Stadium Bishan Sports Hall Bishan ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.850921746813,1.35528296093544</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Bukit Batok Swimming Complex</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Bukit Batok Swimming Complex</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.747953902343,1.34433193069812</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Bukit Gombak Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Bukit Gombak Sports Hall Bukit Gombak Stadium Bukit Gombak ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.752169895813,1.35979986930643</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Burghley Squash and Tennis Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Burghley Squash and Tennis Centre</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.860486203719,1.35939115025993</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Choa Chu Kang Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Choa Chu Kang Swimming Complex Choa Chu Kang Sports Hall Choa Chu Kang Stadium Choa Chu Kang ClubFITT Gym Choa Chu Kang Tennis Centre</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.747920387187,1.39066650447249</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Farrer Park Field</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Farrer Park Field</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.8495001889,1.3117118259153</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Farrer Park Tennis Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Farrer Park Tennis Centre</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.8495001889,1.3117118259153</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Geylang East Swimming Complex</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Geylang East Swimming Complex</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.887659498158,1.32095400552975</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Clementi Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Clementi Sports Hall Clementi Swimming Complex Clementi ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.764861090412,1.31101531705881</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Clementi Stadium</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Clementi Stadium</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.762488244697,1.30976493208289</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Delta Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Delta Sports Hall Delta Swimming ComplexDelta ClubFITT Gym Delta Hockey Field</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.820016228491,1.28937462253609</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Geylang Field</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Geylang Field</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.87750283031,1.30983732743072</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Hougang Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Hougang Sports Hall Hougang Swimming Complex Hougang Stadium Hougang ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.888071407982,1.37057382119054</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Jalan Besar Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Jalan Besar Swimming Complex Jalan Besar Stadium</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.859961393173,1.31085524382005</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Jurong East Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Jurong East Sports Hall Jurong East Stadium Jurong East Swimming Complex Jurong East ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.729174732945,1.34685615877411</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Jurong West Sports Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Jurong West Sports Hall Jurong West Tennis Centre Jurong West Stadium Jurong West Swimming Complex Jurong West ClubFITT Gym</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.693768576925,1.33841839735679</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kallang Basin Swimming Complex</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - </b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - Kallang Basin Swimming Complex</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.872490692903,1.322559852428</coordinates>
+</Point>
+</Placemark>
+</Document>
+</kml>
