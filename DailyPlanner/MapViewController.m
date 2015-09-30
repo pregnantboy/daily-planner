@@ -7,8 +7,6 @@
 //
 
 #import "MapViewController.h"
-#import "CustomInfoWindow.h"
-
 @interface MapViewController ()
 
 @end
