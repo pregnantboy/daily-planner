@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "CustomInfoWindow.h"
 
 @interface MapViewController ()
 
@@ -73,7 +74,8 @@ BOOL locationUpdated_;
 
 - (void) mapView:(GMSMapView *) mapView
 didChangeCameraPosition:(GMSCameraPosition *) position  {
-    if (position.zoom < 10){  // remove markers if zoom is too low
+    NSLog(@"zoom: %f", position.zoom);
+    if (position.zoom < 12.2){  // remove markers if zoom is too low
         [self.map clear];
         markersPlaced_ = NO;
         NSLog(@"removed markers");
@@ -81,10 +83,17 @@ didChangeCameraPosition:(GMSCameraPosition *) position  {
         NSLog(@"placed markers");
         markersPlaced_ = YES;
         for (LocationObject * loc in [self.locationManager getLocations]){
-            NSLog(@"Placed marker at %f,%f:: %@", loc.position.latitude, loc.position.longitude, loc.title);
+//            NSLog(@"Placed marker at %f,%f:: %@", loc.position.latitude, loc.position.longitude, loc.title);
             [self placeMarkerAtPosition:loc.position title:loc.title icon:[UIImage imageNamed:[self.locationManager getLocationIcon]]];;
         }
     }
+}
+
+- (UIView *) mapView:(GMSMapView *) mapView
+    markerInfoWindow:(GMSMarker *) marker {
+    CustomInfoWindow *infoWindow = [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
+    infoWindow.placeTitle.text = marker.title;
+    return infoWindow;
 }
 
 # pragma mark - SearchResultsView
@@ -116,9 +125,27 @@ didChangeCameraPosition:(GMSCameraPosition *) position  {
     marker.map = self.map;
 }
 
+- (IBAction)selectCategory:(UISegmentedControl *)sender {
+    NSInteger idx = [sender selectedSegmentIndex];
+    switch (idx) {
+        case 0:
+            [self.locationManager setCategory:FOOD];
+            break;
+        case 1:
+            [self.locationManager setCategory:SPORTS];
+            break;
+    }
+    [self.map clear];
+    for (LocationObject * loc in [self.locationManager getLocations]){  // place new markers
+        NSLog(@"Placed marker at %f,%f:: %@", loc.position.latitude, loc.position.longitude, loc.title);
+        [self placeMarkerAtPosition:loc.position title:loc.title icon:[UIImage imageNamed:[self.locationManager getLocationIcon]]];;
+    }
+    
+}
+
 - (void) goToPosition:(CLLocationCoordinate2D)coord {
     [self.map moveCamera:[GMSCameraUpdate setTarget:coord]];
-    [self.map moveCamera:[GMSCameraUpdate zoomTo:13]];
+    [self.map moveCamera:[GMSCameraUpdate zoomTo:13.2]];
 }
 
 - (IBAction)categorySelector:(UISegmentedControl *)sender {

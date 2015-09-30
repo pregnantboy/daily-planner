@@ -72,13 +72,9 @@
         case FOOD:
             return @"foodicon.png";
         case SPORTS:
-            return nil;
+            return @"soccericon.png";
     }
     return nil;
-}
-
-- (void) setCategory:(Category)cat {
-    self.category = cat;
 }
 
 @end

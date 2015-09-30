@@ -32,6 +32,6 @@ typedef enum {
 
 - (NSMutableArray *) getLocations;
 - (NSString *) getLocationIcon;
-- (void) parseKMLLocationsFile:(NSString *)fileName locations:(NSMutableArray *)locationsArray;
+- (NSMutableArray *) parseKMLLocationsFile:(NSString *)fileName;
 - (LocationObject *) parseLocationElement:(TBXMLElement *) elem;
 @end

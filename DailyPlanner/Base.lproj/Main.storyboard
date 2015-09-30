@@ -235,6 +235,7 @@
                                 </segments>
                                 <connections>
                                     <action selector="categorySelector:" destination="Jli-pN-stJ" eventType="valueChanged" id="5Is-3z-h6R"/>
+                                    <action selector="selectCategory:" destination="Jli-pN-stJ" eventType="valueChanged" id="MCQ-Yr-4ll"/>
                                 </connections>
                             </segmentedControl>
                             <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for locations" translatesAutoresizingMaskIntoConstraints="NO" id="q4v-md-Dze">
