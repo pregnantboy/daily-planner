@@ -42,8 +42,6 @@
 		403CCAAB1BBB04AF00D25A5C /* foodicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 403CCAAA1BBB04AF00D25A5C /* foodicon.png */; };
 		406BE7E81BBB85D500A28ACE /* soccericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 406BE7E71BBB85D500A28ACE /* soccericon.png */; };
 		406BE7F21BBB95B400A28ACE /* confirmButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 406BE7F11BBB95B400A28ACE /* confirmButton.png */; };
-		406BE7F71BBB96D300A28ACE /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 406BE7F61BBB96D300A28ACE /* InfoWindow.xib */; };
-		406BE7FA1BBB97DB00A28ACE /* CustomInfoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 406BE7F91BBB97DB00A28ACE /* CustomInfoWindow.m */; };
 		406F0D4D1BBA560E00F8C1A8 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 406F0D4A1BBA560E00F8C1A8 /* LocationManager.m */; };
 		406F0D4E1BBA560E00F8C1A8 /* LocationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 406F0D4C1BBA560E00F8C1A8 /* LocationObject.m */; };
 /* End PBXBuildFile section */
@@ -137,9 +135,6 @@
 		403CCAAA1BBB04AF00D25A5C /* foodicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = foodicon.png; path = DailyPlanner/foodicon.png; sourceTree = "<group>"; };
 		406BE7E71BBB85D500A28ACE /* soccericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soccericon.png; path = DailyPlanner/soccericon.png; sourceTree = "<group>"; };
 		406BE7F11BBB95B400A28ACE /* confirmButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirmButton.png; sourceTree = "<group>"; };
-		406BE7F61BBB96D300A28ACE /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
-		406BE7F81BBB97DB00A28ACE /* CustomInfoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomInfoWindow.h; sourceTree = "<group>"; };
-		406BE7F91BBB97DB00A28ACE /* CustomInfoWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomInfoWindow.m; sourceTree = "<group>"; };
 		406F0D491BBA560E00F8C1A8 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		406F0D4A1BBA560E00F8C1A8 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		406F0D4B1BBA560E00F8C1A8 /* LocationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationObject.h; sourceTree = "<group>"; };
@@ -233,9 +228,6 @@
 				406F0D4C1BBA560E00F8C1A8 /* LocationObject.m */,
 				40004EDE1BAD9A7F00815C14 /* MapViewController.h */,
 				40004EDF1BAD9A7F00815C14 /* MapViewController.m */,
-				406BE7F81BBB97DB00A28ACE /* CustomInfoWindow.h */,
-				406BE7F91BBB97DB00A28ACE /* CustomInfoWindow.m */,
-				406BE7F61BBB96D300A28ACE /* InfoWindow.xib */,
 				3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */,
 				3C060EDA1B9E9FEA003AE123 /* Images.xcassets */,
 				3C060ECD1B9E9FEA003AE123 /* Supporting Files */,
@@ -426,7 +418,6 @@
 				403CCAAB1BBB04AF00D25A5C /* foodicon.png in Resources */,
 				3C64BCD81BA134AE0058F42A /* GTMOAuth2ViewTouch.xib in Resources */,
 				3C060ED91B9E9FEA003AE123 /* Main.storyboard in Resources */,
-				406BE7F71BBB96D300A28ACE /* InfoWindow.xib in Resources */,
 				3C64BCEE1BA325070058F42A /* partlyCloudyNight.png in Resources */,
 				403CCAA51BBAF4B200D25A5C /* SSC_Sports_Facilities.kml in Resources */,
 				3C060F061B9EB452003AE123 /* sunny.png in Resources */,
@@ -494,7 +485,6 @@
 			files = (
 				406F0D4D1BBA560E00F8C1A8 /* LocationManager.m in Sources */,
 				3C060F0D1B9F01A5003AE123 /* WeatherTableViewCell.m in Sources */,
-				406BE7FA1BBB97DB00A28ACE /* CustomInfoWindow.m in Sources */,
 				3C060ED31B9E9FEA003AE123 /* AppDelegate.m in Sources */,
 				406F0D4E1BBA560E00F8C1A8 /* LocationObject.m in Sources */,
 				3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */,

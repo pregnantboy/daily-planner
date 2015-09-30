@@ -89,11 +89,26 @@ didChangeCameraPosition:(GMSCameraPosition *) position  {
     }
 }
 
-- (UIView *) mapView:(GMSMapView *) mapView
-    markerInfoWindow:(GMSMarker *) marker {
-    CustomInfoWindow *infoWindow = [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
-    infoWindow.placeTitle.text = marker.title;
-    return infoWindow;
+
+- (void) mapView:(GMSMapView *) mapView
+didTapInfoWindowOfMarker:(GMSMarker *) marker {
+    NSLog(@"Did click on marker window");
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Confirm Location"
+                                                                   message:marker.title
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                          // handle confirm here
+                                                          }];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * action) {
+                                                          // handle cancellation here
+                                                          }];
+    
+    [alert addAction:defaultAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 # pragma mark - SearchResultsView
@@ -120,10 +135,10 @@ didChangeCameraPosition:(GMSCameraPosition *) position  {
     GMSMarker * marker = [GMSMarker markerWithPosition:position];
     marker.title = title;
     marker.icon = icon;
-//    marker.icon = ;
-//    marker.icon = (expects a UI image)
+    marker.snippet = @"Click to choose";
     marker.map = self.map;
 }
+
 
 - (IBAction)selectCategory:(UISegmentedControl *)sender {
     NSInteger idx = [sender selectedSegmentIndex];
