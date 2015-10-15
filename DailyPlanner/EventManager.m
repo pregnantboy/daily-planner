@@ -89,6 +89,11 @@ static BOOL shouldShowLoginPageOnLoad = NO;
              didFinishSelector:@selector(displayResultWithTicket:finishedWithObject:error:)];
 }
 
+- (void) updateEvent:(EventObject *)event {
+    
+//    [GTLQueryCalendar queryForEventsUpdateWithObject:nil calendarId:@"primary" eventId:eventId];
+}
+
 // Display query results
 - (void)displayResultWithTicket:(GTLServiceTicket *)ticket
              finishedWithObject:(GTLCalendarEvents *)events
@@ -112,7 +117,8 @@ static BOOL shouldShowLoginPageOnLoad = NO;
                                                                  endTime:[event.end.dateTime date]
                                                                 location:event.location
                                                                  details:event.descriptionProperty
-                                                         reminderMinutes:minutesReminder];
+                                                         reminderMinutes:minutesReminder
+                                                             googleEvent:event];
                 [_events addObject:aEvent];
             }
         } else {

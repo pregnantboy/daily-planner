@@ -26,7 +26,8 @@
         endTime:(NSDate *)endTime
        location:(NSString *)location
         details:(NSString *)details
-reminderMinutes:(NSInteger)minutes {
+reminderMinutes:(NSInteger)minutes
+    googleEvent:(GTLCalendarEvent*) gEvent{
     self = [super init];
     if (self) {
         _title = title;

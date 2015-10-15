@@ -17,10 +17,11 @@
 #import "MapViewController.h"
 
 @interface EventViewController() {
-    NSArray *_events;
+    NSMutableArray *_events;
     EventManager *_eventManager;
     WeatherManager *_weatherManager;
     UIView *_closePopUpButton;
+    NSIndexPath * popUpEventIndex;
 }
 
 @end
@@ -167,6 +168,7 @@
     _closePopUpButton.hidden = NO;
     if (indexPath.row < [_events count]) {
         EventObject *event = (EventObject *)[_events objectAtIndex:indexPath.row];
+        popUpEventIndex = indexPath;
         [self updateValuesforPopUpViewWithEventObject:event];
     }
     [UIView animateWithDuration:0.5 animations:^{
@@ -185,6 +187,7 @@
 }
 
 - (void)closePopUpViews {
+    popUpEventIndex = nil;
     self.detailedView.hidden = YES;
     self.detailedView.alpha = 0.0;
     _closePopUpButton.hidden = YES;
@@ -203,6 +206,14 @@
     MapViewController * map = (MapViewController *)unwindSegue.sourceViewController;
     LocationObject * loc = map.locationManager.chosenLocation;
     NSLog(@"Location: %@", loc.title);
+    if (popUpEventIndex) {
+        EventObject * e = [_events objectAtIndex:popUpEventIndex.row];
+        e.location = loc.title; //[NSString stringWithFormat:@"%@ @(%f, %f)", loc.title, loc.position.latitude, loc.position.longitude];
+        [_events replaceObjectAtIndex:popUpEventIndex.row withObject:e];
+        [self.eventsTableView reloadData];
+        [self updateValuesforPopUpViewWithEventObject:e];
+    }
+//    [_eventManager updateEvent:@"lala"];
     // get the data here
 }
 

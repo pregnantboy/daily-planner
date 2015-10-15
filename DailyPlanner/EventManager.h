@@ -27,4 +27,6 @@ extern NSString *const eventsReceivedNotification;
 - (NSArray *)events;
 - (void)refreshEvents;
 
+- (void) updateEvent:(NSString *)eventId;
+
 @end

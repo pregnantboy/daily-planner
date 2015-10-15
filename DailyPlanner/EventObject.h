@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GTLCalendar.h"
 
 @interface EventObject : NSObject
 
@@ -15,17 +16,19 @@
         endTime:(NSDate *)endTime
        location:(NSString *)location
         details:(NSString *)details
-reminderMinutes:(NSInteger)minutes;
+reminderMinutes:(NSInteger)minutes
+    googleEvent:(GTLCalendarEvent*) gEvent;
 - initWithNotLoggedIn;
 - initWithLoading;
 
 - (NSString *)title;
 - (NSString *)startString;
 - (NSString *)endString;
-- (NSString *)location;
+@property NSString * location;
 - (NSString *)details;
 - (NSString *)reminderString;
 - (NSInteger)minutes;
+- (GTLCalendarEvent *) gEvent;
 - (BOOL)isEvent;
 
 @end
