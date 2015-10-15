@@ -38,5 +38,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailedReminder;
 @property (weak, nonatomic) IBOutlet UILabel *detailedNotes;
 
+// Suggest location
+@property (weak, nonatomic) IBOutlet UIButton *suggestLocationButton;
+- (IBAction)clickSuggestLocation:(UIButton *)sender;
+
+
 
 @end

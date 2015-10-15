@@ -14,6 +14,7 @@
 
 
 #import "EventViewController.h"
+#import "MapViewController.h"
 
 @interface EventViewController() {
     NSArray *_events;
@@ -188,6 +189,21 @@
     self.detailedView.alpha = 0.0;
     _closePopUpButton.hidden = YES;
     _closePopUpButton.alpha = 0.0;
+}
+
+
+#pragma mark - Suggested Location
+- (IBAction)clickSuggestLocation:(UIButton *)sender {
+    
+}
+
+- (IBAction)unwindToEventView:(UIStoryboardSegue *)unwindSegue
+{
+    // event view controller should not be coupled so tightly with map view controller
+    MapViewController * map = (MapViewController *)unwindSegue.sourceViewController;
+    LocationObject * loc = map.locationManager.chosenLocation;
+    NSLog(@"Location: %@", loc.title);
+    // get the data here
 }
 
 @end

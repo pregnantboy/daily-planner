@@ -44,6 +44,7 @@
 		4014DE291BCF6C0A00C9AA88 /* KML in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE281BCF6C0A00C9AA88 /* KML */; };
 		4014DE2C1BCF6C2000C9AA88 /* foodicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE2A1BCF6C2000C9AA88 /* foodicon.png */; };
 		4014DE2D1BCF6C2000C9AA88 /* soccericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE2B1BCF6C2000C9AA88 /* soccericon.png */; };
+		40D064831BCF7EE4005D7407 /* location-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D064821BCF7EE4005D7407 /* location-icon.png */; };
 		B41FB455C5D05E375C46FA4E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79322EA4620AAF8EE7BCA983 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +141,7 @@
 		4014DE281BCF6C0A00C9AA88 /* KML */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KML; path = DailyPlanner/KML; sourceTree = "<group>"; };
 		4014DE2A1BCF6C2000C9AA88 /* foodicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = foodicon.png; path = DailyPlanner/foodicon.png; sourceTree = "<group>"; };
 		4014DE2B1BCF6C2000C9AA88 /* soccericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soccericon.png; path = DailyPlanner/soccericon.png; sourceTree = "<group>"; };
+		40D064821BCF7EE4005D7407 /* location-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "location-icon.png"; path = "DailyPlanner/location-icon.png"; sourceTree = "<group>"; };
 		614DE304676EA25856212130 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		79322EA4620AAF8EE7BCA983 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE64455FE1F63247C588E185 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		3C060EC11B9E9FE9003AE123 = {
 			isa = PBXGroup;
 			children = (
+				40D064821BCF7EE4005D7407 /* location-icon.png */,
 				4014DE2A1BCF6C2000C9AA88 /* foodicon.png */,
 				4014DE2B1BCF6C2000C9AA88 /* soccericon.png */,
 				4014DE281BCF6C0A00C9AA88 /* KML */,
@@ -418,6 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D064831BCF7EE4005D7407 /* location-icon.png in Resources */,
 				4014DE2C1BCF6C2000C9AA88 /* foodicon.png in Resources */,
 				4014DE2D1BCF6C2000C9AA88 /* soccericon.png in Resources */,
 				4014DE291BCF6C0A00C9AA88 /* KML in Resources */,

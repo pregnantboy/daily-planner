@@ -34,4 +34,10 @@ typedef enum {
 - (NSString *) getLocationIcon;
 - (NSMutableArray *) parseKMLLocationsFile:(NSString *)fileName;
 - (LocationObject *) parseLocationElement:(TBXMLElement *) elem;
+
+@property (strong) LocationObject * chosenLocation;
+@property (nonatomic) BOOL choseALocation;
+
+- (void) chooseLocation:(NSString *)place position:(CLLocationCoordinate2D) position;
+
 @end

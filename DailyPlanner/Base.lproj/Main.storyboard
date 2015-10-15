@@ -308,9 +308,11 @@
                     <connections>
                         <outlet property="map" destination="j9H-V7-DXc" id="o5H-Gz-kE4"/>
                         <outlet property="searchResultsView" destination="zWJ-FS-VVg" id="1zK-5G-k2a"/>
+                        <segue destination="wip-Do-bGd" kind="unwind" identifier="unwindToEventViewSegue" unwindAction="unwindToEventView:" id="QZx-zv-02h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8B-cJ-3zh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wip-Do-bGd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="212.5" y="1309.5"/>
         </scene>
@@ -549,6 +551,17 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIO-pX-8yI">
+                                                <rect key="frame" x="274" y="15" width="41" height="41"/>
+                                                <animations/>
+                                                <state key="normal" title="Button" image="location-icon.png" backgroundImage="location-icon.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickSuggestLocation:" destination="Uvh-S5-tbH" eventType="touchUpInside" id="Lrt-XP-mUn"/>
+                                                    <segue destination="1v4-0L-7qt" kind="show" identifier="BackToEventsView" id="xhD-0G-ev5"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <animations/>
                                         <constraints>
@@ -675,6 +688,7 @@
                         <outlet property="lastUpdated" destination="Sp0-eI-oxO" id="cia-hM-ZvM"/>
                         <outlet property="refresh" destination="iV0-C5-c3F" id="BTg-bO-Ajk"/>
                         <outlet property="settingsButton" destination="oJl-kw-Ghz" id="12G-ws-esw"/>
+                        <outlet property="suggestLocationButton" destination="TIO-pX-8yI" id="cmu-KM-aRh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXu-im-YMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -688,6 +702,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="location-icon.png" width="400" height="500"/>
         <image name="mainBackground.jpg" width="640" height="1136"/>
         <image name="partlyCloudy.png" width="256" height="256"/>
         <image name="refresh.png" width="128" height="128"/>

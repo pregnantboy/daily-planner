@@ -97,7 +97,8 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
-                                                          // handle confirm here
+                                                              [self.locationManager chooseLocation:marker.title position:marker.position];
+                                                              [self performSegueWithIdentifier:@"unwindToEventViewSegue" sender:self];
                                                           }];
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction * action) {
@@ -202,9 +203,15 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
 }
 
 
-/*
+
 #pragma mark - Navigation
 
+- (IBAction)unwindToEventsView:(UIStoryboardSegue*)sender
+{
+    UIViewController *sourceViewController = sender.sourceViewController;
+    // Pull any data from the view controller which initiated the unwind segue.
+}
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

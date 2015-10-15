@@ -20,6 +20,8 @@
 
 - (id) init {
     self = [super init];
+    self.choseALocation = NO;
+    self.chosenLocation = nil;
     self.foodLocations = [self parseKMLLocationsFile:@"KML/HawkerCenter.kml"];
     self.sportsLocations = [self parseKMLLocationsFile:@"KML/SSC_Sports_Facilities.kml"];
     return self;
@@ -79,6 +81,11 @@
             return @"soccericon.png";
     }
     return nil;
+}
+
+- (void) chooseLocation:(NSString *)place position:(CLLocationCoordinate2D) position {
+    self.chosenLocation = [[LocationObject alloc] initWithTitle:place position:position];
+    self.choseALocation = YES;
 }
 
 @end
