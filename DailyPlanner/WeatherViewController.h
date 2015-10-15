@@ -26,5 +26,6 @@
 
 // weather forecast
 @property (weak, nonatomic) IBOutlet UITableView *weatherTable;
+@property (weak, nonatomic) IBOutlet UIButton *reloadButton;
 
 @end

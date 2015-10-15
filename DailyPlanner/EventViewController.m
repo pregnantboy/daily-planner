@@ -19,6 +19,7 @@
     NSArray *_events;
     EventManager *_eventManager;
     WeatherManager *_weatherManager;
+    UIView *_closePopUpButton;
 }
 
 @end
@@ -37,6 +38,17 @@
     // Notification Center Observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newEventsData) name:eventsReceivedNotification object:nil];
     
+    // Close pop up button
+    _closePopUpButton = [[UIView alloc] initWithFrame:self.view.frame];
+    _closePopUpButton.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.2];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                      action:@selector (closePopUpViews)];
+    [_closePopUpButton addGestureRecognizer:singleTap];
+    [self.view insertSubview:_closePopUpButton belowSubview:self.detailedView];
+    
+    
+    // Close all pop ups on load
+    [self closePopUpViews];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -150,7 +162,32 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    self.detailedView.hidden = NO;
+    _closePopUpButton.hidden = NO;
+    if (indexPath.row < [_events count]) {
+        EventObject *event = (EventObject *)[_events objectAtIndex:indexPath.row];
+        [self updateValuesforPopUpViewWithEventObject:event];
+    }
+    [UIView animateWithDuration:0.5 animations:^{
+        self.detailedView.alpha = 0.95;
+        _closePopUpButton.alpha = 1.0;
+    }];
+}
+
+#pragma  mark - Private helpers
+- (void)updateValuesforPopUpViewWithEventObject:(EventObject *)event {
+    self.detailedTitle.text = event.title;
+    self.detailedLocation.text = event.location;
+    self.detailedTime.text = [NSString stringWithFormat:@"%@ to %@", [event startString], [event endString]];
+    self.detailedReminder.text = event.reminderString;
+    self.detailedNotes.text = event.details;
+}
+
+- (void)closePopUpViews {
+    self.detailedView.hidden = YES;
+    self.detailedView.alpha = 0.0;
+    _closePopUpButton.hidden = YES;
+    _closePopUpButton.alpha = 0.0;
 }
 
 @end

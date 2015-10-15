@@ -31,4 +31,12 @@
 @property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
 @property (weak, nonatomic) IBOutlet UIView *detailedView;
 
+// Detailed view
+@property (weak, nonatomic) IBOutlet UILabel *detailedTitle;
+@property (weak, nonatomic) IBOutlet UILabel *detailedLocation;
+@property (weak, nonatomic) IBOutlet UILabel *detailedTime;
+@property (weak, nonatomic) IBOutlet UILabel *detailedReminder;
+@property (weak, nonatomic) IBOutlet UILabel *detailedNotes;
+
+
 @end

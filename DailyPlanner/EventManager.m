@@ -96,13 +96,12 @@ static BOOL shouldShowLoginPageOnLoad = NO;
     if (error == nil) {
         // TODO: ADD SPINNER TO STOP HERE
         _events = [[NSMutableArray alloc] init];
-        NSMutableString *eventString = [[NSMutableString alloc] init];
         if (events.items.count > 0) {
             for (GTLCalendarEvent *event in events) {
                 int minutesReminder;
-                if (event.reminders.useDefault == [NSNumber numberWithInt:1]) {
+                if (event.reminders.useDefault.intValue == 1) {
                     minutesReminder = 30;
-                } else if (event.reminders.useDefault == [NSNumber numberWithInt:0]) {
+                } else if (event.reminders.useDefault.intValue== 0) {
                     NSLog(@"%@", event.reminders.overrides);
                     if ([event.reminders.overrides count] > 0) {
                         minutesReminder = [[[event.reminders.overrides objectAtIndex:0] valueForKey:@"minutes"] intValue];

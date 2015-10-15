@@ -18,5 +18,7 @@
 - (NSMutableArray *)prettyForecast;
 - (NSDictionary *)hiLoTemp;
 - (NSDictionary *)prettyNowcast;
-
+- (NSDate *)lastUpdated;
+- (void)tryUpdate;
+- (void)forceUpdate;
 @end

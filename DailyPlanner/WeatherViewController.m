@@ -24,17 +24,17 @@
     // set up clock label
     [self updateClock];
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateClock) userInfo:nil repeats:YES];
-    
-    // TODO: LOAD OLD DATA AND SHIFT THIS TO VIEW DID APPEAR
-    // Instantiate Weather Manager
-    _weatherManager = [WeatherManager sharedManager];
 
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    // Instantiate Weather Manager
+    _weatherManager = [WeatherManager sharedManager];
+    [_weatherManager tryUpdate];
     _weatherForecast = [_weatherManager prettyForecast];
     [self.weatherTable reloadData];
     [self updateNowcast];
+    [self updateLastUpdatedString];
 }
 
 #pragma mark - Main Clock
@@ -103,6 +103,25 @@
     cell.tempLabel.text = [NSString stringWithFormat:@"%@%@", [hourlyWeatherData objectForKey:@"temp"] , @"\u00B0"];
     
     return cell;
+}
+
+#pragma mark - IBAction handler
+- (IBAction)refresh:(id)sender {
+    [_weatherManager forceUpdate];
+    [self updateNowcast];
+    [_weatherTable reloadData];
+    [self updateLastUpdatedString];
+}
+
+#pragma mark - Last Updated String
+- (void)updateLastUpdatedString {
+    NSDate *lastUpdated = [_weatherManager lastUpdated];
+    NSDateFormatter *lastUpdatedFormatter = [[NSDateFormatter alloc] init];
+    [lastUpdatedFormatter setDateFormat:@"d MMM, hh:mm a"];
+    NSString *dateString = [lastUpdatedFormatter stringFromDate:lastUpdated];
+    if (dateString) {
+        self.lastUpdated.text = [@"Last updated: " stringByAppendingString:dateString];
+    }
 }
 
 

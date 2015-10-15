@@ -91,7 +91,7 @@ reminderMinutes:(NSInteger)minutes {
 }
 
 - (NSString *)reminderString {
-    if (_minutes >= 0) {
+    if (_minutes > 0) {
         return [NSString stringWithFormat:@"%ld minutes before", _minutes];
     } else {
         return @"Not set";

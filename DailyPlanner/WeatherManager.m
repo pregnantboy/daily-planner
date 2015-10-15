@@ -26,8 +26,11 @@
 @end
 
 static WeatherManager *_sharedManager;
+// high/low forecast
 static NSString *neaForecastUrl = @"http://www.nea.gov.sg/api/WebAPI/?dataset=12hrs_forecast&keyref=781CF461BB6606AD19AA45F38E88F174F0E3E9D8D4FF2BF7";
+// current temp and condition
 static NSString *nowcastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d80/conditions/q/SG/Singapore.json";
+// hourly temp and condition
 static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d80/hourly/q/SG/Singapore.json";
 static NSString *const ForecastLastUpdatedUserDefault = @"ForecastLastUpdatedUserDefault";
 static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserDefault";
@@ -58,8 +61,7 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
             _nowcastLastUpdated = [_defaults objectForKey:NowcastLastUpdatedUserDefault];
         }
         
-        [self tryUpdateNowcast];
-        [self tryUpdateForecast];
+        [self tryUpdate];
     }
     return self;
 }
@@ -73,6 +75,8 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
     });
     return _sharedManager;
 }
+
+
 
 - (void)updateForecast {
     NSLog(@"updating forecast");
@@ -184,6 +188,8 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
     [_prettyNowcast setObject:weatherObj forKey:@"weather"];
 }
 
+#pragma mark - Public API
+
 - (NSMutableArray *)prettyForecast {
     return _prettyForecast;
 }
@@ -195,6 +201,22 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
 - (NSDictionary *)hiLoTemp {
     return _hiLoTemp;
 }
+
+- (NSDate *)lastUpdated {
+    return _forecastLastUpdated;
+}
+
+- (void)tryUpdate {
+    [self tryUpdateForecast];
+    [self tryUpdateNowcast];
+}
+
+- (void)forceUpdate {
+    [self updateForecast];
+    [self updateNowcast];
+}
+
+#pragma mark - Private helpers
 
 - (BOOL)isNightWithHour:(int)hour {
     if (hour < 7 || hour >= 19) {
