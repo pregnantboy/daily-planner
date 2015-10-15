@@ -1,0 +1,1503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+<name>Blk 112 Jalan Bukit Merah</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 160112</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.826003271541,1.28000215456105</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 115 Bukit Merah View</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 151115</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.821822937348,1.28550479712908</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 117 Aljunied Ave 2</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 380117</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.886773210322,1.32078141248066</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 127 Toa Payoh Lorong 1</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 310127</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.844731368601,1.33809309390968</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 137 Tampines Street 11</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 521137</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.94462422511,1.34563987605725</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 159 Mei Chin Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 140159</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.802903553401,1.29323658227636</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 16 Bedok South Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 460016</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.935473316778,1.32050117552512</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 163 Bukit Merah Central</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 150163</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.816992086611,1.28369297959086</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 17 Upper Boon Keng Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 380017</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.87162000051,1.31502839662017</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 20 Ghim Moh Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 270020</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.788229991336,1.31099696909433</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 208B New Upper Changi Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 462208</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.930543973157,1.32481850199752</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 210 Toa Payoh Lorong 8</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 310210</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.854333510404,1.34025241457549</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 216 Bedok North Street 1</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 460216</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.933221303984,1.32706279467259</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 22 Toa Payoh Lorong 7</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 310022</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.857003388311,1.33538293917728</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 226D Ang Mo Kio Ave 1</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 564226</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.839142233945,1.36681033738629</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 226H Ang Mo Kio Street 22</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 568226</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.840021902844,1.36719687033387</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 254 Jurong East Street 24</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 600254</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.737738078201,1.34348845894063</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 29 Bendemeer Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 330029</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.863020600314,1.31921702010622</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 320 Shunfu Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 570320</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.836964189656,1.35202589616994</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 341 Ang Mo Kio Ave 1</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 560341</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.848066975252,1.36384549981539</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 347 Jurong East Ave 1</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 600347</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.731144481832,1.34518844534244</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 353 Clementi Ave 2</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 120353</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.770772491551,1.3143809870983</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 36 Telok Blangah Rise</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 90036</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.821997911879,1.27258947818296</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 37A Teban Gardens Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 601037</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.742747027626,1.3208320535485</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 409 Ang Mo Kio Ave 10</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 560409</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.855287977153,1.36265443286343</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 44 Holland Drive</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 270044</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.792773453688,1.30811814307735</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 448 Clementi Ave 3</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 120448</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.764516869064,1.31332002691315</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 453A Ang Mo Kio Ave 10</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 561453</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.856308352936,1.36825163580707</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 49 Sims Place</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 380049</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.879309535292,1.31703535989715</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 4A Eunos Crescent</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 402004</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.904261932033,1.32032869068211</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 4A Jalan Batu</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 432004</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.883909424419,1.30234567149893</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 4A Woodlands Centre Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 731004</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.770076486706,1.44108454877492</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 79 Redhill Lane</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 150079</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.818333852298,1.28778379283874</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 79 Telok Blangah Drive</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 100079</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.807621263594,1.27336523888669</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 80 Circuit Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 370080</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.887102351861,1.32783448134196</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 82 Telok Blangah Drive</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 100082</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.80790032742,1.27389154406148</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 84 Marine Parade Central</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 440084</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.906338279995,1.30228554862088</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 85 Bedok North Street 4</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 460085</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.938714703258,1.33205810219028</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 85 Redhill Lane</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 150085</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.818310870414,1.28730784808551</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 89 Circuit Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 370089</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.885438519942,1.32358004776939</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 90 Whampoa Drive</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 320090</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.854994756684,1.32306436172493</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 93 Toa Payoh Lorong 4</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 310093</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.849484643551,1.33841766788349</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blks 1314 Haig Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 430013</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.895587516444,1.31510942485301</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 502 West Coast Drive</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 120502</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.759041657454,1.31189135035919</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 503 West Coast Drive</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 120503</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.759751087413,1.31180343019796</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 505 Jurong West Street 52</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 640505</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.718443360139,1.34965762131079</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 50A Marine Terrace</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 441050</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.915736714347,1.30573006933754</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 51 Old Airport Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 390051</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.885731353673,1.30811015844569</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 511 Bedok North Street 3</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 460511</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.930455647306,1.33300981031107</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 527 Ang Mo Kio Ave 10</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 560527</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.854457639969,1.37277242224935</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 538 Bedok North Street 3</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 460538</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.924620995424,1.33206760052746</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 58 New Upper Changi Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 461058</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.941124959274,1.32420121449402</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 1 Jalan Kukoh</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 161001</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.839933850158,1.28823134999158</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 105 Hougang Ave 1</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 530105</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.890093830225,1.35384760963913</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 11 Telok Blangah Crescent</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 90011</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.81864138064,1.27736723112632</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 6 Tanjong Pagar Plaza</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 81006</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.84316670553,1.27661498288569</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 628 Ang Mo Kio Ave 4</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 560628</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.840627769148,1.38099093384737</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 630 Bedok Reservoir Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 470630</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.91405365383,1.33315962360895</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 69 Geylang Bahru</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 330069</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.870004699141,1.32146344369775</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 7 Empress Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 260007</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.80563609931,1.31624608622326</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 724 Ang Mo Kio Ave 6</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 560724</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.846509988148,1.37217291777113</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 726 Clementi West Street 2</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 120726</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.764250429953,1.3038110725467</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 74 Toa Payoh Lorong 4</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 310074</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.852003184683,1.33455108202629</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Market Street Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 48940</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.849983359872,1.28388574566935</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Maxwell Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 69184</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.844733190551,1.28033058233472</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Newton Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 229495</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.839412174197,1.31218620580693</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>North Bridge Road Market  Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 198783</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.863909021261,1.30563467774605</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Pasir Panjang Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 118543</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.791402394604,1.27590789220387</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Pek Kio Market  Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 211041</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.850224807005,1.31616032756822</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Peoples Park Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 50032</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.842341799818,1.28473556892978</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Sembawang Hills Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 574419</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.828992932901,1.37238453087005</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Serangoon Garden Market</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 555945</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.866724628782,1.3630853360021</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Taman Jurong Market  Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 618499</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.721519595483,1.33458971183849</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tanglin Halt Market</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 148813</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.797719058637,1.30055840796238</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tekka Market</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 210665</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.850609661527,1.30617807237148</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tiong Bahru Market</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 168898</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.83218124287,1.28478590261027</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Zion Riverside Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 247792</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.831188985488,1.29234257145475</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blk 75 Toa Payoh Lorong 5</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 310075</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.852956666316,1.33602109823917</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blks 160162 Ang Mo Kio Ave 4</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 560160</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.83897689493,1.37428295239557</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blks 1A 2A 3A Commonwealth Drive</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 141001</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.797835220617,1.29973105072559</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blks 2021 Marsiling Lane</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 730020</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.776966894669,1.44340515609318</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blks 221AB Boon Lay Place</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 641221</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.712800358892,1.3452243978252</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blks 22AB Havelock Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 161022</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.829623089551,1.28797084452847</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blks 7979A Circuit Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 370079</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.885043234983,1.32645030655364</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blks 9192 Whampoa Drive</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 320091</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.854059876227,1.32342852934043</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Bukit Timah Market</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 588215</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.776006986743,1.33945275388516</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Chinatown Market</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 50335</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.843159200011,1.28227220702347</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Chomp Chomp Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 557269</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.866526695428,1.36423284848197</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Chong Pang Market  Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 760104</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.828419537284,1.43152706459917</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Dunman Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 424768</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.901824889366,1.3094146074629</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>East Coast Lagoon Food Village</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 468960</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.934799415763,1.30726140542198</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Geylang Serai Market</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 402001</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.897977091384,1.31672549223318</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Blks 2  3 Changi Village Road</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 500002</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.988244928759,1.38915198076082</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Golden Mile Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 199583</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.863877053254,1.30314185035911</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Holland Village Market  Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 277700</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.794833482537,1.31114930086</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Hong Lim Market  Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 51531</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - NEA Food centre</b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.845823485493,1.28529942027059</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kallang Estate Market</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 397972</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.884017980705,1.30734434915351</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kovan Market  Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 530209</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.8860550492,1.35908416431708</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Commonwealth Crescent Market</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 149644</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.800356135409,1.30699568338598</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>ABC Brickworks Market  Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 150006</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.808127689343,1.28695308713317</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Adam Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 289876</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.814079512137,1.32413503632515</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Albert Centre Market  Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 180270</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.854077253212,1.30105202355694</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Alexandra Village Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 150120</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.80448901902,1.28629814805735</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Amoy Street Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 69111</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.846606538817,1.27921882118539</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Bedok Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 469572</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.95547155292,1.32035442385101</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Beo Crescent Market</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 169982</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.827353654785,1.28883118329883</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Berseh Food Centre</name>
+<description>
+<p><font color="red"><i></i>
+<b>PostalCode - 208877</b>
+</font></p>
+<p><font color="Blue"><i></i>
+<b>Description - </b>
+</font></p>
+</description>
+<Point>
+<coordinates>103.856853665634,1.30733687878896</coordinates>
+</Point>
+</Placemark>
+</Document>
+</kml>

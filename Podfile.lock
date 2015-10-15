@@ -1,0 +1,13 @@
+PODS:
+  - GoogleMaps (1.10.4)
+  - TBXML (1.5)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - TBXML
+
+SPEC CHECKSUMS:
+  GoogleMaps: 134bcf57e8d489efbc0c29d532ed421554fabdb2
+  TBXML: 9f9dadb239f2f2af1dadb87fe43a0ce6e479379a
+
+COCOAPODS: 0.39.0

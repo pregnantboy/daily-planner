@@ -38,6 +38,13 @@
 		3C64BCEC1BA3244B0058F42A /* clearNight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCEB1BA3244B0058F42A /* clearNight.png */; };
 		3C64BCEE1BA325070058F42A /* partlyCloudyNight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCED1BA325070058F42A /* partlyCloudyNight.png */; };
 		3C64BCF01BA325E80058F42A /* hazy.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCEF1BA325E80058F42A /* hazy.png */; };
+		4014DE211BCF6BD000C9AA88 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */; };
+		4014DE221BCF6BD000C9AA88 /* LocationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4014DE1E1BCF6BD000C9AA88 /* LocationObject.m */; };
+		4014DE231BCF6BD000C9AA88 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4014DE201BCF6BD000C9AA88 /* MapViewController.m */; };
+		4014DE291BCF6C0A00C9AA88 /* KML in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE281BCF6C0A00C9AA88 /* KML */; };
+		4014DE2C1BCF6C2000C9AA88 /* foodicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE2A1BCF6C2000C9AA88 /* foodicon.png */; };
+		4014DE2D1BCF6C2000C9AA88 /* soccericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE2B1BCF6C2000C9AA88 /* soccericon.png */; };
+		B41FB455C5D05E375C46FA4E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79322EA4620AAF8EE7BCA983 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +131,18 @@
 		3C64BCEB1BA3244B0058F42A /* clearNight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearNight.png; sourceTree = "<group>"; };
 		3C64BCED1BA325070058F42A /* partlyCloudyNight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = partlyCloudyNight.png; sourceTree = "<group>"; };
 		3C64BCEF1BA325E80058F42A /* hazy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hazy.png; sourceTree = "<group>"; };
+		4014DE1B1BCF6BD000C9AA88 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		4014DE1D1BCF6BD000C9AA88 /* LocationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationObject.h; sourceTree = "<group>"; };
+		4014DE1E1BCF6BD000C9AA88 /* LocationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationObject.m; sourceTree = "<group>"; };
+		4014DE1F1BCF6BD000C9AA88 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		4014DE201BCF6BD000C9AA88 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		4014DE281BCF6C0A00C9AA88 /* KML */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KML; path = DailyPlanner/KML; sourceTree = "<group>"; };
+		4014DE2A1BCF6C2000C9AA88 /* foodicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = foodicon.png; path = DailyPlanner/foodicon.png; sourceTree = "<group>"; };
+		4014DE2B1BCF6C2000C9AA88 /* soccericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soccericon.png; path = DailyPlanner/soccericon.png; sourceTree = "<group>"; };
+		614DE304676EA25856212130 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		79322EA4620AAF8EE7BCA983 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE64455FE1F63247C588E185 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +153,7 @@
 				3C64BCD61BA12D2B0058F42A /* SystemConfiguration.framework in Frameworks */,
 				3C64BCD41BA12D240058F42A /* Security.framework in Frameworks */,
 				3C64BCD21BA12D1B0058F42A /* libGTLTouchStaticLib.a in Frameworks */,
+				B41FB455C5D05E375C46FA4E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,12 +170,17 @@
 		3C060EC11B9E9FE9003AE123 = {
 			isa = PBXGroup;
 			children = (
+				4014DE2A1BCF6C2000C9AA88 /* foodicon.png */,
+				4014DE2B1BCF6C2000C9AA88 /* soccericon.png */,
+				4014DE281BCF6C0A00C9AA88 /* KML */,
 				3C64BCD51BA12D2B0058F42A /* SystemConfiguration.framework */,
 				3C64BCD31BA12D240058F42A /* Security.framework */,
 				3C64BCC31BA12CDE0058F42A /* GTL.xcodeproj */,
 				3C060ECC1B9E9FEA003AE123 /* DailyPlanner */,
 				3C060EE61B9E9FEA003AE123 /* DailyPlannerTests */,
 				3C060ECB1B9E9FEA003AE123 /* Products */,
+				B283468F1D5E41FF0D1EC439 /* Pods */,
+				A860B62091663CC3F1DEDE78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +216,12 @@
 				3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */,
 				3C060EF91B9EA1E3003AE123 /* WeatherViewController.h */,
 				3C060EFA1B9EA1E3003AE123 /* WeatherViewController.m */,
+				4014DE1B1BCF6BD000C9AA88 /* LocationManager.h */,
+				4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */,
+				4014DE1D1BCF6BD000C9AA88 /* LocationObject.h */,
+				4014DE1E1BCF6BD000C9AA88 /* LocationObject.m */,
+				4014DE1F1BCF6BD000C9AA88 /* MapViewController.h */,
+				4014DE201BCF6BD000C9AA88 /* MapViewController.m */,
 				3C060EDA1B9E9FEA003AE123 /* Images.xcassets */,
 				3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */,
 				3C060ED71B9E9FEA003AE123 /* Main.storyboard */,
@@ -249,6 +280,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A860B62091663CC3F1DEDE78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79322EA4620AAF8EE7BCA983 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B283468F1D5E41FF0D1EC439 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE64455FE1F63247C588E185 /* Pods.debug.xcconfig */,
+				614DE304676EA25856212130 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,9 +304,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C060EED1B9E9FEA003AE123 /* Build configuration list for PBXNativeTarget "DailyPlanner" */;
 			buildPhases = (
+				58AD736355593533EC454E99 /* Check Pods Manifest.lock */,
 				3C060EC61B9E9FEA003AE123 /* Sources */,
 				3C060EC71B9E9FEA003AE123 /* Frameworks */,
 				3C060EC81B9E9FEA003AE123 /* Resources */,
+				E0B15DB74F9652E3C8824179 /* Embed Pods Frameworks */,
+				311C590D4B139769033C48C5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -367,6 +418,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4014DE2C1BCF6C2000C9AA88 /* foodicon.png in Resources */,
+				4014DE2D1BCF6C2000C9AA88 /* soccericon.png in Resources */,
+				4014DE291BCF6C0A00C9AA88 /* KML in Resources */,
 				3C64BCD81BA134AE0058F42A /* GTMOAuth2ViewTouch.xib in Resources */,
 				3C060ED91B9E9FEA003AE123 /* Main.storyboard in Resources */,
 				3C64BCEE1BA325070058F42A /* partlyCloudyNight.png in Resources */,
@@ -395,13 +449,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		311C590D4B139769033C48C5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58AD736355593533EC454E99 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E0B15DB74F9652E3C8824179 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C060EC61B9E9FEA003AE123 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4014DE211BCF6BD000C9AA88 /* LocationManager.m in Sources */,
 				3C060F0D1B9F01A5003AE123 /* WeatherTableViewCell.m in Sources */,
 				3C060ED31B9E9FEA003AE123 /* AppDelegate.m in Sources */,
+				4014DE221BCF6BD000C9AA88 /* LocationObject.m in Sources */,
 				3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */,
 				3C64BCDB1BA134E90058F42A /* GTLCalendar_Sources.m in Sources */,
 				3C479FA61BA47B2E0034D10E /* EventManager.m in Sources */,
@@ -411,6 +515,7 @@
 				3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */,
 				3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */,
 				3C060ED01B9E9FEA003AE123 /* main.m in Sources */,
+				4014DE231BCF6BD000C9AA88 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +641,7 @@
 		};
 		3C060EEE1B9E9FEA003AE123 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE64455FE1F63247C588E185 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -545,7 +651,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
-					"-all_load",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -557,6 +663,7 @@
 		};
 		3C060EEF1B9E9FEA003AE123 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 614DE304676EA25856212130 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -566,7 +673,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
-					"-all_load",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
