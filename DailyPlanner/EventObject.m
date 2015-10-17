@@ -26,8 +26,7 @@
         endTime:(NSDate *)endTime
        location:(NSString *)location
         details:(NSString *)details
-reminderMinutes:(NSInteger)minutes
-    googleEvent:(GTLCalendarEvent*) gEvent{
+reminderMinutes:(NSInteger)minutes{
     self = [super init];
     if (self) {
         _title = title;
@@ -75,6 +74,15 @@ reminderMinutes:(NSInteger)minutes
                                           timeStyle:NSDateFormatterShortStyle];
 }
 
+
+- (NSDate *)startTime {
+    return _startTime;
+}
+
+- (NSDate *) endTime{
+    return _endTime;
+}
+
 - (NSString *)location {
     if (_location) {
         return _location;
@@ -105,6 +113,11 @@ reminderMinutes:(NSInteger)minutes
 
 - (BOOL)isEvent {
     return _isEvent;
+}
+
+# pragma mark - Setters
+- (void)setlocation:(NSString *)location {
+    _location = location;
 }
 
 @end

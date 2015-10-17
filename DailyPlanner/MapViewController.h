@@ -22,5 +22,5 @@
 - (IBAction)categorySelector:(UISegmentedControl *)sender;
 - (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title;
 - (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title icon:(UIImage *)icon;
-- (IBAction)unwindToMainMenu:(UIStoryboardSegue*)sender;
+- (IBAction)clickCancel:(id)sender;
 @end

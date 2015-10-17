@@ -39,5 +39,5 @@ typedef enum {
 @property (nonatomic) BOOL choseALocation;
 
 - (void) chooseLocation:(NSString *)place position:(CLLocationCoordinate2D) position;
-
+- (void) cancelChosenLocation;
 @end

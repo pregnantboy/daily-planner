@@ -117,8 +117,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
                                                                  endTime:[event.end.dateTime date]
                                                                 location:event.location
                                                                  details:event.descriptionProperty
-                                                         reminderMinutes:minutesReminder
-                                                             googleEvent:event];
+                                                         reminderMinutes:minutesReminder];
                 [_events addObject:aEvent];
             }
         } else {

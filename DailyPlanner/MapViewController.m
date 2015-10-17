@@ -138,6 +138,11 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
     marker.map = self.map;
 }
 
+- (IBAction)clickCancel:(id)sender {
+    [self performSegueWithIdentifier:@"unwindToEventViewSegue" sender:self];
+    
+}
+
 
 - (IBAction)selectCategory:(UISegmentedControl *)sender {
     NSInteger idx = [sender selectedSegmentIndex];
@@ -205,12 +210,6 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
 
 
 #pragma mark - Navigation
-
-- (IBAction)unwindToEventsView:(UIStoryboardSegue*)sender
-{
-    UIViewController *sourceViewController = sender.sourceViewController;
-    // Pull any data from the view controller which initiated the unwind segue.
-}
 /*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

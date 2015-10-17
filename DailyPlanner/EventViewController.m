@@ -31,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateClock];
+    
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateClock) userInfo:nil repeats:YES];
     
     // Instantiate managers
@@ -186,10 +187,19 @@
     self.detailedNotes.text = event.details;
 }
 
+- (void)updateValuesforPopUpEditViewWithEventObject:(EventObject *)event {
+    self.locationField.text = event.location;
+    self.notesField.text = event.details;
+    self.startTimePickerField.date = [event startTime];
+    self.endTimePickerField.date = [event endTime];
+}
+
 - (void)closePopUpViews {
     popUpEventIndex = nil;
     self.detailedView.hidden = YES;
     self.detailedView.alpha = 0.0;
+//    self.editEventView.hidden = YES;
+//    self.editEventView.alpha = 0.0;
     _closePopUpButton.hidden = YES;
     _closePopUpButton.alpha = 0.0;
 }
@@ -204,17 +214,36 @@
 {
     // event view controller should not be coupled so tightly with map view controller
     MapViewController * map = (MapViewController *)unwindSegue.sourceViewController;
-    LocationObject * loc = map.locationManager.chosenLocation;
-    NSLog(@"Location: %@", loc.title);
-    if (popUpEventIndex) {
-        EventObject * e = [_events objectAtIndex:popUpEventIndex.row];
-        e.location = loc.title; //[NSString stringWithFormat:@"%@ @(%f, %f)", loc.title, loc.position.latitude, loc.position.longitude];
-        [_events replaceObjectAtIndex:popUpEventIndex.row withObject:e];
-        [self.eventsTableView reloadData];
-        [self updateValuesforPopUpViewWithEventObject:e];
+    if (map.locationManager.choseALocation){
+        LocationObject * loc = map.locationManager.chosenLocation;
+        NSLog(@"Location: %@", loc.title);
+        if (popUpEventIndex) {
+            EventObject * e = [_events objectAtIndex:popUpEventIndex.row];
+            [e setLocation:loc.title]; //[NSString stringWithFormat:@"%@ @(%f, %f)", loc.title, loc.position.latitude, loc.position.longitude];
+            [_events replaceObjectAtIndex:popUpEventIndex.row withObject:e];
+            [self.eventsTableView reloadData];
+            [self updateValuesforPopUpViewWithEventObject:e];
+        }
     }
 //    [_eventManager updateEvent:@"lala"];
     // get the data here
 }
 
+# pragma mark - edit/add event
+
+- (IBAction)addNewEvent:(id)sender {
+    self.editEventView.hidden = NO;
+    _closePopUpButton.hidden = NO;
+    EventObject * event = [[EventObject alloc] initWithTitle:@""
+                                                     startTime: [NSDate date]
+                                                       endTime: [[NSDate date] dateByAddingTimeInterval:3600]
+                                                      location: @""
+                                                       details: @""
+                                               reminderMinutes: 10];
+    [self updateValuesforPopUpEditViewWithEventObject:event];
+    [UIView animateWithDuration:0.5 animations:^{
+//        self.editEventView.alpha = 0.95;
+        _closePopUpButton.alpha = 1.0;
+    }];
+}
 @end

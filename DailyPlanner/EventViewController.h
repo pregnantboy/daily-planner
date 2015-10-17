@@ -38,6 +38,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailedReminder;
 @property (weak, nonatomic) IBOutlet UILabel *detailedNotes;
 
+// Edit/Add view
+@property (weak, nonatomic) IBOutlet UIView *editEventView;
+@property (weak, nonatomic) IBOutlet UITextField *locationField;
+@property (weak, nonatomic) IBOutlet UIDatePicker *startTimePickerField;
+@property (weak, nonatomic) IBOutlet UIDatePicker *endTimePickerField;
+@property (weak, nonatomic) IBOutlet UITextView *notesField;
+- (IBAction)addNewEvent:(id)sender;
+
+
 // Suggest location
 @property (weak, nonatomic) IBOutlet UIButton *suggestLocationButton;
 - (IBAction)clickSuggestLocation:(UIButton *)sender;
