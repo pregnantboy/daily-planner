@@ -36,6 +36,7 @@ typedef enum {
 - (LocationObject *) parseLocationElement:(TBXMLElement *) elem;
 
 @property (strong) LocationObject * chosenLocation;
+- (void) deselectLocation;
 @property (nonatomic) BOOL choseALocation;
 
 - (void) chooseLocation:(NSString *)place position:(CLLocationCoordinate2D) position;

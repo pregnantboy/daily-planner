@@ -16,15 +16,15 @@
         endTime:(NSDate *)endTime
        location:(NSString *)location
         details:(NSString *)details
-reminderMinutes:(NSInteger)minutes
-    googleEvent:(GTLCalendarEvent*) gEvent;
+reminderMinutes:(NSInteger)minutes;
 - initWithNotLoggedIn;
 - initWithLoading;
 
 - (NSString *)title;
 - (NSString *)startString;
 - (NSString *)endString;
-@property NSString * location;
+- (NSString *)location;
+- (void)setLocation:(NSString *)newLocation;
 - (NSString *)details;
 - (NSString *)reminderString;
 - (NSInteger)minutes;

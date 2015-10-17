@@ -15,6 +15,7 @@
     NSString *_location;
     NSString *_details;
     NSInteger _minutes;
+    GTLCalendarEvent * _gEvent;
     BOOL _isEvent;
 }
 @end
@@ -26,8 +27,7 @@
         endTime:(NSDate *)endTime
        location:(NSString *)location
         details:(NSString *)details
-reminderMinutes:(NSInteger)minutes
-    googleEvent:(GTLCalendarEvent*) gEvent{
+reminderMinutes:(NSInteger)minutes{
     self = [super init];
     if (self) {
         _title = title;
@@ -83,6 +83,10 @@ reminderMinutes:(NSInteger)minutes
     }
 }
 
+- (void) setLocation:(NSString *)newLocation {
+    _location = newLocation;
+}
+
 - (NSString *)details {
     if (_details) {
         return _details;
@@ -101,6 +105,10 @@ reminderMinutes:(NSInteger)minutes
 
 - (NSInteger)minutes {
     return _minutes;
+}
+
+- (GTLCalendarEvent *)gEvent {
+    return _gEvent;
 }
 
 - (BOOL)isEvent {

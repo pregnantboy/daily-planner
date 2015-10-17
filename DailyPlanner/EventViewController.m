@@ -14,6 +14,8 @@
 
 
 #import "EventViewController.h"
+#import "EventDetailedView.h"
+#import "EventEditView.h"
 #import "MapViewController.h"
 
 @interface EventViewController() {
@@ -46,7 +48,7 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                       action:@selector (closePopUpViews)];
     [_closePopUpButton addGestureRecognizer:singleTap];
-    [self.view insertSubview:_closePopUpButton belowSubview:self.detailedView];
+    [self.view insertSubview:_closePopUpButton belowSubview:self.popupView];
     
     
     // Close all pop ups on load
@@ -164,32 +166,44 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.detailedView.hidden = NO;
+    self.popupView.hidden = NO;
     _closePopUpButton.hidden = NO;
     if (indexPath.row < [_events count]) {
         EventObject *event = (EventObject *)[_events objectAtIndex:indexPath.row];
+        [self createDetailedEventView:event];
         popUpEventIndex = indexPath;
-        [self updateValuesforPopUpViewWithEventObject:event];
     }
+    // animate the stuff
     [UIView animateWithDuration:0.5 animations:^{
-        self.detailedView.alpha = 0.95;
+        self.popupView.alpha = 0.95;
         _closePopUpButton.alpha = 1.0;
     }];
 }
 
-#pragma  mark - Private helpers
-- (void)updateValuesforPopUpViewWithEventObject:(EventObject *)event {
-    self.detailedTitle.text = event.title;
-    self.detailedLocation.text = event.location;
-    self.detailedTime.text = [NSString stringWithFormat:@"%@ to %@", [event startString], [event endString]];
-    self.detailedReminder.text = event.reminderString;
-    self.detailedNotes.text = event.details;
+# pragma mark - PopupView
+
+- (void) createDetailedEventView:(EventObject *)event {
+    EventDetailedView * v = (EventDetailedView *)[[EventDetailedView alloc] init];
+    [v updateViewWithEventObject:event];
+    [self.popupView addSubview:v];
 }
+- (void) createEditEventView:(EventObject *)event{
+    EventEditView * v = (EventEditView *)[[EventEditView alloc] init];
+    [v updateViewWithEventObject:event];
+    [self.popupView addSubview:v];
+}
+- (void) createAddEventView{
+    EventEditView * v = (EventEditView *)[[EventEditView alloc] init];
+    [v updateViewWithEventObject:event];
+    [self.popupView addSubview:v];
+}
+
+#pragma  mark - Private helpers
 
 - (void)closePopUpViews {
     popUpEventIndex = nil;
-    self.detailedView.hidden = YES;
-    self.detailedView.alpha = 0.0;
+    self.popupView.hidden = YES;
+    self.popupView.alpha = 0.0;
     _closePopUpButton.hidden = YES;
     _closePopUpButton.alpha = 0.0;
 }
@@ -204,17 +218,18 @@
 {
     // event view controller should not be coupled so tightly with map view controller
     MapViewController * map = (MapViewController *)unwindSegue.sourceViewController;
-    LocationObject * loc = map.locationManager.chosenLocation;
-    NSLog(@"Location: %@", loc.title);
-    if (popUpEventIndex) {
-        EventObject * e = [_events objectAtIndex:popUpEventIndex.row];
-        e.location = loc.title; //[NSString stringWithFormat:@"%@ @(%f, %f)", loc.title, loc.position.latitude, loc.position.longitude];
-        [_events replaceObjectAtIndex:popUpEventIndex.row withObject:e];
-        [self.eventsTableView reloadData];
-        [self updateValuesforPopUpViewWithEventObject:e];
+    
+    if (map.locationManager.choseALocation){
+        LocationObject * loc = map.locationManager.chosenLocation;
+        NSLog(@"Location: %@", loc.title);
+        if (popUpEventIndex) {
+            EventObject * e = [_events objectAtIndex:popUpEventIndex.row];
+            e.location = @"lala";
+            [_events replaceObjectAtIndex:popUpEventIndex.row withObject:e];
+            [self.eventsTableView reloadData];
+//            [self updateValuesforPopUpViewWithEventObject:e];
+        }
     }
-//    [_eventManager updateEvent:@"lala"];
-    // get the data here
 }
 
 @end

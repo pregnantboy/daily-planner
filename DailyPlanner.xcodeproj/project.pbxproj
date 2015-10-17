@@ -44,6 +44,12 @@
 		4014DE291BCF6C0A00C9AA88 /* KML in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE281BCF6C0A00C9AA88 /* KML */; };
 		4014DE2C1BCF6C2000C9AA88 /* foodicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE2A1BCF6C2000C9AA88 /* foodicon.png */; };
 		4014DE2D1BCF6C2000C9AA88 /* soccericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE2B1BCF6C2000C9AA88 /* soccericon.png */; };
+		409025191BD244E4004253D7 /* add-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 409025171BD244E4004253D7 /* add-icon.png */; };
+		4090251A1BD244E4004253D7 /* cancel-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 409025181BD244E4004253D7 /* cancel-icon.png */; };
+		409025241BD24BBD004253D7 /* EventDetailedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 409025231BD24BBD004253D7 /* EventDetailedView.m */; };
+		409025261BD24C27004253D7 /* EventDetailedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 409025251BD24C27004253D7 /* EventDetailedView.xib */; };
+		409025281BD24C3D004253D7 /* EventEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 409025271BD24C3D004253D7 /* EventEditView.xib */; };
+		4090252E1BD2B48D004253D7 /* EventEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4090252D1BD2B48D004253D7 /* EventEditView.m */; };
 		40D064831BCF7EE4005D7407 /* location-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D064821BCF7EE4005D7407 /* location-icon.png */; };
 		B41FB455C5D05E375C46FA4E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79322EA4620AAF8EE7BCA983 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -141,6 +147,14 @@
 		4014DE281BCF6C0A00C9AA88 /* KML */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KML; path = DailyPlanner/KML; sourceTree = "<group>"; };
 		4014DE2A1BCF6C2000C9AA88 /* foodicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = foodicon.png; path = DailyPlanner/foodicon.png; sourceTree = "<group>"; };
 		4014DE2B1BCF6C2000C9AA88 /* soccericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soccericon.png; path = DailyPlanner/soccericon.png; sourceTree = "<group>"; };
+		409025171BD244E4004253D7 /* add-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add-icon.png"; path = "DailyPlanner/add-icon.png"; sourceTree = "<group>"; };
+		409025181BD244E4004253D7 /* cancel-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cancel-icon.png"; path = "DailyPlanner/cancel-icon.png"; sourceTree = "<group>"; };
+		409025221BD24BBD004253D7 /* EventDetailedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailedView.h; sourceTree = "<group>"; };
+		409025231BD24BBD004253D7 /* EventDetailedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailedView.m; sourceTree = "<group>"; };
+		409025251BD24C27004253D7 /* EventDetailedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailedView.xib; sourceTree = "<group>"; };
+		409025271BD24C3D004253D7 /* EventEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventEditView.xib; sourceTree = "<group>"; };
+		4090252C1BD2B48D004253D7 /* EventEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventEditView.h; sourceTree = "<group>"; };
+		4090252D1BD2B48D004253D7 /* EventEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventEditView.m; sourceTree = "<group>"; };
 		40D064821BCF7EE4005D7407 /* location-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "location-icon.png"; path = "DailyPlanner/location-icon.png"; sourceTree = "<group>"; };
 		614DE304676EA25856212130 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		79322EA4620AAF8EE7BCA983 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +186,8 @@
 		3C060EC11B9E9FE9003AE123 = {
 			isa = PBXGroup;
 			children = (
+				409025171BD244E4004253D7 /* add-icon.png */,
+				409025181BD244E4004253D7 /* cancel-icon.png */,
 				40D064821BCF7EE4005D7407 /* location-icon.png */,
 				4014DE2A1BCF6C2000C9AA88 /* foodicon.png */,
 				4014DE2B1BCF6C2000C9AA88 /* soccericon.png */,
@@ -205,6 +221,12 @@
 				3C479FA51BA47B2E0034D10E /* EventManager.m */,
 				3C36202C1BB113FD00240340 /* EventObject.h */,
 				3C36202D1BB113FD00240340 /* EventObject.m */,
+				409025221BD24BBD004253D7 /* EventDetailedView.h */,
+				409025231BD24BBD004253D7 /* EventDetailedView.m */,
+				4090252C1BD2B48D004253D7 /* EventEditView.h */,
+				4090252D1BD2B48D004253D7 /* EventEditView.m */,
+				409025251BD24C27004253D7 /* EventDetailedView.xib */,
+				409025271BD24C3D004253D7 /* EventEditView.xib */,
 				3C64BCE01BA15CCF0058F42A /* EventTableViewCell.h */,
 				3C64BCE11BA15CCF0058F42A /* EventTableViewCell.m */,
 				3C64BCC01BA0AC1B0058F42A /* EventViewController.h */,
@@ -421,9 +443,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409025191BD244E4004253D7 /* add-icon.png in Resources */,
+				4090251A1BD244E4004253D7 /* cancel-icon.png in Resources */,
 				40D064831BCF7EE4005D7407 /* location-icon.png in Resources */,
 				4014DE2C1BCF6C2000C9AA88 /* foodicon.png in Resources */,
 				4014DE2D1BCF6C2000C9AA88 /* soccericon.png in Resources */,
+				409025281BD24C3D004253D7 /* EventEditView.xib in Resources */,
 				4014DE291BCF6C0A00C9AA88 /* KML in Resources */,
 				3C64BCD81BA134AE0058F42A /* GTMOAuth2ViewTouch.xib in Resources */,
 				3C060ED91B9E9FEA003AE123 /* Main.storyboard in Resources */,
@@ -437,6 +462,7 @@
 				3C060F051B9EB452003AE123 /* rainy.png in Resources */,
 				3C060F071B9EB452003AE123 /* thunderstorm.png in Resources */,
 				3C64BCF01BA325E80058F42A /* hazy.png in Resources */,
+				409025261BD24C27004253D7 /* EventDetailedView.xib in Resources */,
 				3C64BCEC1BA3244B0058F42A /* clearNight.png in Resources */,
 				3C0A2B241BAA7EE900D7E0B0 /* refresh.png in Resources */,
 				3C64BCDF1BA158340058F42A /* backButton.png in Resources */,
@@ -519,7 +545,9 @@
 				3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */,
 				3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */,
 				3C060ED01B9E9FEA003AE123 /* main.m in Sources */,
+				4090252E1BD2B48D004253D7 /* EventEditView.m in Sources */,
 				4014DE231BCF6BD000C9AA88 /* MapViewController.m in Sources */,
+				409025241BD24BBD004253D7 /* EventDetailedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
