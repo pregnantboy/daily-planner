@@ -15,8 +15,8 @@
 
 - (id) init{
     self = [super init];
-    [[NSBundle mainBundle] loadNibNamed:@"EventDetailedView" owner:self options:nil];
-    [self addSubview:self.view];
+//    [[NSBundle mainBundle] loadNibNamed:@"EventDetailedView" owner:self options:nil];
+//    [self addSubview:self.view];
     return self;
 }
 

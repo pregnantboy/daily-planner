@@ -75,6 +75,14 @@ reminderMinutes:(NSInteger)minutes{
                                           timeStyle:NSDateFormatterShortStyle];
 }
 
+
+- (NSDate *)startTime{
+    return _startTime;
+}
+- (NSDate *)endTime{
+    return _endTime;
+}
+
 - (NSString *)location {
     if (_location) {
         return _location;

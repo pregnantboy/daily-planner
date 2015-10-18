@@ -31,4 +31,11 @@
     }
     return self;
 }
+
+- (void) updateViewWithEventObject:(EventObject *)event {
+    self.location.text = [event location];
+    self.startTime.date = [event startTime];
+    self.endTime.date = [event endTime];
+    self.details.text = [event details];
+}
 @end

@@ -166,36 +166,55 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.popupView.hidden = NO;
     _closePopUpButton.hidden = NO;
     if (indexPath.row < [_events count]) {
         EventObject *event = (EventObject *)[_events objectAtIndex:indexPath.row];
         [self createDetailedEventView:event];
         popUpEventIndex = indexPath;
     }
-    // animate the stuff
+}
+
+# pragma mark - PopupView
+- (void) showPopup {
+    self.popupView.hidden = NO;
+    [self resetPopup];
     [UIView animateWithDuration:0.5 animations:^{
         self.popupView.alpha = 0.95;
         _closePopUpButton.alpha = 1.0;
     }];
 }
 
-# pragma mark - PopupView
+
+- (void) resetPopup {
+    for(UIView *subview in [self.popupView subviews]) {
+        [subview removeFromSuperview];
+    }
+}
+
 
 - (void) createDetailedEventView:(EventObject *)event {
+    [self showPopup];
     EventDetailedView * v = (EventDetailedView *)[[EventDetailedView alloc] init];
     [v updateViewWithEventObject:event];
     [self.popupView addSubview:v];
 }
 - (void) createEditEventView:(EventObject *)event{
+    [self showPopup];
     EventEditView * v = (EventEditView *)[[EventEditView alloc] init];
     [v updateViewWithEventObject:event];
     [self.popupView addSubview:v];
 }
 - (void) createAddEventView{
+    [self showPopup];
+    EventObject *event = [[EventObject alloc] initWithTitle:@"" startTime:[NSDate date] endTime:[NSDate dateWithTimeIntervalSinceNow:3600] location:@"" details:@"" reminderMinutes:0];
     EventEditView * v = (EventEditView *)[[EventEditView alloc] init];
+    NSLog(@"ok till here");
     [v updateViewWithEventObject:event];
     [self.popupView addSubview:v];
+}
+
+- (IBAction)clickAddEventButton:(id)sender {
+    [self createAddEventView];
 }
 
 #pragma  mark - Private helpers
@@ -210,9 +229,6 @@
 
 
 #pragma mark - Suggested Location
-- (IBAction)clickSuggestLocation:(UIButton *)sender {
-    
-}
 
 - (IBAction)unwindToEventView:(UIStoryboardSegue *)unwindSegue
 {
@@ -221,14 +237,17 @@
     
     if (map.locationManager.choseALocation){
         LocationObject * loc = map.locationManager.chosenLocation;
-        NSLog(@"Location: %@", loc.title);
-        if (popUpEventIndex) {
-            EventObject * e = [_events objectAtIndex:popUpEventIndex.row];
-            e.location = @"lala";
-            [_events replaceObjectAtIndex:popUpEventIndex.row withObject:e];
-            [self.eventsTableView reloadData];
-//            [self updateValuesforPopUpViewWithEventObject:e];
+        if (map.locationManager.choseALocation){
+            NSLog(@"Location: %@", loc.title);
+            if (popUpEventIndex) {
+                EventObject * e = [_events objectAtIndex:popUpEventIndex.row];
+                [e setLocation:loc.title];
+                [_events replaceObjectAtIndex:popUpEventIndex.row withObject:e];
+                [self.eventsTableView reloadData];
+                //            [self updateValuesforPopUpViewWithEventObject:e];
+            }
         }
+        
     }
 }
 

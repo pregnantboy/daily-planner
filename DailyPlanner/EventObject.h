@@ -23,6 +23,8 @@ reminderMinutes:(NSInteger)minutes;
 - (NSString *)title;
 - (NSString *)startString;
 - (NSString *)endString;
+- (NSDate *)startTime;
+- (NSDate *)endTime;
 - (NSString *)location;
 - (void)setLocation:(NSString *)newLocation;
 - (NSString *)details;

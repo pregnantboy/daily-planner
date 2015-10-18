@@ -16,7 +16,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="EventDetailedView">
+        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="iN0-l3-epB" userLabel="EventDetailedView">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>

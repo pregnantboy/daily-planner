@@ -520,6 +520,9 @@
                                         <exclude reference="gT3-Qt-mqT"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="clickAddEventButton:" destination="Uvh-S5-tbH" eventType="touchUpInside" id="hld-zz-1gP"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vc-2R-0Rf" userLabel="Popup VIew">
                                 <rect key="frame" x="16" y="194" width="343" height="402.5"/>
