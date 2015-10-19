@@ -9,26 +9,11 @@
 #import "EventEditView.h"
 
 @implementation EventEditView
-- (id) init{
-    self = [super init];
-    [[NSBundle mainBundle] loadNibNamed:@"EventEditView" owner:self options:nil];
-    [self addSubview:self.view];
-    return self;
-}
-
-- (id) initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    [[NSBundle mainBundle] loadNibNamed:@"EventEditView" owner:self options:nil];
-    [self addSubview:self.view];
-    return self;
-}
-
-- (id) initWithCoder:(NSCoder *)aDecoder{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [[NSBundle mainBundle] loadNibNamed:@"EventEditView" owner:self options:nil];
-        [self addSubview:self.view];
+- (id) initWithEventObject:(EventObject *)event {
+    if (event) {
+        [self updateViewWithEventObject:event];
     }
+    self = [[[NSBundle mainBundle] loadNibNamed:@"EventEditView" owner:self options:nil] objectAtIndex:0];
     return self;
 }
 

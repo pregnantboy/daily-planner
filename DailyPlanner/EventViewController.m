@@ -166,7 +166,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    _closePopUpButton.hidden = NO;
     if (indexPath.row < [_events count]) {
         EventObject *event = (EventObject *)[_events objectAtIndex:indexPath.row];
         [self createDetailedEventView:event];
@@ -175,15 +174,22 @@
 }
 
 # pragma mark - PopupView
-- (void) showPopup {
-    self.popupView.hidden = NO;
+- (void) showPopupWithView:(UIView *)view {
     [self resetPopup];
+    _closePopUpButton.hidden = NO;
+    self.popupView.hidden = NO;
+    [self.popupView addSubview:view];
+     view.frame = self.popupView.bounds;
+    
     [UIView animateWithDuration:0.5 animations:^{
         self.popupView.alpha = 0.95;
         _closePopUpButton.alpha = 1.0;
     }];
 }
 
+- (void)printConstraints:(CGRect) rect {
+    NSLog(@"%f, %f, %f, %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+}
 
 - (void) resetPopup {
     for(UIView *subview in [self.popupView subviews]) {
@@ -193,25 +199,20 @@
 
 
 - (void) createDetailedEventView:(EventObject *)event {
-    [self showPopup];
-    EventDetailedView * v = (EventDetailedView *)[[EventDetailedView alloc] init];
-    [v updateViewWithEventObject:event];
-    [self.popupView addSubview:v];
+    EventDetailedView *view = [[EventDetailedView alloc] initWithEventObject:event];
+    [self showPopupWithView:view];
 }
 - (void) createEditEventView:(EventObject *)event{
-    [self showPopup];
-    EventEditView * v = (EventEditView *)[[EventEditView alloc] init];
-    [v updateViewWithEventObject:event];
-    [self.popupView addSubview:v];
+    EventEditView *view = [[EventEditView alloc] initWithEventObject:event];
+    [self showPopupWithView:view];
 }
 - (void) createAddEventView{
-    [self showPopup];
     EventObject *event = [[EventObject alloc] initWithTitle:@"" startTime:[NSDate date] endTime:[NSDate dateWithTimeIntervalSinceNow:3600] location:@"" details:@"" reminderMinutes:0];
-    EventEditView * v = (EventEditView *)[[EventEditView alloc] init];
-    NSLog(@"ok till here");
-    [v updateViewWithEventObject:event];
-    [self.popupView addSubview:v];
+    [self createEditEventView:event];
+    
 }
+
+#pragma mark - Add new event button
 
 - (IBAction)clickAddEventButton:(id)sender {
     [self createAddEventView];
