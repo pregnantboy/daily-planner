@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -14,8 +14,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trh-qg-cIm">
                     <rect key="frame" x="2" y="2" width="385" height="50"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cc0-q4-oez">
-                            <rect key="frame" x="10" y="2" width="68" height="45.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cc0-q4-oez">
+                            <rect key="frame" x="10" y="5" width="58" height="38.5"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,7 +62,7 @@
                             </variation>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Specified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hi-Ts-V9c">
-                            <rect key="frame" x="12" y="41" width="141" height="32"/>
+                            <rect key="frame" x="12" y="41" width="305" height="32"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="enU-aI-cQa"/>
@@ -160,8 +160,8 @@
                                 <action selector="clickSuggestLocation:" destination="-1" eventType="touchUpInside" id="hOZ-Hg-N7K"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="None" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVg-Ot-Ixd">
-                            <rect key="frame" x="10" y="266" width="265.5" height="136"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVg-Ot-Ixd">
+                            <rect key="frame" x="12" y="266" width="365" height="31.5"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="BZo-i5-zhm"/>
@@ -193,6 +193,7 @@
                         <constraint firstItem="AVg-Ot-Ixd" firstAttribute="leading" secondItem="a0q-2U-Y3F" secondAttribute="leading" id="B4I-m0-rF2"/>
                         <constraint firstItem="a0q-2U-Y3F" firstAttribute="top" secondItem="8hi-Ts-V9c" secondAttribute="bottom" constant="10" id="B7c-wc-Nat"/>
                         <constraint firstAttribute="trailing" secondItem="8cr-yq-tEB" secondAttribute="trailing" id="Bvt-UG-IAu"/>
+                        <constraint firstItem="8cr-yq-tEB" firstAttribute="leading" secondItem="8hi-Ts-V9c" secondAttribute="trailing" constant="20" id="ENf-6O-M2S"/>
                         <constraint firstAttribute="trailing" secondItem="8cr-yq-tEB" secondAttribute="trailing" constant="15" id="Fjs-uv-Gzj"/>
                         <constraint firstItem="AVg-Ot-Ixd" firstAttribute="leading" secondItem="7By-Qi-Vap" secondAttribute="leading" id="G93-os-3oI"/>
                         <constraint firstItem="wKw-ck-FlC" firstAttribute="top" secondItem="3yx-zq-EHZ" secondAttribute="topMargin" id="GSG-tB-FUX"/>

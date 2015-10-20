@@ -254,20 +254,7 @@
 }
 
 # pragma mark - edit/add event
-
-- (IBAction)addNewEvent:(id)sender {
-//    self.editEventView.hidden = NO;
-//    _closePopUpButton.hidden = NO;
-//    EventObject * event = [[EventObject alloc] initWithTitle:@""
-//                                                     startTime: [NSDate date]
-//                                                       endTime: [[NSDate date] dateByAddingTimeInterval:3600]
-//                                                      location: @""
-//                                                       details: @""
-//                                               reminderMinutes: 10];
-//    [self updateValuesforPopUpEditViewWithEventObject:event];
-//    [UIView animateWithDuration:0.5 animations:^{
-////        self.editEventView.alpha = 0.95;
-//        _closePopUpButton.alpha = 1.0;
-//    }];
+- (IBAction)clickAddEvent:(id)sender {
+    [self createAddEventView];
 }
 @end

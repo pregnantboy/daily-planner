@@ -307,7 +307,7 @@
                                     <outlet property="delegate" destination="1v4-0L-7qt" id="ybU-K9-3eL"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-sb-47g">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-sb-47g">
                                 <rect key="frame" x="26" y="627" width="48" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Cancel">
@@ -531,6 +531,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="clickAddEvent:" destination="Uvh-S5-tbH" eventType="touchUpInside" id="Nxz-UY-f5z"/>
                                     <action selector="clickAddEventButton:" destination="Uvh-S5-tbH" eventType="touchUpInside" id="hld-zz-1gP"/>
                                 </connections>
                             </button>
