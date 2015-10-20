@@ -32,13 +32,5 @@
 
 // popupView
 @property (strong, nonatomic) IBOutlet UIView *popupView;
-- (void) resetPopup;
-- (void) showPopup;
-- (void) createDetailedEventView:(EventObject *)event;
-- (void) createEditEventView:(EventObject *)event;
-- (void) createAddEventView;
-
-- (IBAction)clickAddEventButton:(id)sender;
-
 
 @end

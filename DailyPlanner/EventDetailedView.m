@@ -11,27 +11,17 @@
 @implementation EventDetailedView
 
 - (IBAction)clickSuggestLocation:(id)sender {
+    NSLog(@"suggest");
+    
+}
+- (IBAction)editButton:(id)sender {
+    NSLog(@"edit");
 }
 
-- (id) init{
-    self = [super init];
-//    [[NSBundle mainBundle] loadNibNamed:@"EventDetailedView" owner:self options:nil];
-//    [self addSubview:self.view];
-    return self;
-}
-
-- (id) initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    [[NSBundle mainBundle] loadNibNamed:@"EventDetailedView" owner:self options:nil];
-    [self addSubview:self.view];
-    return self;
-}
-
-- (id) initWithCoder:(NSCoder *)aDecoder{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [[NSBundle mainBundle] loadNibNamed:@"EventDetailedView" owner:self options:nil];
-        [self addSubview:self.view];
+- (id) initWithEventObject:(EventObject *)event{
+    self = [[[NSBundle mainBundle] loadNibNamed:@"EventDetailedView" owner:self options:nil] objectAtIndex:0];
+    if (event) {
+        [self updateViewWithEventObject:event];
     }
     return self;
 }

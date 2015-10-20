@@ -11,14 +11,12 @@
 #import "EventObject.h"
 
 @interface EventDetailedView : UIView
-@property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *locationText;
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *reminder;
 @property (weak, nonatomic) IBOutlet UILabel *notes;
-- (IBAction)clickSuggestLocation:(id)sender;
 
+- (id) initWithEventObject:(EventObject *)event;
 
-- (void) updateViewWithEventObject:(EventObject *)e;
 @end
