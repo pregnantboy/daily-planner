@@ -23,4 +23,5 @@
 - (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title;
 - (IBAction)clickCancel:(id)sender;
 - (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title icon:(UIImage *)icon;
+- (IBAction)clickCancel:(id)sender;
 @end

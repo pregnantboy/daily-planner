@@ -132,7 +132,7 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
 }
 
 - (IBAction)clickCancel:(id)sender {
-    [self.locationManager deselectLocation];
+    [self.locationManager cancelChosenLocation];
     [self performSegueWithIdentifier:@"unwindToEventViewSegue" sender:self];
 }
 
@@ -143,6 +143,7 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
     marker.snippet = @"Click to choose";
     marker.map = self.map;
 }
+
 
 
 - (IBAction)selectCategory:(UISegmentedControl *)sender {

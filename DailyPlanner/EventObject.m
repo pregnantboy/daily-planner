@@ -123,4 +123,9 @@ reminderMinutes:(NSInteger)minutes{
     return _isEvent;
 }
 
+# pragma mark - Setters
+- (void)setlocation:(NSString *)location {
+    _location = location;
+}
+
 @end

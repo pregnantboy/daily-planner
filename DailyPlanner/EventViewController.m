@@ -33,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateClock];
+    
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateClock) userInfo:nil repeats:YES];
     
     // Instantiate managers
@@ -219,6 +220,7 @@
 
 #pragma  mark - Private helpers
 
+
 - (void)closePopUpViews {
     popUpEventIndex = nil;
     self.popupView.hidden = YES;
@@ -234,7 +236,6 @@
 {
     // event view controller should not be coupled so tightly with map view controller
     MapViewController * map = (MapViewController *)unwindSegue.sourceViewController;
-    
     if (map.locationManager.choseALocation){
         LocationObject * loc = map.locationManager.chosenLocation;
         if (map.locationManager.choseALocation){
@@ -251,4 +252,21 @@
     }
 }
 
+# pragma mark - edit/add event
+
+- (IBAction)addNewEvent:(id)sender {
+//    self.editEventView.hidden = NO;
+//    _closePopUpButton.hidden = NO;
+//    EventObject * event = [[EventObject alloc] initWithTitle:@""
+//                                                     startTime: [NSDate date]
+//                                                       endTime: [[NSDate date] dateByAddingTimeInterval:3600]
+//                                                      location: @""
+//                                                       details: @""
+//                                               reminderMinutes: 10];
+//    [self updateValuesforPopUpEditViewWithEventObject:event];
+//    [UIView animateWithDuration:0.5 animations:^{
+////        self.editEventView.alpha = 0.95;
+//        _closePopUpButton.alpha = 1.0;
+//    }];
+}
 @end

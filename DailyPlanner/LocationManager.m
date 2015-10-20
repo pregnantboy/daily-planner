@@ -88,7 +88,8 @@
     self.choseALocation = YES;
 }
 
-- (void) deselectLocation {
+
+- (void) cancelChosenLocation{
     self.chosenLocation = nil;
     self.choseALocation = NO;
 }
