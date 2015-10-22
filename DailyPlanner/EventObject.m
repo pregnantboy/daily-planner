@@ -74,6 +74,19 @@ reminderMinutes:(NSInteger)minutes{
                                           timeStyle:NSDateFormatterShortStyle];
 }
 
+- (NSString *)startStringWithDate {
+    return [NSDateFormatter localizedStringFromDate:_startTime
+                                          dateStyle:NSDateFormatterMediumStyle
+                                          timeStyle:NSDateFormatterMediumStyle];
+}
+
+- (NSString *)endStringWithDate {
+    return [NSDateFormatter localizedStringFromDate:_endTime
+                                          dateStyle:NSDateFormatterMediumStyle
+                                          timeStyle:NSDateFormatterMediumStyle];
+}
+
+
 
 - (NSDate *)startTime{
     return _startTime;
@@ -114,6 +127,13 @@ reminderMinutes:(NSInteger)minutes{
     return _minutes;
 }
 
+- (NSString *)minutesString {
+    if (_minutes > 0) {
+        return [NSString stringWithFormat:@"%ld", _minutes];
+    } else {
+        return @"";
+    }
+}
 
 - (BOOL)isEvent {
     return _isEvent;
@@ -122,6 +142,29 @@ reminderMinutes:(NSInteger)minutes{
 # pragma mark - Setters
 - (void)setlocation:(NSString *)location {
     _location = location;
+}
+
+- (void)setStartTime:(NSDate *)date {
+    _startTime = date;
+}
+
+- (void)setEndDate:(NSDate *)date {
+    _endTime = date;
+}
+
+- (void)setTitle:(NSString *)title {
+    _title = title;
+}
+
+- (void)setMinutes:(NSInteger)minutes {
+    if (minutes > 0) {
+        _minutes = minutes;
+    }
+    else _minutes = -1;
+}
+
+- (void)setDetails:(NSString *)details {
+    _details = details;
 }
 
 @end

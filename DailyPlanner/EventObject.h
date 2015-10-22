@@ -30,6 +30,14 @@ reminderMinutes:(NSInteger)minutes;
 - (NSString *)details;
 - (NSString *)reminderString;
 - (NSInteger)minutes;
+- (NSString *)minutesString;
 - (BOOL)isEvent;
+- (NSString *)startStringWithDate;
+- (NSString *)endStringWithDate;
+- (void)setStartTime:(NSDate *)date;
+- (void)setEndDate:(NSDate *)date;
+- (void)setTitle:(NSString *)title;
+- (void)setMinutes:(NSInteger)minutes;
+- (void)setDetails:(NSString *)details;
 
 @end

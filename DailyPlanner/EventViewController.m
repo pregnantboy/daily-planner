@@ -50,7 +50,7 @@
                                                                                       action:@selector (closePopUpViews)];
     [_closePopUpButton addGestureRecognizer:singleTap];
     [self.view insertSubview:_closePopUpButton belowSubview:self.popupView];
-    
+    [_closePopUpButton addSubview:self.saveButton];
     
     // Close all pop ups on load
     [self closePopUpViews];
@@ -181,6 +181,9 @@
     [self resetPopup];
     _closePopUpButton.hidden = NO;
     self.popupView.hidden = NO;
+    if ([view isKindOfClass:[EventEditView class]]) {
+        self.saveButton.hidden = NO;
+    }
     [self.popupView addSubview:view];
      view.frame = self.popupView.bounds;
     [UIView animateWithDuration:0.5 animations:^{
@@ -209,7 +212,7 @@
     [self showPopupWithView:view];
 }
 - (void) createAddEventView{
-    EventObject *event = [[EventObject alloc] initWithTitle:@"" startTime:[NSDate date] endTime:[NSDate dateWithTimeIntervalSinceNow:3600] location:@"" details:@"" reminderMinutes:0];
+    EventObject *event = [[EventObject alloc] initWithTitle:@"" startTime:[NSDate date] endTime:[NSDate dateWithTimeIntervalSinceNow:3600] location:@"" details:@"" reminderMinutes:-1];
     [self createEditEventView:event];
     
 }
@@ -227,6 +230,7 @@
     popUpEventIndex = nil;
     self.popupView.hidden = YES;
     self.popupView.alpha = 0.0;
+    _saveButton.hidden = YES;
     _closePopUpButton.hidden = YES;
     _closePopUpButton.alpha = 0.0;
 }
@@ -259,6 +263,8 @@
     [self createAddEventView];
 }
 
-# pragma mark - CRUD operations
+- (IBAction)saveEvent:(id)sender {
+    // do something im giving up on you
+}
 
 @end
