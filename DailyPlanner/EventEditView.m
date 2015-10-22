@@ -17,6 +17,11 @@
     return self;
 }
 
+- (IBAction)changedReminderValue:(UISlider *)sender {
+    long val = (long) sender.value;
+    self.reminder.text = [NSString stringWithFormat:@"%ld mins before", val];
+}
+
 - (void) updateViewWithEventObject:(EventObject *)event {
     self.location.text = [event location];
     self.startTime.date = [event startTime];

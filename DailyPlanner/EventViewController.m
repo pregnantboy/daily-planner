@@ -169,8 +169,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row < [_events count]) {
         EventObject *event = (EventObject *)[_events objectAtIndex:indexPath.row];
-        [self createDetailedEventView:event];
-        popUpEventIndex = indexPath;
+        if ([event isEvent]){
+            [self createDetailedEventView:event];
+            popUpEventIndex = indexPath;
+        }
     }
 }
 
@@ -181,7 +183,6 @@
     self.popupView.hidden = NO;
     [self.popupView addSubview:view];
      view.frame = self.popupView.bounds;
-    
     [UIView animateWithDuration:0.5 animations:^{
         self.popupView.alpha = 0.95;
         _closePopUpButton.alpha = 1.0;
@@ -257,4 +258,7 @@
 - (IBAction)clickAddEvent:(id)sender {
     [self createAddEventView];
 }
+
+# pragma mark - CRUD operations
+
 @end

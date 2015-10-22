@@ -16,7 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *reminder;
 @property (weak, nonatomic) IBOutlet UILabel *notes;
+- (IBAction)clickSuggestLocation:(id)sender;
 
 - (id) initWithEventObject:(EventObject *)event;
+@property (strong, nonatomic) IBOutlet UIButton *suggestLocationButton;
 
 @end

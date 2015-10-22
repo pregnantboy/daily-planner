@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EventObject.h"
 
-@interface GoogleEventObject : NSObject
+@interface GoogleEventObject : EventObject
 
+- initWithGoogleEvent:(GTLCalendarEvent *)gEvent;
+
+- (GTLCalendarEvent *) gEvent;
 @end

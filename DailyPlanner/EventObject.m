@@ -15,7 +15,6 @@
     NSString *_location;
     NSString *_details;
     NSInteger _minutes;
-    GTLCalendarEvent * _gEvent;
     BOOL _isEvent;
 }
 @end
@@ -115,9 +114,6 @@ reminderMinutes:(NSInteger)minutes{
     return _minutes;
 }
 
-- (GTLCalendarEvent *)gEvent {
-    return _gEvent;
-}
 
 - (BOOL)isEvent {
     return _isEvent;

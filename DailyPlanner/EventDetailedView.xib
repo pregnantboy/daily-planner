@@ -5,7 +5,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventDetailedView"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventDetailedView">
+            <connections>
+                <outlet property="suggestLocationButton" destination="8cr-yq-tEB" id="ZdO-Eu-HG3"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="EventDetailedView" customClass="EventDetailedView">
             <rect key="frame" x="0.0" y="0.0" width="389" height="501"/>
@@ -157,7 +161,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="clickSuggestLocation:" destination="-1" eventType="touchUpInside" id="hOZ-Hg-N7K"/>
+                                <action selector="clickSuggestLocation:" destination="-1" eventType="touchUpInside" id="R9O-Zs-1Zd"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVg-Ot-Ixd">

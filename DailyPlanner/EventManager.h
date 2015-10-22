@@ -10,6 +10,7 @@
 #import "GTMOAuth2ViewControllerTouch.h"
 #import "GTLCalendar.h"
 #import "EventObject.h"
+#import "GoogleEventObject.h"
 
 extern NSString *const eventsReceivedNotification;
 
@@ -27,6 +28,9 @@ extern NSString *const eventsReceivedNotification;
 - (NSArray *)events;
 - (void)refreshEvents;
 
-- (void) updateEvent:(NSString *)eventId;
+# pragma mark - CRUD operations
 
+- (void) createEvent:(EventObject *)event;
+- (void) updateEventWithObject:(EventObject *)newEvent index:(NSInteger) idx;
+- (void) deleteEvent:(NSInteger) idx;
 @end

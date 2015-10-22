@@ -89,11 +89,6 @@ static BOOL shouldShowLoginPageOnLoad = NO;
              didFinishSelector:@selector(displayResultWithTicket:finishedWithObject:error:)];
 }
 
-- (void) updateEvent:(EventObject *)event {
-    
-//    [GTLQueryCalendar queryForEventsUpdateWithObject:nil calendarId:@"primary" eventId:eventId];
-}
-
 // Display query results
 - (void)displayResultWithTicket:(GTLServiceTicket *)ticket
              finishedWithObject:(GTLCalendarEvents *)events
@@ -103,21 +98,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
         _events = [[NSMutableArray alloc] init];
         if (events.items.count > 0) {
             for (GTLCalendarEvent *event in events) {
-                int minutesReminder;
-                if (event.reminders.useDefault.intValue == 1) {
-                    minutesReminder = 30;
-                } else if (event.reminders.useDefault.intValue== 0) {
-                    NSLog(@"%@", event.reminders.overrides);
-                    if ([event.reminders.overrides count] > 0) {
-                        minutesReminder = [[[event.reminders.overrides objectAtIndex:0] valueForKey:@"minutes"] intValue];
-                    }
-                }
-                EventObject *aEvent = [[EventObject alloc] initWithTitle:event.summary
-                                                               startTime:[event.start.dateTime date]
-                                                                 endTime:[event.end.dateTime date]
-                                                                location:event.location
-                                                                 details:event.descriptionProperty
-                                                         reminderMinutes:minutesReminder];
+                GoogleEventObject *aEvent = [[GoogleEventObject alloc] initWithGoogleEvent:event];
                 [_events addObject:aEvent];
             }
         } else {
@@ -286,6 +267,33 @@ static BOOL shouldShowLoginPageOnLoad = NO;
         }
     }
     return YES;
+}
+# pragma mark - CRUD operations
+
+
+- (void) createEvent:(EventObject *)event{
+        // update if this is a google event object
+//        GoogleEventObject *event = (GoogleEventObject *) self.events[idx];
+//        GTLCalendarEvent *gEvent = [event gEvent];
+//        [GTLQueryCalendar queryForEventsInsertWithObject:gEvent calendarId:@"primary"];
+}
+
+- (void) updateEventWithObject:(EventObject *)newEvent index:(NSInteger) idx{
+    if ([self.events[idx] class] == [GoogleEventObject class]){
+        // update if this is a google event object
+        GoogleEventObject *event = (GoogleEventObject *) self.events[idx];
+        GTLCalendarEvent *gEvent = [event gEvent];
+        [GTLQueryCalendar queryForEventsUpdateWithObject:gEvent calendarId:@"primary" eventId:[gEvent identifier]];
+    }
+    
+}
+
+- (void) deleteEvent:(NSInteger) idx{
+    if ([self.events[idx] class] == [GoogleEventObject class]){
+        GoogleEventObject *event = (GoogleEventObject *) self.events[idx];
+        GTLCalendarEvent *gEvent = [event gEvent];
+        [GTLQueryCalendar queryForEventsDeleteWithCalendarId:@"primary" eventId:[gEvent identifier]];
+    }
 }
 
 @end

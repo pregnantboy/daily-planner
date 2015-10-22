@@ -44,6 +44,8 @@
 		4014DE291BCF6C0A00C9AA88 /* KML in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE281BCF6C0A00C9AA88 /* KML */; };
 		4014DE2C1BCF6C2000C9AA88 /* foodicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE2A1BCF6C2000C9AA88 /* foodicon.png */; };
 		4014DE2D1BCF6C2000C9AA88 /* soccericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4014DE2B1BCF6C2000C9AA88 /* soccericon.png */; };
+		4068DAB91BD733D9003D1F72 /* GoogleEventObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4068DAB81BD733D9003D1F72 /* GoogleEventObject.m */; };
+		4068DABF1BD8A2C2003D1F72 /* done-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4068DABE1BD8A2C2003D1F72 /* done-icon.png */; };
 		409025191BD244E4004253D7 /* add-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 409025171BD244E4004253D7 /* add-icon.png */; };
 		4090251A1BD244E4004253D7 /* cancel-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 409025181BD244E4004253D7 /* cancel-icon.png */; };
 		409025241BD24BBD004253D7 /* EventDetailedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 409025231BD24BBD004253D7 /* EventDetailedView.m */; };
@@ -147,6 +149,9 @@
 		4014DE281BCF6C0A00C9AA88 /* KML */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KML; path = DailyPlanner/KML; sourceTree = "<group>"; };
 		4014DE2A1BCF6C2000C9AA88 /* foodicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodicon.png; sourceTree = "<group>"; };
 		4014DE2B1BCF6C2000C9AA88 /* soccericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soccericon.png; sourceTree = "<group>"; };
+		4068DAB71BD733D9003D1F72 /* GoogleEventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleEventObject.h; sourceTree = "<group>"; };
+		4068DAB81BD733D9003D1F72 /* GoogleEventObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleEventObject.m; sourceTree = "<group>"; };
+		4068DABE1BD8A2C2003D1F72 /* done-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "done-icon.png"; path = "DailyPlanner/done-icon.png"; sourceTree = "<group>"; };
 		409025171BD244E4004253D7 /* add-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-icon.png"; sourceTree = "<group>"; };
 		409025181BD244E4004253D7 /* cancel-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-icon.png"; sourceTree = "<group>"; };
 		409025221BD24BBD004253D7 /* EventDetailedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailedView.h; sourceTree = "<group>"; };
@@ -186,6 +191,7 @@
 		3C060EC11B9E9FE9003AE123 = {
 			isa = PBXGroup;
 			children = (
+				4068DABE1BD8A2C2003D1F72 /* done-icon.png */,
 				4014DE281BCF6C0A00C9AA88 /* KML */,
 				3C64BCD51BA12D2B0058F42A /* SystemConfiguration.framework */,
 				3C64BCD31BA12D240058F42A /* Security.framework */,
@@ -216,6 +222,8 @@
 				3C479FA51BA47B2E0034D10E /* EventManager.m */,
 				3C36202C1BB113FD00240340 /* EventObject.h */,
 				3C36202D1BB113FD00240340 /* EventObject.m */,
+				4068DAB71BD733D9003D1F72 /* GoogleEventObject.h */,
+				4068DAB81BD733D9003D1F72 /* GoogleEventObject.m */,
 				409025221BD24BBD004253D7 /* EventDetailedView.h */,
 				409025231BD24BBD004253D7 /* EventDetailedView.m */,
 				4090252C1BD2B48D004253D7 /* EventEditView.h */,
@@ -443,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4068DABF1BD8A2C2003D1F72 /* done-icon.png in Resources */,
 				409025191BD244E4004253D7 /* add-icon.png in Resources */,
 				4090251A1BD244E4004253D7 /* cancel-icon.png in Resources */,
 				40D064831BCF7EE4005D7407 /* location-icon.png in Resources */,
@@ -543,6 +552,7 @@
 				3C64BCE21BA15CCF0058F42A /* EventTableViewCell.m in Sources */,
 				3C64BCE51BA1A0960058F42A /* WeatherManager.m in Sources */,
 				3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */,
+				4068DAB91BD733D9003D1F72 /* GoogleEventObject.m in Sources */,
 				3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */,
 				3C060ED01B9E9FEA003AE123 /* main.m in Sources */,
 				4090252E1BD2B48D004253D7 /* EventEditView.m in Sources */,

@@ -6,7 +6,11 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventEditView"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventEditView">
+            <connections>
+                <outlet property="reminder" destination="eXS-wG-8Pu" id="su1-d0-ZPf"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="Clb-UY-OFr" userLabel="EventEditView" customClass="EventEditView">
             <rect key="frame" x="0.0" y="0.0" width="600" height="665"/>
@@ -15,10 +19,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiI-EF-e5d">
                     <rect key="frame" x="2" y="2" width="596" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bD-tZ-Z2R">
-                            <rect key="frame" x="538" y="10" width="37" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bD-tZ-Z2R">
+                            <rect key="frame" x="538" y="9.5" width="37" height="30"/>
                             <animations/>
-                            <state key="normal" title="Done">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="AwP-WB-2De"/>
+                                <constraint firstAttribute="width" constant="37" id="BRd-xd-zSB"/>
+                            </constraints>
+                            <state key="normal" title="Done" image="done-icon.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -68,17 +76,6 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mins before" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-wG-8Pu">
-                            <rect key="frame" x="10" y="288" width="154" height="32"/>
-                            <animations/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="154" id="0Kj-np-J5x"/>
-                                <constraint firstAttribute="height" constant="32" id="RZ1-OX-N52"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-4D-xpr">
                             <rect key="frame" x="10" y="330" width="72" height="32"/>
                             <animations/>
@@ -172,6 +169,24 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="5" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="7yA-lV-pes">
+                            <rect key="frame" x="8" y="289" width="242" height="31"/>
+                            <animations/>
+                            <connections>
+                                <action selector="changedReminderValue:" destination="-1" eventType="valueChanged" id="eyN-3i-SPO"/>
+                            </connections>
+                        </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mins before" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-wG-8Pu">
+                            <rect key="frame" x="258" y="288" width="154" height="32"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="154" id="0Kj-np-J5x"/>
+                                <constraint firstAttribute="height" constant="32" id="RZ1-OX-N52"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <animations/>
                     <constraints>
@@ -184,6 +199,7 @@
                         <constraint firstItem="dua-dD-P6G" firstAttribute="top" secondItem="iOP-c5-8ap" secondAttribute="bottom" constant="10" id="C7o-Lq-db5"/>
                         <constraint firstItem="ceT-4D-xpr" firstAttribute="leading" secondItem="rj4-9Z-Uko" secondAttribute="leading" id="Cux-hx-JJt"/>
                         <constraint firstItem="wxk-iT-4Wy" firstAttribute="top" secondItem="dua-dD-P6G" secondAttribute="bottom" constant="5" id="D9a-5A-p2t"/>
+                        <constraint firstItem="ZzE-sL-BAp" firstAttribute="leading" secondItem="7yA-lV-pes" secondAttribute="leading" id="Dha-o6-2Gm"/>
                         <constraint firstItem="ceT-4D-xpr" firstAttribute="leading" secondItem="hKf-YJ-k2w" secondAttribute="leading" id="IU4-6B-Iz0"/>
                         <constraint firstItem="dua-dD-P6G" firstAttribute="top" secondItem="iOP-c5-8ap" secondAttribute="bottom" constant="16" id="Ine-3e-zPe"/>
                         <constraint firstAttribute="trailing" secondItem="eXS-wG-8Pu" secondAttribute="trailing" constant="420" id="JRC-lv-FCK"/>
@@ -196,8 +212,10 @@
                         <constraint firstItem="iOP-c5-8ap" firstAttribute="width" secondItem="8TI-E5-Abx" secondAttribute="width" multiplier="0.7" id="SAc-B4-xef"/>
                         <constraint firstItem="hKf-YJ-k2w" firstAttribute="leading" secondItem="ZzE-sL-BAp" secondAttribute="leading" id="TBN-ga-hni"/>
                         <constraint firstItem="eXS-wG-8Pu" firstAttribute="top" secondItem="ZzE-sL-BAp" secondAttribute="bottom" constant="2" id="Wef-Hg-JIw"/>
+                        <constraint firstItem="bta-be-QMs" firstAttribute="width" secondItem="7yA-lV-pes" secondAttribute="width" id="Zra-Yx-Gpc"/>
                         <constraint firstItem="wxk-iT-4Wy" firstAttribute="top" secondItem="dua-dD-P6G" secondAttribute="bottom" constant="2" id="Zvq-KC-R3o"/>
                         <constraint firstItem="hKf-YJ-k2w" firstAttribute="top" secondItem="8TI-E5-Abx" secondAttribute="topMargin" id="c7F-L1-6AR"/>
+                        <constraint firstItem="eXS-wG-8Pu" firstAttribute="leading" secondItem="7yA-lV-pes" secondAttribute="trailing" constant="10" id="gfl-DW-vu7"/>
                         <constraint firstItem="eXS-wG-8Pu" firstAttribute="top" secondItem="ZzE-sL-BAp" secondAttribute="bottom" constant="1" id="ikg-yb-wEu"/>
                         <constraint firstItem="ceT-4D-xpr" firstAttribute="leading" secondItem="eXS-wG-8Pu" secondAttribute="leading" id="irq-nh-xz3"/>
                         <constraint firstAttribute="bottom" secondItem="ceT-4D-xpr" secondAttribute="bottom" constant="228" id="iwH-Dl-JoP"/>
@@ -207,13 +225,16 @@
                         <constraint firstItem="ceT-4D-xpr" firstAttribute="leading" secondItem="hKf-YJ-k2w" secondAttribute="leading" id="nba-Kp-0Ak"/>
                         <constraint firstItem="iOP-c5-8ap" firstAttribute="leading" secondItem="hKf-YJ-k2w" secondAttribute="leading" id="p8K-7u-te0"/>
                         <constraint firstAttribute="width" secondItem="rj4-9Z-Uko" secondAttribute="width" constant="20" id="pIp-fV-ojS"/>
+                        <constraint firstItem="eXS-wG-8Pu" firstAttribute="centerY" secondItem="7yA-lV-pes" secondAttribute="centerY" id="ps1-gX-g5p"/>
                         <constraint firstItem="dua-dD-P6G" firstAttribute="top" secondItem="8TI-E5-Abx" secondAttribute="top" constant="5" id="sjI-l9-FDP"/>
                         <constraint firstItem="dua-dD-P6G" firstAttribute="leading" secondItem="hKf-YJ-k2w" secondAttribute="leading" id="uXb-6f-Yje"/>
                         <constraint firstItem="ZzE-sL-BAp" firstAttribute="top" secondItem="wxk-iT-4Wy" secondAttribute="bottom" constant="10" id="vxT-Ak-R2y"/>
                         <constraint firstAttribute="centerX" secondItem="wxk-iT-4Wy" secondAttribute="centerX" id="xFr-9O-G1l"/>
+                        <constraint firstItem="7yA-lV-pes" firstAttribute="top" secondItem="ZzE-sL-BAp" secondAttribute="bottom" constant="2" id="zmz-o3-AqE"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
+                            <exclude reference="RC2-8Z-BHD"/>
                             <exclude reference="p8K-7u-te0"/>
                             <exclude reference="BqP-kC-y0h"/>
                             <exclude reference="C7o-Lq-db5"/>
@@ -221,14 +242,15 @@
                             <exclude reference="uXb-6f-Yje"/>
                             <exclude reference="Zvq-KC-R3o"/>
                             <exclude reference="lZi-aY-Lwf"/>
-                            <exclude reference="1HC-Ry-p1r"/>
-                            <exclude reference="8Ic-pF-Ps5"/>
-                            <exclude reference="JRC-lv-FCK"/>
-                            <exclude reference="Wef-Hg-JIw"/>
                             <exclude reference="IU4-6B-Iz0"/>
                             <exclude reference="MI0-D8-PTd"/>
                             <exclude reference="irq-nh-xz3"/>
                             <exclude reference="OIc-fO-6dR"/>
+                            <exclude reference="1HC-Ry-p1r"/>
+                            <exclude reference="8Ic-pF-Ps5"/>
+                            <exclude reference="JRC-lv-FCK"/>
+                            <exclude reference="Wef-Hg-JIw"/>
+                            <exclude reference="ikg-yb-wEu"/>
                         </mask>
                     </variation>
                 </scrollView>
@@ -266,4 +288,7 @@
             <point key="canvasLocation" x="602" y="408.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="done-icon.png" width="600" height="587"/>
+    </resources>
 </document>

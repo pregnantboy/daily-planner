@@ -30,7 +30,6 @@ reminderMinutes:(NSInteger)minutes;
 - (NSString *)details;
 - (NSString *)reminderString;
 - (NSInteger)minutes;
-- (GTLCalendarEvent *) gEvent;
 - (BOOL)isEvent;
 
 @end

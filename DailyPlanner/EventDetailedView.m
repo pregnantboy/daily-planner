@@ -10,12 +10,11 @@
 
 @implementation EventDetailedView
 
-- (IBAction)clickSuggestLocation:(id)sender {
-    NSLog(@"suggest");
-    
-}
 - (IBAction)editButton:(id)sender {
     NSLog(@"edit");
+}
+
+- (IBAction)clickSuggestLocation:(id)sender {
 }
 
 - (id) initWithEventObject:(EventObject *)event{

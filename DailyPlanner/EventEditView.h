@@ -15,7 +15,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *details;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startTime;
 @property (weak, nonatomic) IBOutlet UIDatePicker *endTime;
+@property (strong, nonatomic) IBOutlet UILabel *reminder;
 
 - (id) initWithEventObject:(EventObject *)event;
+- (IBAction)changedReminderValue:(UISlider *)sender;
 
 @end
