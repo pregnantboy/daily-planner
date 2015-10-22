@@ -69,6 +69,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 - (void)fetchEvents {
     
     GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"primary"];
+    [GTL_AreBoolsEqual(<#BOOL b1#>, <#BOOL b2#>)
     query.maxResults = 10;
     
     // For debugging purposes, set timeMin to 00:00 of today

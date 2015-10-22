@@ -11,10 +11,14 @@
 #import "EventObject.h"
 
 @interface EventEditView : UIView
+@property (weak, nonatomic) IBOutlet UITextField *title;
 @property (weak, nonatomic) IBOutlet UITextField *location;
 @property (weak, nonatomic) IBOutlet UITextView *details;
-@property (weak, nonatomic) IBOutlet UIDatePicker *startTime;
-@property (weak, nonatomic) IBOutlet UIDatePicker *endTime;
+@property (weak, nonatomic) IBOutlet UITextField *startTime;
+@property (weak, nonatomic) IBOutlet UITextField *endTime;
+@property (weak, nonatomic) IBOutlet UITextField *minutes;
+@property (weak, nonatomic) IBOutlet UIView *datePickerView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 - (id) initWithEventObject:(EventObject *)event;
 

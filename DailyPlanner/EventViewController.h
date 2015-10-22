@@ -31,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
 
 // popupView
-- (IBAction)clickAddEvent:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *popupView;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @end

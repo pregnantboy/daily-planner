@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Uvh-S5-tbH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Uvh-S5-tbH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -513,7 +513,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-oy-ddX">
-                                <rect key="frame" x="162" y="611" width="50" height="50"/>
+                                <rect key="frame" x="162" y="606.5" width="50" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ItJ-XC-Ofe"/>
@@ -540,22 +540,45 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2g9-tv-5le">
+                                <rect key="frame" x="211" y="609" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="9ci-LT-HWm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="M9X-FV-qjD"/>
+                                    <constraint firstAttribute="height" constant="50" id="hhg-TD-1QM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="y1A-OU-ygl"/>
+                                </constraints>
+                                <state key="normal" title="Add" image="greentick.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="M9X-FV-qjD"/>
+                                        <exclude reference="y1A-OU-ygl"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="saveEvent:" destination="Uvh-S5-tbH" eventType="touchUpInside" id="vx1-J4-wtj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="DX9-W9-vY5" firstAttribute="centerX" secondItem="2g9-tv-5le" secondAttribute="centerX" id="2Ok-hq-9Zr"/>
                             <constraint firstAttribute="centerX" secondItem="KAR-oy-ddX" secondAttribute="centerX" id="4Te-ds-Vib"/>
                             <constraint firstAttribute="centerY" secondItem="DX9-W9-vY5" secondAttribute="centerY" id="5GG-si-wYO"/>
                             <constraint firstAttribute="centerX" secondItem="d79-e8-TOo" secondAttribute="centerX" constant="10" id="5Ko-4b-YMQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kjh-pc-buA" secondAttribute="trailing" id="7xR-KW-Wtf"/>
+                            <constraint firstItem="KAR-oy-ddX" firstAttribute="centerY" secondItem="2g9-tv-5le" secondAttribute="centerY" id="96s-iI-A4g"/>
                             <constraint firstItem="ZZu-DS-cOt" firstAttribute="top" secondItem="d79-e8-TOo" secondAttribute="bottom" constant="5" id="Az0-JB-hz0"/>
                             <constraint firstItem="DX9-W9-vY5" firstAttribute="width" secondItem="FPC-qp-J8h" secondAttribute="width" id="D6Q-TT-l9X"/>
                             <constraint firstAttribute="centerX" secondItem="DX9-W9-vY5" secondAttribute="centerX" id="EUC-sn-WKK"/>
                             <constraint firstItem="iV0-C5-c3F" firstAttribute="leading" secondItem="Sp0-eI-oxO" secondAttribute="trailing" constant="3" id="IO2-mi-698"/>
                             <constraint firstItem="kjh-pc-buA" firstAttribute="top" secondItem="Sp0-eI-oxO" secondAttribute="bottom" constant="2" id="LSg-z5-viz"/>
                             <constraint firstItem="kjh-pc-buA" firstAttribute="leading" secondItem="FPC-qp-J8h" secondAttribute="leadingMargin" id="M1m-Lb-vaw"/>
-                            <constraint firstItem="KAR-oy-ddX" firstAttribute="top" secondItem="kjh-pc-buA" secondAttribute="bottom" constant="14" id="PmK-yj-G9w"/>
+                            <constraint firstItem="KAR-oy-ddX" firstAttribute="top" secondItem="kjh-pc-buA" secondAttribute="bottom" constant="10" id="PmK-yj-G9w"/>
                             <constraint firstItem="Sp0-eI-oxO" firstAttribute="trailing" secondItem="kjh-pc-buA" secondAttribute="trailing" id="TY3-5V-uSU"/>
                             <constraint firstItem="d79-e8-TOo" firstAttribute="top" secondItem="TsK-m1-G7s" secondAttribute="bottom" constant="35" id="Tkr-j6-4sL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oJl-kw-Ghz" secondAttribute="trailing" constant="-10" id="Ujq-4k-fsl"/>
@@ -592,6 +615,7 @@
                         <outlet property="lastUpdated" destination="Sp0-eI-oxO" id="cia-hM-ZvM"/>
                         <outlet property="popupView" destination="3vc-2R-0Rf" id="yvf-vD-sLR"/>
                         <outlet property="refresh" destination="iV0-C5-c3F" id="BTg-bO-Ajk"/>
+                        <outlet property="saveButton" destination="2g9-tv-5le" id="9U2-H4-fZq"/>
                         <outlet property="settingsButton" destination="oJl-kw-Ghz" id="12G-ws-esw"/>
                     </connections>
                 </viewController>
@@ -608,6 +632,7 @@
     <resources>
         <image name="add-icon.png" width="500" height="500"/>
         <image name="cancel-icon.png" width="256" height="256"/>
+        <image name="greentick.png" width="1000" height="1000"/>
         <image name="mainBackground.jpg" width="640" height="1136"/>
         <image name="partlyCloudy.png" width="256" height="256"/>
         <image name="refresh.png" width="128" height="128"/>
