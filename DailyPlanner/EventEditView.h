@@ -21,6 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 - (id) initWithEventObject:(EventObject *)event;
-- (IBAction)changedReminderValue:(UISlider *)sender;
+- (EventObject *) eventObject;
 
 @end

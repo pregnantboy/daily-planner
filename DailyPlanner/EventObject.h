@@ -35,7 +35,7 @@ reminderMinutes:(NSInteger)minutes;
 - (NSString *)startStringWithDate;
 - (NSString *)endStringWithDate;
 - (void)setStartTime:(NSDate *)date;
-- (void)setEndDate:(NSDate *)date;
+- (void)setEndTime:(NSDate *)date;
 - (void)setTitle:(NSString *)title;
 - (void)setMinutes:(NSInteger)minutes;
 - (void)setDetails:(NSString *)details;

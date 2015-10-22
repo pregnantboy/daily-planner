@@ -43,13 +43,13 @@ EventObject *_event;
 shouldChangeCharactersInRange:(NSRange)range
 replacementString:(NSString *)string {
     if (textField == self.title) {
-        [_event setTitle:self.title.text];
+        [_event setTitle:[textField.text stringByAppendingString:string]];
     }
     if (textField == self.location) {
-        [_event setLocation:self.location.text];
+        [_event setLocation:[textField.text stringByAppendingString:string]];
     }
     if (textField == self.minutes) {
-        [_event setMinutes:self.minutes.text.integerValue];
+        [_event setMinutes:[textField.text stringByAppendingString:string].integerValue];
         NSLog(@"textField %f,", textField.frame.origin.y);
     }
     return YES;
@@ -73,11 +73,25 @@ replacementString:(NSString *)string {
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if (textField == self.startTime) {
         _datePickerForWhich = 1;
+        self.datePicker.minimumDate = [NSDate date];
+        if ([_event startTime]){
+            [self.datePicker setDate:[_event startTime] animated:NO];
+        } else {
+            [self.datePicker setDate:[NSDate date] animated:NO];        }
+        
         [self showDatePickerView];
         return NO;
     }
     if (textField == self.endTime) {
         _datePickerForWhich = 2;
+        if ([_event startTime]){
+            self.datePicker.minimumDate = [_event startTime];
+        }
+        if ([_event endTime]){
+            [self.datePicker setDate:[_event endTime] animated:NO];
+        } else {
+            [self.datePicker setDate:[[NSDate date] dateByAddingTimeInterval:3600] animated:NO];
+        }
         [self showDatePickerView];
         return NO;
     }
@@ -97,10 +111,10 @@ replacementString:(NSString *)string {
 
 // Need to do startdate before enddate checking somewhere but im too lazy
 - (IBAction)dateSetButton:(id)sender {
-    if (_datePickerForWhich ==1) {
+    if (_datePickerForWhich == 1) {
         [_event setStartTime:self.datePicker.date];
     } else if (_datePickerForWhich == 2) {
-        [_event setEndDate:self.datePicker.date];
+        [_event setEndTime:self.datePicker.date];
     }
     _datePickerForWhich = 0;
     [self updateView];

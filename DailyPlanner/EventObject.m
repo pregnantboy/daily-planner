@@ -77,13 +77,13 @@ reminderMinutes:(NSInteger)minutes{
 - (NSString *)startStringWithDate {
     return [NSDateFormatter localizedStringFromDate:_startTime
                                           dateStyle:NSDateFormatterMediumStyle
-                                          timeStyle:NSDateFormatterMediumStyle];
+                                          timeStyle:NSDateFormatterShortStyle];
 }
 
 - (NSString *)endStringWithDate {
     return [NSDateFormatter localizedStringFromDate:_endTime
                                           dateStyle:NSDateFormatterMediumStyle
-                                          timeStyle:NSDateFormatterMediumStyle];
+                                          timeStyle:NSDateFormatterShortStyle];
 }
 
 
@@ -148,7 +148,7 @@ reminderMinutes:(NSInteger)minutes{
     _startTime = date;
 }
 
-- (void)setEndDate:(NSDate *)date {
+- (void)setEndTime:(NSDate *)date {
     _endTime = date;
 }
 

@@ -265,6 +265,10 @@
 
 - (IBAction)saveEvent:(id)sender {
     // do something im giving up on you
+    NSLog(@"Saving event...");
+    EventEditView *theView = (EventEditView *)self.popupView.subviews[0];
+    EventObject *event = [theView eventObject];
+    NSLog(@"%@", event.title);
 }
 
 @end
