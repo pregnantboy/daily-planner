@@ -36,6 +36,9 @@ reminderMinutes:(NSInteger)minutes{
         _details = details;
         _minutes = minutes;
         _isEvent = YES;
+        if (!_minutes) {
+            _minutes = -1;
+        }
     }
     return self;
 }

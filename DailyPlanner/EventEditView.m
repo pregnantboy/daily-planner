@@ -7,21 +7,37 @@
 //
 
 #import "EventEditView.h"
+#import "EventViewController.h"
+@interface EventEditView () {
+    EventViewController *_vc;
+    EventObject *_event;
+}
+@end
 
 @implementation EventEditView
 
 int _datePickerForWhich;
-EventObject *_event;
 
-- (id) initWithEventObject:(EventObject *)event {
+- (id) initWithEventObject:(EventObject *)event withViewController:(UIViewController *)vc{
     _event = event;
     self = [[[NSBundle mainBundle] loadNibNamed:@"EventEditView" owner:self options:nil] objectAtIndex:0];
-    
+    if ([vc isKindOfClass:[EventViewController class]]) {
+        _vc = (EventViewController *)vc;
+    }
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     
     [self addGestureRecognizer:tap];
+    [self.title addTarget:self
+                  action:@selector(textFieldDidChange:)
+        forControlEvents:UIControlEventEditingChanged];
+    [self.location addTarget:self
+                  action:@selector(textFieldDidChange:)
+        forControlEvents:UIControlEventEditingChanged];
+    [self.minutes addTarget:self
+                  action:@selector(textFieldDidChange:)
+        forControlEvents:UIControlEventEditingChanged];
     return self;
 }
 
@@ -39,20 +55,17 @@ EventObject *_event;
     }
 }
 
-- (BOOL)textField:(UITextField *)textField
-shouldChangeCharactersInRange:(NSRange)range
-replacementString:(NSString *)string {
+- (void)textFieldDidChange:(UITextField *) textField {
     if (textField == self.title) {
-        [_event setTitle:[textField.text stringByAppendingString:string]];
+        [_event setTitle:textField.text];
+        NSLog(@"%@",textField.text);
     }
     if (textField == self.location) {
-        [_event setLocation:[textField.text stringByAppendingString:string]];
+        [_event setLocation:textField.text];
     }
     if (textField == self.minutes) {
-        [_event setMinutes:[textField.text stringByAppendingString:string].integerValue];
-        NSLog(@"textField %f,", textField.frame.origin.y);
+        [_event setMinutes:textField.text.integerValue];
     }
-    return YES;
 }
 
 - (void)dismissKeyboard {
@@ -119,6 +132,17 @@ replacementString:(NSString *)string {
     _datePickerForWhich = 0;
     [self updateView];
     [self hideDatePickerView];
+}
+
+- (IBAction)deleteButton:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning!" message: @"Confirm deletion?" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *noButton = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction *yesButton = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
+        [_vc deleteEventforSelectedEvent];
+    }];
+    [alert addAction:yesButton];
+    [alert addAction:noButton];
+    [_vc presentViewController:alert animated:YES completion:nil];
 }
 
 - (EventObject *)eventObject {

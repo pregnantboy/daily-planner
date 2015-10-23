@@ -30,7 +30,8 @@ extern NSString *const eventsReceivedNotification;
 
 # pragma mark - CRUD operations
 
-- (void) createEvent:(EventObject *)event;
-- (void) updateEventWithObject:(EventObject *)newEvent index:(NSInteger) idx;
-- (void) deleteEvent:(NSInteger) idx;
+- (void)addEventWithObject:(EventObject *)event;
+- (void)updateEventWithEvent:(EventObject *)event;
+- (void)deleteEvent:(GTLCalendarEvent *)event;
+
 @end

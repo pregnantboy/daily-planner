@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *datePickerView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
-- (id) initWithEventObject:(EventObject *)event;
+- (id) initWithEventObject:(EventObject *)event withViewController:(UIViewController *)vc;
 - (EventObject *) eventObject;
 
 @end

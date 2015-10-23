@@ -128,7 +128,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
     
     // Instantiate AuthController
     GTMOAuth2ViewControllerTouch *authController;
-    NSArray *scopes = [NSArray arrayWithObjects:kGTLAuthScopeCalendarReadonly, nil];
+    NSArray *scopes = [NSArray arrayWithObjects:kGTLAuthScopeCalendar, nil];
     authController = [[GTMOAuth2ViewControllerTouch alloc]
                       initWithScope:[scopes componentsJoinedByString:@" "]
                       clientID:kClientID
@@ -271,28 +271,71 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 # pragma mark - CRUD operations
 
 
-- (void) createEvent:(EventObject *)event{
-        // update if this is a google event object
-//        GoogleEventObject *event = (GoogleEventObject *) self.events[idx];
-//        GTLCalendarEvent *gEvent = [event gEvent];
-//        [GTLQueryCalendar queryForEventsInsertWithObject:gEvent calendarId:@"primary"];
-}
-
-- (void) updateEventWithObject:(EventObject *)newEvent index:(NSInteger) idx{
-    if ([self.events[idx] class] == [GoogleEventObject class]){
-        // update if this is a google event object
-        GoogleEventObject *event = (GoogleEventObject *) self.events[idx];
-        GTLCalendarEvent *gEvent = [event gEvent];
-        [GTLQueryCalendar queryForEventsUpdateWithObject:gEvent calendarId:@"primary" eventId:[gEvent identifier]];
+- (void)addEventWithObject:(EventObject *)event {
+    if (!event.title || [event.title isEqualToString:@""]) {
+        [self showAlert:@"Ooops!" message:@"Event title cannot be null."];
+        return;
     }
-    
+    if ([event isKindOfClass:[GoogleEventObject class]]) {
+        GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsInsertWithObject:[(GoogleEventObject *)event gEvent] calendarId:@"primary"];
+        [self.service executeQuery:query
+                          delegate:self
+                 didFinishSelector:@selector(addEventWithTicket:finishedWithEvent:error:)];
+    } else {
+        [self showAlert:@"Not a Google Calendar event." message:nil];
+    }
 }
 
-- (void) deleteEvent:(NSInteger) idx{
-    if ([self.events[idx] class] == [GoogleEventObject class]){
-        GoogleEventObject *event = (GoogleEventObject *) self.events[idx];
-        GTLCalendarEvent *gEvent = [event gEvent];
-        [GTLQueryCalendar queryForEventsDeleteWithCalendarId:@"primary" eventId:[gEvent identifier]];
+- (void)addEventWithTicket:(GTLServiceTicket *)ticket finishedWithEvent:(GTLCalendarEvent *)event error:(NSError *) error {
+    if (error) {
+        [self showAlert:@"Add Event Error" message:error.localizedDescription];
+    } else {
+        [self showAlert:[NSString stringWithFormat:@"%@ successfully added.",event.summary] message:nil];
+        [self refreshEvents];
+    }
+}
+
+- (void)updateEventWithEvent:(EventObject *)event{
+    if (!event.title || [event.title isEqualToString:@""]) {
+        [self showAlert:@"Ooops!" message:@"Event title cannot be null."];
+        return;
+    }
+    if ([event isKindOfClass:[GoogleEventObject class]]) {
+        GTLCalendarEvent *gEvent = [(GoogleEventObject *)event gEvent];
+        GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsUpdateWithObject:gEvent calendarId:@"primary" eventId:gEvent.identifier];
+        [self.service executeQuery:query
+                          delegate:self
+                 didFinishSelector:@selector(updateEventWithTicket:finishedWithEvent:error:)];
+    } else {
+        [self showAlert:@"Not a Google Calendar event." message:nil];
+    }
+}
+
+- (void)updateEventWithTicket:(GTLServiceTicket *)ticket finishedWithEvent:(GTLCalendarEvent *)event error:(NSError *) error {
+    if (error) {
+        [self showAlert:@"Update Event Error" message:error.localizedDescription];
+    } else {
+        [self showAlert:[NSString stringWithFormat:@"%@ successfully updated.",event.summary] message:nil];
+        [self refreshEvents];
+    }
+}
+
+- (void)deleteEvent:(GTLCalendarEvent *)event{
+    if ([event isKindOfClass:[GoogleEventObject class]]){
+        GTLCalendarEvent *gEvent = [(GoogleEventObject *)event gEvent];
+         GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsDeleteWithCalendarId:@"primary" eventId:[gEvent identifier]];
+        [self.service executeQuery:query
+                          delegate:self
+                 didFinishSelector:@selector(deleteEventWithTicket:finishedWithEvent:error:)];
+    }
+}
+
+- (void)deleteEventWithTicket:(GTLServiceTicket *)ticket finishedWithEvent:(id)nilObject error:(NSError *) error {
+    if (error) {
+        [self showAlert:@"Delete Event Error" message:error.localizedDescription];
+    } else {
+        [self showAlert:[NSString stringWithFormat:@"Event successfully deleted."] message:nil];
+        [self refreshEvents];
     }
 }
 

@@ -19,11 +19,12 @@
 #import "MapViewController.h"
 
 @interface EventViewController() {
-    NSMutableArray *_events;
+    NSArray *_events;
     EventManager *_eventManager;
     WeatherManager *_weatherManager;
     UIView *_closePopUpButton;
-    NSIndexPath * popUpEventIndex;
+    NSInteger _selectedRowIndex;
+    EventEditView *_currentEventEditView;
 }
 
 @end
@@ -171,7 +172,7 @@
         EventObject *event = (EventObject *)[_events objectAtIndex:indexPath.row];
         if ([event isEvent]){
             [self createDetailedEventView:event];
-            popUpEventIndex = indexPath;
+            _selectedRowIndex = indexPath.row;
         }
     }
 }
@@ -183,6 +184,7 @@
     self.popupView.hidden = NO;
     if ([view isKindOfClass:[EventEditView class]]) {
         self.saveButton.hidden = NO;
+        _currentEventEditView = (EventEditView *)view;
     }
     [self.popupView addSubview:view];
      view.frame = self.popupView.bounds;
@@ -204,16 +206,17 @@
 
 
 - (void) createDetailedEventView:(EventObject *)event {
-    EventDetailedView *view = [[EventDetailedView alloc] initWithEventObject:event];
+    EventDetailedView *view = [[EventDetailedView alloc] initWithEventObject:event andViewController:self];
     [self showPopupWithView:view];
 }
 - (void) createEditEventView:(EventObject *)event{
-    EventEditView *view = [[EventEditView alloc] initWithEventObject:event];
+    EventEditView *view = [[EventEditView alloc] initWithEventObject:event withViewController:self];
     [self showPopupWithView:view];
 }
 - (void) createAddEventView{
-    EventObject *event = [[EventObject alloc] initWithTitle:@"" startTime:[NSDate date] endTime:[NSDate dateWithTimeIntervalSinceNow:3600] location:@"" details:@"" reminderMinutes:-1];
-    [self createEditEventView:event];
+    // For now, only create google event object
+    GoogleEventObject *newEvent = [[GoogleEventObject alloc] initWithNewEvent];
+    [self createEditEventView:newEvent];
     
 }
 
@@ -227,12 +230,13 @@
 
 
 - (void)closePopUpViews {
-    popUpEventIndex = nil;
+    _selectedRowIndex = -1;
     self.popupView.hidden = YES;
     self.popupView.alpha = 0.0;
     _saveButton.hidden = YES;
     _closePopUpButton.hidden = YES;
     _closePopUpButton.alpha = 0.0;
+    [self.view endEditing:YES];
 }
 
 
@@ -246,10 +250,10 @@
         LocationObject * loc = map.locationManager.chosenLocation;
         if (map.locationManager.choseALocation){
             NSLog(@"Location: %@", loc.title);
-            if (popUpEventIndex) {
-                EventObject * e = [_events objectAtIndex:popUpEventIndex.row];
+            if (_selectedRowIndex) {
+                EventObject * e = [_events objectAtIndex:_selectedRowIndex];
                 [e setLocation:loc.title];
-                [_events replaceObjectAtIndex:popUpEventIndex.row withObject:e];
+//                [_events replaceObjectAtIndex:popUpEventIndex.row withObject:e];
                 [self.eventsTableView reloadData];
                 //            [self updateValuesforPopUpViewWithEventObject:e];
             }
@@ -265,10 +269,27 @@
 
 - (IBAction)saveEvent:(id)sender {
     // do something im giving up on you
-    NSLog(@"Saving event...");
-    EventEditView *theView = (EventEditView *)self.popupView.subviews[0];
-    EventObject *event = [theView eventObject];
-    NSLog(@"%@", event.title);
+    EventObject *currEvent = [_currentEventEditView eventObject];
+    // VERY weak check but meh~
+    if (_selectedRowIndex <0) {
+        [_eventManager addEventWithObject:currEvent];
+    } else if (_selectedRowIndex < [_events count]){
+        [_eventManager updateEventWithEvent:currEvent];
+    } 
+    [self closePopUpViews];
+}
+
+#pragma mark - public API
+- (void)createEditEventViewForSelectedEvent {
+    [self createEditEventView:[_events objectAtIndex:_selectedRowIndex]];
+}
+
+- (void)deleteEventforSelectedEvent {
+    // VERY weak check but meh~
+    if (_selectedRowIndex >=0 && _selectedRowIndex < [_events count] ) {
+        [_eventManager deleteEvent:[_events objectAtIndex:_selectedRowIndex]];
+    }
+    [self closePopUpViews];
 }
 
 @end

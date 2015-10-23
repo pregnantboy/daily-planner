@@ -7,22 +7,31 @@
 //
 
 #import "EventDetailedView.h"
+#import "EventViewController.h"
+
+@interface EventDetailedView () {
+    EventViewController *_vc;
+}
+@end
 
 @implementation EventDetailedView
-
-- (IBAction)editButton:(id)sender {
-    NSLog(@"edit");
-}
 
 - (IBAction)clickSuggestLocation:(id)sender {
 }
 
-- (id) initWithEventObject:(EventObject *)event{
+- (id) initWithEventObject:(EventObject *)event andViewController:(UIViewController *) vc{
     self = [[[NSBundle mainBundle] loadNibNamed:@"EventDetailedView" owner:self options:nil] objectAtIndex:0];
+    if ([vc isKindOfClass:[EventViewController class]]) {
+        _vc = (EventViewController *)vc;
+    }
     if (event) {
         [self updateViewWithEventObject:event];
     }
     return self;
+}
+
+- (IBAction)editButton:(id)sender {
+    [_vc createEditEventViewForSelectedEvent];
 }
 
 - (void) updateViewWithEventObject:(EventObject *)event{

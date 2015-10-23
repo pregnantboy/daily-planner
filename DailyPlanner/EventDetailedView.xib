@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -25,10 +25,14 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPC-wk-2xY">
-                            <rect key="frame" x="334" y="10" width="30" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPC-wk-2xY">
+                            <rect key="frame" x="337" y="10" width="30" height="30"/>
                             <animations/>
-                            <state key="normal" title="Edit">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="7LC-QV-eSV"/>
+                                <constraint firstAttribute="width" constant="30" id="d9z-Yc-hGf"/>
+                            </constraints>
+                            <state key="normal" image="pencil.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -39,7 +43,7 @@
                     <animations/>
                     <color key="backgroundColor" red="0.84313725490000002" green="0.50196078430000002" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="aPC-wk-2xY" secondAttribute="trailing" constant="21" id="9o0-em-2bi"/>
+                        <constraint firstAttribute="trailing" secondItem="aPC-wk-2xY" secondAttribute="trailing" constant="18" id="9o0-em-2bi"/>
                         <constraint firstAttribute="centerY" secondItem="aPC-wk-2xY" secondAttribute="centerY" id="AjW-NT-cXk"/>
                         <constraint firstAttribute="centerY" secondItem="Cc0-q4-oez" secondAttribute="centerY" id="Wt0-wz-CRR"/>
                         <constraint firstItem="Cc0-q4-oez" firstAttribute="leading" secondItem="trh-qg-cIm" secondAttribute="leading" constant="10" id="fAC-dy-Wbf"/>
@@ -74,22 +78,6 @@
                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0q-2U-Y3F">
-                            <rect key="frame" x="12" y="83" width="59.5" height="32"/>
-                            <animations/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="60" id="8oe-iF-Fvt"/>
-                                <constraint firstAttribute="height" constant="32" id="fOM-mb-Tzz"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="8oe-iF-Fvt"/>
-                                </mask>
-                            </variation>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 to 13:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUP-BL-Szh">
                             <rect key="frame" x="12" y="117" width="149.5" height="32"/>
@@ -178,6 +166,22 @@
                                 <mask key="constraints">
                                     <exclude reference="BZo-i5-zhm"/>
                                     <exclude reference="IjT-Gk-ggF"/>
+                                </mask>
+                            </variation>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0q-2U-Y3F">
+                            <rect key="frame" x="12" y="83" width="59.5" height="32"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="8oe-iF-Fvt"/>
+                                <constraint firstAttribute="height" constant="32" id="fOM-mb-Tzz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="8oe-iF-Fvt"/>
                                 </mask>
                             </variation>
                         </label>
@@ -323,5 +327,6 @@
     </objects>
     <resources>
         <image name="location-icon.png" width="400" height="500"/>
+        <image name="pencil.png" width="512" height="512"/>
     </resources>
 </document>

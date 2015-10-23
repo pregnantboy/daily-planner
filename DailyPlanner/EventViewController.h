@@ -34,6 +34,8 @@
 @property (strong, nonatomic) IBOutlet UIView *popupView;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
-
+// for referencing from EventDetailedView
+- (void)createEditEventViewForSelectedEvent;
+- (void)deleteEventforSelectedEvent;
 
 @end

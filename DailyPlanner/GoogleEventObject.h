@@ -11,7 +11,8 @@
 
 @interface GoogleEventObject : EventObject
 
-- initWithGoogleEvent:(GTLCalendarEvent *)gEvent;
-
+- (id) initWithGoogleEvent:(GTLCalendarEvent *)gEvent;
+- (void)updateGoogleCalendarEvent;
+- (id) initWithNewEvent;
 - (GTLCalendarEvent *) gEvent;
 @end
