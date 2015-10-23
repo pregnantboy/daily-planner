@@ -19,25 +19,28 @@
 int _datePickerForWhich;
 
 - (id) initWithEventObject:(EventObject *)event withViewController:(UIViewController *)vc{
-    _event = event;
     self = [[[NSBundle mainBundle] loadNibNamed:@"EventEditView" owner:self options:nil] objectAtIndex:0];
-    if ([vc isKindOfClass:[EventViewController class]]) {
-        _vc = (EventViewController *)vc;
+    if (self) {
+        if ([vc isKindOfClass:[EventViewController class]]) {
+            _vc = (EventViewController *)vc;
+        }
+        _event = event;
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                       initWithTarget:self
+                                       action:@selector(dismissKeyboard)];
+        
+        [self addGestureRecognizer:tap];
+        [self.title addTarget:self
+                       action:@selector(textFieldDidChange:)
+             forControlEvents:UIControlEventEditingChanged];
+        [self.location addTarget:self
+                          action:@selector(textFieldDidChange:)
+                forControlEvents:UIControlEventEditingChanged];
+        [self.minutes addTarget:self
+                         action:@selector(textFieldDidChange:)
+               forControlEvents:UIControlEventEditingChanged];
     }
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    
-    [self addGestureRecognizer:tap];
-    [self.title addTarget:self
-                  action:@selector(textFieldDidChange:)
-        forControlEvents:UIControlEventEditingChanged];
-    [self.location addTarget:self
-                  action:@selector(textFieldDidChange:)
-        forControlEvents:UIControlEventEditingChanged];
-    [self.minutes addTarget:self
-                  action:@selector(textFieldDidChange:)
-        forControlEvents:UIControlEventEditingChanged];
     return self;
 }
 

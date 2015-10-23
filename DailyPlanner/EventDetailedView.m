@@ -21,11 +21,13 @@
 
 - (id) initWithEventObject:(EventObject *)event andViewController:(UIViewController *) vc{
     self = [[[NSBundle mainBundle] loadNibNamed:@"EventDetailedView" owner:self options:nil] objectAtIndex:0];
-    if ([vc isKindOfClass:[EventViewController class]]) {
-        _vc = (EventViewController *)vc;
-    }
-    if (event) {
-        [self updateViewWithEventObject:event];
+    if (self) {
+        if ([vc isKindOfClass:[EventViewController class]]) {
+            _vc = (EventViewController *)vc;
+        }
+        if (event) {
+            [self updateViewWithEventObject:event];
+        }
     }
     return self;
 }
