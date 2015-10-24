@@ -30,6 +30,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     // Instantiate Weather Manager
     _weatherManager = [WeatherManager sharedManager];
+    [_weatherManager tryUpdate];
     _weatherForecast = [_weatherManager prettyForecast];
     [self.weatherTable reloadData];
     [self updateNowcast];

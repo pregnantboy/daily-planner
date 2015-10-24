@@ -260,7 +260,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j9H-V7-DXc" customClass="GMSMapView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9H-V7-DXc" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -279,7 +279,7 @@
                                     <action selector="clickCancel:" destination="1v4-0L-7qt" eventType="touchUpInside" id="bk8-9M-foj"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w6L-Tc-VGN">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w6L-Tc-VGN">
                                 <rect key="frame" x="0.0" y="80" width="375" height="29"/>
                                 <animations/>
                                 <segments>
@@ -291,18 +291,24 @@
                                     <action selector="selectCategory:" destination="1v4-0L-7qt" eventType="valueChanged" id="iuv-F4-fXt"/>
                                 </connections>
                             </segmentedControl>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for locations" translatesAutoresizingMaskIntoConstraints="NO" id="kM3-6w-oGC">
+                            <searchBar contentMode="redraw" placeholder="Search for locations" translatesAutoresizingMaskIntoConstraints="NO" id="kM3-6w-oGC">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="PN6-IC-esf"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="1v4-0L-7qt" id="dPZ-Zu-cFM"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zWJ-FS-VVg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zWJ-FS-VVg">
                                 <rect key="frame" x="0.0" y="64" width="375" height="230"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="Gk6-VM-ybB"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="1v4-0L-7qt" id="ybU-K9-3eL"/>
                                 </connections>
@@ -311,9 +317,28 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="w6L-Tc-VGN" firstAttribute="top" secondItem="kM3-6w-oGC" secondAttribute="bottom" constant="10" id="2GY-AY-xjZ"/>
+                            <constraint firstItem="j9H-V7-DXc" firstAttribute="top" secondItem="kM3-6w-oGC" secondAttribute="bottom" id="4EP-ce-Hth"/>
+                            <constraint firstItem="zWJ-FS-VVg" firstAttribute="top" secondItem="kM3-6w-oGC" secondAttribute="bottom" id="8aT-HP-bt6"/>
+                            <constraint firstItem="j9H-V7-DXc" firstAttribute="top" secondItem="Qxf-ih-P4t" secondAttribute="bottom" constant="44" id="8dm-C8-Iyi"/>
+                            <constraint firstItem="kM3-6w-oGC" firstAttribute="top" secondItem="Qxf-ih-P4t" secondAttribute="bottom" id="E2e-TV-Idm"/>
+                            <constraint firstItem="j9H-V7-DXc" firstAttribute="leading" secondItem="YC9-DX-WO5" secondAttribute="leadingMargin" constant="-16" id="J2Q-ar-sPW"/>
+                            <constraint firstAttribute="centerX" secondItem="w6L-Tc-VGN" secondAttribute="centerX" id="QCY-14-CxC"/>
                             <constraint firstAttribute="bottomMargin" secondItem="dkW-Vy-6iy" secondAttribute="bottom" constant="10" id="QXq-X1-ZwY"/>
                             <constraint firstItem="dkW-Vy-6iy" firstAttribute="leading" secondItem="YC9-DX-WO5" secondAttribute="leadingMargin" id="QZ8-AU-4hR"/>
+                            <constraint firstItem="kM3-6w-oGC" firstAttribute="width" secondItem="YC9-DX-WO5" secondAttribute="width" id="ipZ-UQ-nGu"/>
+                            <constraint firstAttribute="centerX" secondItem="kM3-6w-oGC" secondAttribute="centerX" id="kUZ-9V-ZyK"/>
+                            <constraint firstItem="2M4-0V-2rs" firstAttribute="top" secondItem="j9H-V7-DXc" secondAttribute="bottom" id="tMF-AZ-4Ug"/>
+                            <constraint firstItem="kM3-6w-oGC" firstAttribute="width" secondItem="zWJ-FS-VVg" secondAttribute="width" id="vHO-4P-CbC"/>
+                            <constraint firstItem="w6L-Tc-VGN" firstAttribute="width" secondItem="YC9-DX-WO5" secondAttribute="width" id="vZk-cg-X31"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j9H-V7-DXc" secondAttribute="trailing" constant="-16" id="wzk-Zv-C1B"/>
+                            <constraint firstItem="kM3-6w-oGC" firstAttribute="centerX" secondItem="zWJ-FS-VVg" secondAttribute="centerX" id="zso-pa-lag"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8dm-C8-Iyi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="2cj-iQ-d7S">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="viY-v3-oic"/>

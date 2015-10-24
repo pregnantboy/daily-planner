@@ -58,6 +58,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [_eventManager viewDidAppear];
+    [WeatherManager sharedManager];
 }
 
 #pragma mark - Main Clock
@@ -131,9 +132,10 @@
         // Set event start time and end time
         cell.startEndTime.text = [NSString stringWithFormat:@"%@ - %@", [event startString], [event endString]];
         
-        // Set weather icon
-        WeatherObject *weather = [[WeatherObject alloc] initWithWeatherType:rand()%8];
-        [cell.weatherIcon setImage:[weather imageIcon]];
+        // Set weather icon (TODO or not to do)
+        [cell.weatherIcon setImage:NULL];
+//        WeatherObject *weather = [[WeatherObject alloc] initWithWeatherType:rand()%8];
+//        [cell.weatherIcon setImage:[weather imageIcon]];
     } else {
         cell.location.text = @"";
         cell.startEndTime.text = @"";
