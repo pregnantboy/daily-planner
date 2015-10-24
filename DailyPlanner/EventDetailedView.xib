@@ -149,7 +149,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="clickSuggestLocation:" destination="-1" eventType="touchUpInside" id="R9O-Zs-1Zd"/>
+                                <action selector="suggestLocationButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fb8-bk-msn"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVg-Ot-Ixd">
@@ -322,7 +322,7 @@
                 <outlet property="time" destination="hUP-BL-Szh" id="mfH-ez-30B"/>
                 <outlet property="title" destination="Cc0-q4-oez" id="dad-34-Rjb"/>
             </connections>
-            <point key="canvasLocation" x="122.5" y="-5.5"/>
+            <point key="canvasLocation" x="123.5" y="8.5"/>
         </view>
     </objects>
     <resources>

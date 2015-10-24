@@ -152,4 +152,21 @@ int _datePickerForWhich;
     return _event;
 }
 
+#pragma mark - MapViewControllerDelegate
+
+- (IBAction)suggestLocationButton:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MapViewController *mvc = [storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    [_vc presentViewController:mvc animated:YES completion:^void {
+        mvc.delegate = self;
+    }];
+}
+
+- (void)returnFromMapViewController:(MapViewController *)mvc withLocation:(NSString *)locationString {
+    if (locationString) {
+        self.location.text = locationString;
+        [_event setLocation:locationString];
+    }
+}
+
 @end

@@ -10,18 +10,16 @@
 #import "LocationManager.h"
 @import GoogleMaps;
 
+@class MapViewController;
+@protocol MapViewControllerDelegate <NSObject>
+- (void)returnFromMapViewController:(MapViewController *)mvc withLocation:(NSString *)locationString;
+@end
+
 @interface MapViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, GMSMapViewDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *searchResultsView;
 @property (weak, nonatomic) IBOutlet GMSMapView *map;
 @property (strong) NSMutableArray* searchAutocompleteResults;
 @property (strong) LocationManager* locationManager;
+@property (nonatomic, weak) id <MapViewControllerDelegate> delegate;
 
-
-- (IBAction)selectCategory:(UISegmentedControl *)sender;
-- (void) goToPosition:(CLLocationCoordinate2D)coord;
-- (IBAction)categorySelector:(UISegmentedControl *)sender;
-- (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title;
-- (IBAction)clickCancel:(id)sender;
-- (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title icon:(UIImage *)icon;
-- (IBAction)clickCancel:(id)sender;
 @end

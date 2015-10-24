@@ -29,16 +29,11 @@ typedef enum {
 @property NSURLConnection * currentConnection;
 @property NSMutableArray * foodLocations;
 @property NSMutableArray * sportsLocations;
+@property (strong) LocationObject * chosenLocation;
+@property (nonatomic) BOOL choseALocation;
 
 - (NSMutableArray *) getLocations;
 - (NSString *) getLocationIcon;
-- (NSMutableArray *) parseKMLLocationsFile:(NSString *)fileName;
-- (LocationObject *) parseLocationElement:(TBXMLElement *) elem;
-
-@property (strong) LocationObject * chosenLocation;
-- (void) deselectLocation;
-@property (nonatomic) BOOL choseALocation;
-
 - (void) chooseLocation:(NSString *)place position:(CLLocationCoordinate2D) position;
 - (void) cancelChosenLocation;
 @end

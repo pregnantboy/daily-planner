@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "EventObject.h"
 
-@interface GoogleEventObject : EventObject
+@interface GoogleEventObject : EventObject <NSCoding>
 
 - (id) initWithGoogleEvent:(GTLCalendarEvent *)gEvent;
 - (void)updateGoogleCalendarEvent;

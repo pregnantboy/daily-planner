@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "EventObject.h"
+#import "MapViewController.h"
 
-@interface EventEditView : UIView
+@interface EventEditView : UIView <MapViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *title;
 @property (weak, nonatomic) IBOutlet UITextField *location;
 @property (weak, nonatomic) IBOutlet UITextView *details;

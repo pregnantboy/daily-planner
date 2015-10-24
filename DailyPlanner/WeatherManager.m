@@ -72,6 +72,7 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedManager = [[WeatherManager alloc] init];
+        [_sharedManager tryUpdate];
     });
     return _sharedManager;
 }
@@ -111,7 +112,7 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
     if (parser == _neaForecastParser) {
         if ([elementName isEqualToString:@"temperature"]) {
             _hiLoTemp = attributeDict;
-            [_hiLoTemp writeToFile:_forecastPath atomically:YES];
+            [_hiLoTemp writeToFile:_hiLoTempPath atomically:YES];
         }
     }
 }
@@ -136,7 +137,8 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
 - (void)tryUpdateNowcast {
     BOOL hiLoFileExists = [[NSFileManager defaultManager] fileExistsAtPath:_hiLoTempPath];
     BOOL nowcastFileExists = [[NSFileManager defaultManager] fileExistsAtPath:_nowcastPath];
-    if (nowcastFileExists && hiLoFileExists && [self isOutdated:_nowcastLastUpdated]) {
+    if (nowcastFileExists && hiLoFileExists && ![self isOutdated:_nowcastLastUpdated]) {
+        NSLog(@"Nowcast file exists!");
         _rawNowcast = [NSDictionary dictionaryWithContentsOfFile:_nowcastPath];
         _hiLoTemp = [NSDictionary dictionaryWithContentsOfFile:_hiLoTempPath];
     } else {
@@ -147,8 +149,10 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
 
 - (void)tryUpdateForecast {
     BOOL forecastFileExists = [[NSFileManager defaultManager] fileExistsAtPath:_forecastPath];
-    if (forecastFileExists && [self isOutdated:_forecastLastUpdated]) {
+    if (forecastFileExists && ![self isOutdated:_forecastLastUpdated]) {
         _rawForecast = [NSDictionary dictionaryWithContentsOfFile:_forecastPath];
+        NSLog(@"Forecast file exists!");
+
     } else {
        [self updateForecast];
     }
@@ -183,7 +187,6 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
     _prettyNowcast = [[NSMutableDictionary alloc] init];
     NSDictionary* conditions = [_rawNowcast objectForKey:@"current_observation"];
     [_prettyNowcast setObject:[conditions objectForKey:@"temp_c"] forKey:@"temp"];
-    NSLog(@"%@ ", [conditions objectForKey:@"icon"]);
     WeatherObject *weatherObj = [self weatherObjectForString:[conditions objectForKey:@"icon"]];
     [_prettyNowcast setObject:weatherObj forKey:@"weather"];
 }
@@ -286,7 +289,6 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
 }
 
 - (WeatherObject *)weatherObjectForString:(NSString *)iconName {
-    NSLog(@"iconname %@", iconName);
     BOOL isNight = [self isNightNow];
     WeatherType weatherType;
     if ([iconName isEqualToString:@"clear"] || [iconName isEqualToString:@"sunny"]) {

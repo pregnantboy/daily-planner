@@ -169,5 +169,36 @@ reminderMinutes:(NSInteger)minutes{
 - (void)setDetails:(NSString *)details {
     _details = details;
 }
+NSString *_title;
+NSDate *_startTime;
+NSDate *_endTime;
+NSString *_location;
+NSString *_details;
+NSInteger _minutes;
+BOOL _isEvent;
+#pragma mark - NSCoding Protocol
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:_title forKey:@"title"];
+    [encoder encodeObject:_startTime forKey:@"startTime"];
+    [encoder encodeObject:_endTime forKey:@"endTime"];
+    [encoder encodeObject:_location forKey:@"location"];
+    [encoder encodeObject:_details forKey:@"details"];
+    [encoder encodeObject:[NSNumber numberWithLong:_minutes] forKey:@"minutes"];
+    [encoder encodeObject:[NSNumber numberWithBool:_isEvent] forKey:@"isEvent"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        _title = [decoder decodeObjectForKey:@"title"];
+        _startTime = [decoder decodeObjectForKey:@"startTime"];
+        _endTime = [decoder decodeObjectForKey:@"endTime"];
+        _location = [decoder decodeObjectForKey:@"location"];
+        _details = [decoder decodeObjectForKey:@"details"];
+        _minutes = [[decoder decodeObjectForKey:@"minutes"] longValue];
+        _isEvent = [[decoder decodeObjectForKey:@"isEvent"] boolValue];
+
+    }
+    return self;
+}
 
 @end

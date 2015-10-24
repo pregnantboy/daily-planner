@@ -81,7 +81,7 @@ didChangeCameraPosition:(GMSCameraPosition *) position  {
         NSLog(@"placed markers");
         markersPlaced_ = YES;
         for (LocationObject * loc in [self.locationManager getLocations]){
-//            NSLog(@"Placed marker at %f,%f:: %@", loc.position.latitude, loc.position.longitude, loc.title);
+            //            NSLog(@"Placed marker at %f,%f:: %@", loc.position.latitude, loc.position.longitude, loc.title);
             [self placeMarkerAtPosition:loc.position title:loc.title icon:[UIImage imageNamed:[self.locationManager getLocationIcon]]];;
         }
     }
@@ -98,13 +98,16 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               [self.locationManager chooseLocation:marker.title position:marker.position];
-                                                              [self performSegueWithIdentifier:@"unwindToEventViewSegue" sender:self];
+                                                              [self dismissViewControllerAnimated:YES completion:^void {
+                                                                  [self.delegate returnFromMapViewController:self withLocation:[[self.locationManager chosenLocation] title]];
+                                                              }];
+                                                              
                                                           }];
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel
-                                                          handler:^(UIAlertAction * action) {
-                                                              [self.locationManager deselectLocation];
-                                                          // handle cancellation here
-                                                          }];
+                                                         handler:^(UIAlertAction * action) {
+                                                             [self.locationManager cancelChosenLocation];
+                                                             // handle cancellation here
+                                                         }];
     
     [alert addAction:defaultAction];
     [alert addAction:cancelAction];
@@ -123,6 +126,7 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
         [self goToPosition:result.coordinate];
         self.searchResultsView.hidden = YES; // hide search results
     }];
+    [self.view endEditing:YES];
 }
 
 - (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title{
@@ -133,7 +137,9 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
 
 - (IBAction)clickCancel:(id)sender {
     [self.locationManager cancelChosenLocation];
-    [self performSegueWithIdentifier:@"unwindToEventViewSegue" sender:self];
+    [self dismissViewControllerAnimated:YES completion:^void {
+        [self.delegate returnFromMapViewController:self withLocation:nil];
+    }];
 }
 
 - (void) placeMarkerAtPosition:(CLLocationCoordinate2D)position title:(NSString *)title  icon:(UIImage *)icon{
@@ -161,7 +167,7 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
         NSLog(@"Placed marker at %f,%f:: %@", loc.position.latitude, loc.position.longitude, loc.title);
         [self placeMarkerAtPosition:loc.position title:loc.title icon:[UIImage imageNamed:[self.locationManager getLocationIcon]]];;
     }
-    
+    [self.view endEditing:YES];
 }
 
 - (void) goToPosition:(CLLocationCoordinate2D)coord {
@@ -179,7 +185,7 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
-                  cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"searchResultCell"];
     NSUInteger idx = indexPath.row;
     GMSAutocompletePrediction *pred = self.searchAutocompleteResults[idx];
@@ -213,11 +219,11 @@ didTapInfoWindowOfMarker:(GMSMarker *) marker {
 
 #pragma mark - Navigation
 /*
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

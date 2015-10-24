@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "GTLCalendar.h"
 
-@interface EventObject : NSObject
+@interface EventObject : NSObject <NSCoding>
 
 - initWithTitle:(NSString *)title
       startTime:(NSDate *)startTime

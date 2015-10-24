@@ -21,7 +21,6 @@
 @interface EventViewController() {
     NSArray *_events;
     EventManager *_eventManager;
-    WeatherManager *_weatherManager;
     UIView *_closePopUpButton;
     NSInteger _selectedRowIndex;
     EventEditView *_currentEventEditView;
@@ -185,6 +184,8 @@
     if ([view isKindOfClass:[EventEditView class]]) {
         self.saveButton.hidden = NO;
         _currentEventEditView = (EventEditView *)view;
+    } else if ([view isKindOfClass:[EventDetailedView class]] ) {
+        [self.addNewButton setImage:[UIImage imageNamed:@"back_button.png"] forState:UIControlStateNormal];
     }
     [self.popupView addSubview:view];
      view.frame = self.popupView.bounds;
@@ -231,35 +232,13 @@
 
 - (void)closePopUpViews {
     _selectedRowIndex = -1;
+    [self.addNewButton setImage:[UIImage imageNamed:@"add-icon.png"] forState:UIControlStateNormal];
     self.popupView.hidden = YES;
     self.popupView.alpha = 0.0;
     _saveButton.hidden = YES;
     _closePopUpButton.hidden = YES;
     _closePopUpButton.alpha = 0.0;
     [self.view endEditing:YES];
-}
-
-
-#pragma mark - Suggested Location
-
-- (IBAction)unwindToEventView:(UIStoryboardSegue *)unwindSegue
-{
-    // event view controller should not be coupled so tightly with map view controller
-    MapViewController * map = (MapViewController *)unwindSegue.sourceViewController;
-    if (map.locationManager.choseALocation){
-        LocationObject * loc = map.locationManager.chosenLocation;
-        if (map.locationManager.choseALocation){
-            NSLog(@"Location: %@", loc.title);
-            if (_selectedRowIndex) {
-                EventObject * e = [_events objectAtIndex:_selectedRowIndex];
-                [e setLocation:loc.title];
-//                [_events replaceObjectAtIndex:popUpEventIndex.row withObject:e];
-                [self.eventsTableView reloadData];
-                //            [self updateValuesforPopUpViewWithEventObject:e];
-            }
-        }
-        
-    }
 }
 
 # pragma mark - edit/add event
@@ -290,6 +269,12 @@
         [_eventManager deleteEvent:[_events objectAtIndex:_selectedRowIndex]];
     }
     [self closePopUpViews];
+}
+
+- (void)updateEventWithEvent:(EventObject *)event {
+    if (_selectedRowIndex < [_events count] && _selectedRowIndex >= 0){
+        [_eventManager updateEventWithEvent:event];
+    }
 }
 
 @end

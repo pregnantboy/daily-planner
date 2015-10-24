@@ -42,6 +42,7 @@
 		3C64BCF01BA325E80058F42A /* hazy.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C64BCEF1BA325E80058F42A /* hazy.png */; };
 		3C71AEE41BDACED00065F5CD /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C71AEE31BDACED00065F5CD /* pencil.png */; };
 		3C71AEEA1BDAD1140065F5CD /* trashbin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C71AEE91BDAD1140065F5CD /* trashbin.png */; };
+		3C71AEEC1BDB87C10065F5CD /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C71AEEB1BDB87C10065F5CD /* back_button.png */; };
 		4014DE211BCF6BD000C9AA88 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */; };
 		4014DE221BCF6BD000C9AA88 /* LocationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4014DE1E1BCF6BD000C9AA88 /* LocationObject.m */; };
 		4014DE231BCF6BD000C9AA88 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4014DE201BCF6BD000C9AA88 /* MapViewController.m */; };
@@ -148,6 +149,7 @@
 		3C64BCEF1BA325E80058F42A /* hazy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hazy.png; sourceTree = "<group>"; };
 		3C71AEE31BDACED00065F5CD /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
 		3C71AEE91BDAD1140065F5CD /* trashbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trashbin.png; sourceTree = "<group>"; };
+		3C71AEEB1BDB87C10065F5CD /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
 		4014DE1B1BCF6BD000C9AA88 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		4014DE1D1BCF6BD000C9AA88 /* LocationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationObject.h; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				409025171BD244E4004253D7 /* add-icon.png */,
 				3C1BBC211BD81A1700C900F2 /* greentick.png */,
 				409025181BD244E4004253D7 /* cancel-icon.png */,
+				3C71AEEB1BDB87C10065F5CD /* back_button.png */,
 				3C1BBC1B1BD7EF6400C900F2 /* setButton.png */,
 				40D064821BCF7EE4005D7407 /* location-icon.png */,
 				4014DE2A1BCF6C2000C9AA88 /* foodicon.png */,
@@ -465,6 +468,7 @@
 			files = (
 				4068DABF1BD8A2C2003D1F72 /* done-icon.png in Resources */,
 				409025191BD244E4004253D7 /* add-icon.png in Resources */,
+				3C71AEEC1BDB87C10065F5CD /* back_button.png in Resources */,
 				4090251A1BD244E4004253D7 /* cancel-icon.png in Resources */,
 				40D064831BCF7EE4005D7407 /* location-icon.png in Resources */,
 				4014DE2C1BCF6C2000C9AA88 /* foodicon.png in Resources */,

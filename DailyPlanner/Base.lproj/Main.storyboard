@@ -251,7 +251,7 @@
         <!--Map View Controller-->
         <scene sceneID="F7z-zq-b3l">
             <objects>
-                <viewController id="1v4-0L-7qt" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="1v4-0L-7qt" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qxf-ih-P4t"/>
                         <viewControllerLayoutGuide type="bottom" id="2M4-0V-2rs"/>
@@ -265,12 +265,12 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkW-Vy-6iy">
-                                <rect key="frame" x="26" y="607" width="50" height="50"/>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkW-Vy-6iy">
+                                <rect key="frame" x="16" y="602" width="55" height="55"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="SR4-k9-JRQ"/>
-                                    <constraint firstAttribute="height" constant="50" id="tUj-4J-oNh"/>
+                                    <constraint firstAttribute="width" constant="55" id="SR4-k9-JRQ"/>
+                                    <constraint firstAttribute="height" constant="55" id="tUj-4J-oNh"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="cancel-icon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -307,22 +307,12 @@
                                     <outlet property="delegate" destination="1v4-0L-7qt" id="ybU-K9-3eL"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-sb-47g">
-                                <rect key="frame" x="26" y="627" width="48" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickCancel:" destination="1v4-0L-7qt" eventType="touchUpInside" id="3xP-1z-Nyu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="dkW-Vy-6iy" secondAttribute="bottom" constant="10" id="QXq-X1-ZwY"/>
-                            <constraint firstItem="dkW-Vy-6iy" firstAttribute="leading" secondItem="YC9-DX-WO5" secondAttribute="leadingMargin" constant="10" id="QZ8-AU-4hR"/>
+                            <constraint firstItem="dkW-Vy-6iy" firstAttribute="leading" secondItem="YC9-DX-WO5" secondAttribute="leadingMargin" id="QZ8-AU-4hR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2cj-iQ-d7S">
@@ -609,6 +599,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addNewButton" destination="KAR-oy-ddX" id="S4B-n6-K1i"/>
                         <outlet property="ampmLabel" destination="Vpa-BM-cl1" id="zbM-lz-h5b"/>
                         <outlet property="clockLabel" destination="d79-e8-TOo" id="PHL-0P-ZNH"/>
                         <outlet property="dateLabel" destination="ZZu-DS-cOt" id="MR4-sj-mFM"/>

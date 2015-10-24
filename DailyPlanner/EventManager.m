@@ -58,6 +58,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         if ([paths count] > 0) {
             _eventsPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"events.out"];
+            NSLog(@"%@", _eventsPath);
         }
     }
     return self;
@@ -113,7 +114,9 @@ static BOOL shouldShowLoginPageOnLoad = NO;
         [_defaults setObject:_lastUpdated forKey:EventsLastUpdatedUserDefaults];
         
         // write to file
-         [_events writeToFile:_eventsPath atomically:YES];
+        BOOL success = [NSKeyedArchiver archiveRootObject:_events toFile:_eventsPath];
+        NSLog(@"events archive success: %d", success);
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:eventsReceivedNotification object:nil];
     } else if (!loginPageDismissed && shouldShowLoginPageOnLoad) {
         [self showAlert:@"Error" message:error.localizedDescription];
@@ -245,9 +248,12 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 }
 
 - (BOOL)loadOldData {
+    NSLog(@"loadOldData called");
     BOOL eventsExists = [[NSFileManager defaultManager] fileExistsAtPath:_eventsPath];
+    NSLog(@"%d ee", eventsExists);
     if (eventsExists) {
-        _events = [NSMutableArray arrayWithContentsOfFile:_eventsPath];
+        NSLog(@"Events file exists!");
+        _events = [[NSKeyedUnarchiver unarchiveObjectWithFile:_eventsPath] mutableCopy];
     } else {
         EventObject *loadingEvents = [[EventObject alloc ] initWithLoading];
         _events = [[NSMutableArray alloc] initWithObjects:loadingEvents, nil];

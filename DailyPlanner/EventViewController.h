@@ -30,6 +30,9 @@
 // Events table view
 @property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
 
+// Add new event button
+@property (weak, nonatomic) IBOutlet UIButton *addNewButton;
+
 // popupView
 @property (strong, nonatomic) IBOutlet UIView *popupView;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
@@ -37,5 +40,6 @@
 // for referencing from EventDetailedView
 - (void)createEditEventViewForSelectedEvent;
 - (void)deleteEventforSelectedEvent;
+- (void)updateEventWithEvent:(EventObject *)event;
 
 @end

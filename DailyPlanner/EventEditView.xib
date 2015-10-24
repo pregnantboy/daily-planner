@@ -171,16 +171,19 @@
                                 </mask>
                             </variation>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bD-tZ-Z2R">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bD-tZ-Z2R" userLabel="suggestlocation">
                             <rect key="frame" x="534" y="40" width="36" height="40"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="3Rt-nc-hwg"/>
                                 <constraint firstAttribute="width" secondItem="6bD-tZ-Z2R" secondAttribute="height" multiplier="9:10" id="ihh-3s-SpW"/>
                             </constraints>
-                            <state key="normal" title="Done" image="location-icon.png">
+                            <state key="normal" image="location-icon.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="suggestLocationButton:" destination="Clb-UY-OFr" eventType="touchUpInside" id="QcH-Kt-gWb"/>
+                            </connections>
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="optional" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tNi-0o-6tf">
                             <rect key="frame" x="4" y="263" width="80" height="30"/>

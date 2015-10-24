@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "EventObject.h"
+#import "MapViewController.h"
 
-@interface EventDetailedView : UIView
+@interface EventDetailedView : UIView <MapViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *locationText;
 @property (weak, nonatomic) IBOutlet UILabel *time;

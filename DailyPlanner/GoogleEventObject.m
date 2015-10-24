@@ -76,4 +76,17 @@
     return _gEvent;
 }
 
+#pragma mark - NSCoding Protocol
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [super encodeWithCoder:encoder];
+    [encoder encodeObject:_gEvent forKey:@"gEvent"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super initWithCoder:decoder]) {
+        _gEvent = [decoder decodeObjectForKey:@"gEvent"];
+    }
+    return self;
+}
+
 @end
