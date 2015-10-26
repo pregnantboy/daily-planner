@@ -11,14 +11,15 @@
 
 @interface EventObject : NSObject <NSCoding>
 
-- initWithTitle:(NSString *)title
+- (id)initWithTitle:(NSString *)title
       startTime:(NSDate *)startTime
         endTime:(NSDate *)endTime
        location:(NSString *)location
         details:(NSString *)details
 reminderMinutes:(NSInteger)minutes;
-- initWithNotLoggedIn;
-- initWithLoading;
+- (id)initWithNotLoggedIn;
+- (id)initWithLoading;
+- (id)initWithNoUpcomingEvents;
 
 - (NSString *)title;
 - (NSString *)startString;

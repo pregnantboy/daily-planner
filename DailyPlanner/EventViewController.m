@@ -123,7 +123,7 @@
     EventObject *event = (EventObject *)[_events objectAtIndex:indexPath.row];
     
     // Set event title
-    cell.eventTitle.text = [event title];
+    cell.eventTitle.text = event.title;
     
     if ([event isEvent]) {
         // Set event location

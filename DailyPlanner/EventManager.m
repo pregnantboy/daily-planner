@@ -104,11 +104,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
             }
         } else {
             NSLog(@"No upcoming events found.");
-            [_events addObject:@{@"start":@"",
-                                     @"end":@"",
-                                     @"title":@"No upcoming events for today.",
-                                     @"location":@""
-                                     }];
+            [_events addObject:[[EventObject alloc] initWithNoUpcomingEvents]];
         }
         _lastUpdated = [NSDate date];
         [_defaults setObject:_lastUpdated forKey:EventsLastUpdatedUserDefaults];

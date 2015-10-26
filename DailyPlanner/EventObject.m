@@ -21,7 +21,7 @@
 
 @implementation EventObject
 
-- initWithTitle:(NSString *)title
+- (id)initWithTitle:(NSString *)title
       startTime:(NSDate *)startTime
         endTime:(NSDate *)endTime
        location:(NSString *)location
@@ -43,7 +43,7 @@ reminderMinutes:(NSInteger)minutes{
     return self;
 }
 
-- initWithNotLoggedIn {
+- (id)initWithNotLoggedIn {
     self = [super init];
     if (self) {
         _title = @"Not Logged In";
@@ -52,10 +52,19 @@ reminderMinutes:(NSInteger)minutes{
     return self;
 }
 
-- initWithLoading {
+- (id)initWithLoading {
     self = [super init];
     if (self) {
         _title = @"Loading...";
+        _isEvent = NO;
+    }
+    return self;
+}
+
+- (id)initWithNoUpcomingEvents {
+    self = [super init];
+    if (self) {
+        _title = @"No Upcoming Events!";
         _isEvent = NO;
     }
     return self;
