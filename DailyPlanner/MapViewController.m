@@ -35,8 +35,13 @@ BOOL locationUpdated_;
     dispatch_async(dispatch_get_main_queue(), ^{
         self.map.myLocationEnabled = YES;
         self.map.settings.myLocationButton = YES;
+        
     });
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self goToPosition:CLLocationCoordinate2DMake(1.318078, 103.85673)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,14 +71,13 @@ BOOL locationUpdated_;
 
 # pragma mark - Map Methods
 
-- (void) mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate{
+- (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate{
     NSLog(@"%f, %f", coordinate.latitude, coordinate.longitude);
 }
 
-- (void) mapView:(GMSMapView *) mapView
-didChangeCameraPosition:(GMSCameraPosition *) position  {
+- (void)mapView:(GMSMapView *) map didChangeCameraPosition:(GMSCameraPosition *) position  {
     NSLog(@"zoom: %f", position.zoom);
-    if (position.zoom < 12.2){  // remove markers if zoom is too low
+    if (position.zoom < 11.2){  // remove markers if zoom is too low
         [self.map clear];
         markersPlaced_ = NO;
         NSLog(@"removed markers");
@@ -88,8 +92,7 @@ didChangeCameraPosition:(GMSCameraPosition *) position  {
 }
 
 
-- (void) mapView:(GMSMapView *) mapView
-didTapInfoWindowOfMarker:(GMSMarker *) marker {
+- (void)mapView:(GMSMapView *) mapView didTapInfoWindowOfMarker:(GMSMarker *) marker {
     NSLog(@"Did click on marker window");
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Confirm Location"
                                                                    message:marker.title

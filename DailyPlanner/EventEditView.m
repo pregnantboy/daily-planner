@@ -79,8 +79,8 @@ int _datePickerForWhich;
     NSLog(@"in update view %@", [_event title]);
     self.title.text = [_event title];
     self.location.text = [_event location];
-    self.startTime.text = [_event startStringWithDate];
-    self.endTime.text = [_event endStringWithDate];
+    self.startTime.text = [_event startString];
+    self.endTime.text = [_event endString];
     self.minutes.text =  [_event minutesString];
     self.details.text = [_event details];
 }
