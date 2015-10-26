@@ -1,12 +1,20 @@
 PODS:
+  - Crashlytics (3.3.4)
+  - Fabric (1.5.5):
+    - Fabric/Base (= 1.5.5)
+  - Fabric/Base (1.5.5)
   - GoogleMaps (1.10.4)
   - TBXML (1.5)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - GoogleMaps
   - TBXML
 
 SPEC CHECKSUMS:
+  Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
+  Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
   GoogleMaps: 134bcf57e8d489efbc0c29d532ed421554fabdb2
   TBXML: 9f9dadb239f2f2af1dadb87fe43a0ce6e479379a
 

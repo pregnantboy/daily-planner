@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B4DC177059E6EAE5F5657BE46FA77BC /* TBXML+HTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = B59C7F55DC44BC111A3B6584D370177C /* TBXML+HTTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		204F2296E7C1E3C15F661B9FCB54F4A1 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBE399F80FA409A2651AC1A145013EC /* TBXML+HTTP.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1B4DC177059E6EAE5F5657BE46FA77BC /* TBXML+HTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A26B07C0C3956873DD5B781346FC121 /* TBXML+HTTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		204F2296E7C1E3C15F661B9FCB54F4A1 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A448E1670BCA62F175AAEA51D593415 /* TBXML+HTTP.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		28F826D999CB1FC28782E0B367F18471 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		299EC64BF86853427A64B4A507189D50 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D21242A26D3DED6CC921B81D05E1347D /* TBXML.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		2A03CAE25D4C132B05AC253E0E326A71 /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = BADA8BE88ED8D8E68800071E0333F0B0 /* TBXML+Compression.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		299EC64BF86853427A64B4A507189D50 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D04FA08876C0BE30BDEC0C3BD5E64A /* TBXML.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2A03CAE25D4C132B05AC253E0E326A71 /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B3BD81D41B630C563921501269FF0 /* TBXML+Compression.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		39A8A129CBFA09988964D3FB3E394110 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
 		4E4FFDE3B136911793533AAB9B145C3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		60173AA83C46CFEFF99303050EE7FADC /* TBXML-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD77010FF18364206588B3D8D4826A62 /* TBXML-dummy.m */; };
-		ADA9FC8E35BA2E125DD26725D7475996 /* TBXML+Compression.h in Headers */ = {isa = PBXBuildFile; fileRef = 91F17C9086B13D96AC22162E18F6EF34 /* TBXML+Compression.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8DF9291BD675AA17A82FB4E67C881DF /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CD2589B543E1C3F60E66163FB1141CD /* TBXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60173AA83C46CFEFF99303050EE7FADC /* TBXML-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5F173F4DF228E1E3E0650EFCF3A8D /* TBXML-dummy.m */; };
+		ADA9FC8E35BA2E125DD26725D7475996 /* TBXML+Compression.h in Headers */ = {isa = PBXBuildFile; fileRef = 713FC88E9313D0BC60C964F515D1CC60 /* TBXML+Compression.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8DF9291BD675AA17A82FB4E67C881DF /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 3753E82F2494F07A87FEB644E7592917 /* TBXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,25 +33,27 @@
 		10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		14F22C9A4EBDA9578385AF53A8B43CC7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		2881F2DB2376874A48645629CE506066 /* TBXML-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TBXML-prefix.pch"; sourceTree = "<group>"; };
+		306F0BD7BE4CF232B9545E9A15B1367F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		3753E82F2494F07A87FEB644E7592917 /* TBXML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TBXML.h; path = "TBXML-Headers/TBXML.h"; sourceTree = "<group>"; };
 		37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3A26B07C0C3956873DD5B781346FC121 /* TBXML+HTTP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TBXML+HTTP.h"; path = "TBXML-Headers/TBXML+HTTP.h"; sourceTree = "<group>"; };
+		3DA5F173F4DF228E1E3E0650EFCF3A8D /* TBXML-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TBXML-dummy.m"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		42236F9B0BCB8A35A6EB4353F464B364 /* TBXML.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TBXML.xcconfig; sourceTree = "<group>"; };
+		4A448E1670BCA62F175AAEA51D593415 /* TBXML+HTTP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "TBXML+HTTP.m"; path = "TBXML-Code/TBXML+HTTP.m"; sourceTree = "<group>"; };
 		4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		4FBE399F80FA409A2651AC1A145013EC /* TBXML+HTTP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "TBXML+HTTP.m"; path = "TBXML-Code/TBXML+HTTP.m"; sourceTree = "<group>"; };
+		5755111B2133A4513BD33F01636E4C61 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		6CD2589B543E1C3F60E66163FB1141CD /* TBXML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TBXML.h; path = "TBXML-Headers/TBXML.h"; sourceTree = "<group>"; };
-		91F17C9086B13D96AC22162E18F6EF34 /* TBXML+Compression.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TBXML+Compression.h"; path = "TBXML-Headers/TBXML+Compression.h"; sourceTree = "<group>"; };
+		713FC88E9313D0BC60C964F515D1CC60 /* TBXML+Compression.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TBXML+Compression.h"; path = "TBXML-Headers/TBXML+Compression.h"; sourceTree = "<group>"; };
+		76D04FA08876C0BE30BDEC0C3BD5E64A /* TBXML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TBXML.m; path = "TBXML-Code/TBXML.m"; sourceTree = "<group>"; };
+		954B31193643B34A6C0D1160B8FA70E0 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
 		A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		AB2FE459C9EEBC1A520AB1538CFA010A /* TBXML-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TBXML-prefix.pch"; sourceTree = "<group>"; };
 		B4724AD82859E527A5E68DF4A64B2DE1 /* libTBXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTBXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B59C7F55DC44BC111A3B6584D370177C /* TBXML+HTTP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "TBXML+HTTP.h"; path = "TBXML-Headers/TBXML+HTTP.h"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BADA8BE88ED8D8E68800071E0333F0B0 /* TBXML+Compression.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "TBXML+Compression.m"; path = "TBXML-Code/TBXML+Compression.m"; sourceTree = "<group>"; };
-		BD77010FF18364206588B3D8D4826A62 /* TBXML-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TBXML-dummy.m"; sourceTree = "<group>"; };
-		BFF61D95038503919CD38E43D95B432F /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
-		CDFB8CDBCA2AC6CF4A203D7A5B66CAB5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
-		D21242A26D3DED6CC921B81D05E1347D /* TBXML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TBXML.m; path = "TBXML-Code/TBXML.m"; sourceTree = "<group>"; };
+		C02B3BD81D41B630C563921501269FF0 /* TBXML+Compression.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "TBXML+Compression.m"; path = "TBXML-Code/TBXML+Compression.m"; sourceTree = "<group>"; };
+		D46343923A6DDF09019F5B0045E62AEB /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		FA686C623CEB08822F90A6B2FCE3088B /* TBXML.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TBXML.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,12 +84,48 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		31B34CD910E4790285DC1793A52AC853 /* Resources */ = {
+		16CD88AACEFDEEBA8E4957A9CEBED1C0 /* GoogleMaps */ = {
 			isa = PBXGroup;
 			children = (
-				BFF61D95038503919CD38E43D95B432F /* GoogleMaps.bundle */,
+				B2431D1F9BAF0EEF92E10D9CCC0E6A5A /* Frameworks */,
+				2EC27F5FB2D5305C80C0D40EBEB4112B /* Resources */,
+			);
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		2EC27F5FB2D5305C80C0D40EBEB4112B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5755111B2133A4513BD33F01636E4C61 /* GoogleMaps.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		312FDB85C6069FBA607803F32EC878FB /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				CECDA23A3040B5C0B8942D0994F9582D /* Frameworks */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		58CE18955AF76C75E265FA8C1864F38F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				312FDB85C6069FBA607803F32EC878FB /* Crashlytics */,
+				68D654915525BF58B098F3232D997542 /* Fabric */,
+				16CD88AACEFDEEBA8E4957A9CEBED1C0 /* GoogleMaps */,
+				FBACEEEDAE70F78E004A3BD0F9F7BB4C /* TBXML */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		68D654915525BF58B098F3232D997542 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				BA167F41D463409CE77BFBDE7DAF9B2D /* Base */,
+			);
+			path = Fabric;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -95,7 +133,7 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				CA6DF834CB33451320241CE98A55CCC1 /* Pods */,
+				58CE18955AF76C75E265FA8C1864F38F /* Pods */,
 				8654A25A02EEAA3E58B7423DE619075C /* Products */,
 				037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */,
 			);
@@ -110,13 +148,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A943B9CC55C2B975442D13112B36A4F3 /* GoogleMaps */ = {
+		A0D0D9E72322B148D5211CC75F070413 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D9F986168399BC5FA489E17B4572B978 /* Frameworks */,
-				31B34CD910E4790285DC1793A52AC853 /* Resources */,
+				306F0BD7BE4CF232B9545E9A15B1367F /* Fabric.framework */,
 			);
-			path = GoogleMaps;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2431D1F9BAF0EEF92E10D9CCC0E6A5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D46343923A6DDF09019F5B0045E62AEB /* GoogleMaps.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B3D1D13E0C6553800746CB8FD61CF946 /* Pods */ = {
@@ -132,6 +177,25 @@
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		BA167F41D463409CE77BFBDE7DAF9B2D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A0D0D9E72322B148D5211CC75F070413 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		BBFD2F211BBD1114DA1C031E93044A91 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA686C623CEB08822F90A6B2FCE3088B /* TBXML.xcconfig */,
+				3DA5F173F4DF228E1E3E0650EFCF3A8D /* TBXML-dummy.m */,
+				AB2FE459C9EEBC1A520AB1538CFA010A /* TBXML-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TBXML";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -150,44 +214,24 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		BFD0105B8DC6FA6D4C985AFFC012AEC2 /* Support Files */ = {
+		CECDA23A3040B5C0B8942D0994F9582D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				42236F9B0BCB8A35A6EB4353F464B364 /* TBXML.xcconfig */,
-				BD77010FF18364206588B3D8D4826A62 /* TBXML-dummy.m */,
-				2881F2DB2376874A48645629CE506066 /* TBXML-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TBXML";
-			sourceTree = "<group>";
-		};
-		CA6DF834CB33451320241CE98A55CCC1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A943B9CC55C2B975442D13112B36A4F3 /* GoogleMaps */,
-				F060B827F7DF176F67A71293C8E60524 /* TBXML */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		D9F986168399BC5FA489E17B4572B978 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CDFB8CDBCA2AC6CF4A203D7A5B66CAB5 /* GoogleMaps.framework */,
+				954B31193643B34A6C0D1160B8FA70E0 /* Crashlytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F060B827F7DF176F67A71293C8E60524 /* TBXML */ = {
+		FBACEEEDAE70F78E004A3BD0F9F7BB4C /* TBXML */ = {
 			isa = PBXGroup;
 			children = (
-				6CD2589B543E1C3F60E66163FB1141CD /* TBXML.h */,
-				D21242A26D3DED6CC921B81D05E1347D /* TBXML.m */,
-				91F17C9086B13D96AC22162E18F6EF34 /* TBXML+Compression.h */,
-				BADA8BE88ED8D8E68800071E0333F0B0 /* TBXML+Compression.m */,
-				B59C7F55DC44BC111A3B6584D370177C /* TBXML+HTTP.h */,
-				4FBE399F80FA409A2651AC1A145013EC /* TBXML+HTTP.m */,
-				BFD0105B8DC6FA6D4C985AFFC012AEC2 /* Support Files */,
+				3753E82F2494F07A87FEB644E7592917 /* TBXML.h */,
+				76D04FA08876C0BE30BDEC0C3BD5E64A /* TBXML.m */,
+				713FC88E9313D0BC60C964F515D1CC60 /* TBXML+Compression.h */,
+				C02B3BD81D41B630C563921501269FF0 /* TBXML+Compression.m */,
+				3A26B07C0C3956873DD5B781346FC121 /* TBXML+HTTP.h */,
+				4A448E1670BCA62F175AAEA51D593415 /* TBXML+HTTP.m */,
+				BBFD2F211BBD1114DA1C031E93044A91 /* Support Files */,
 			);
 			path = TBXML;
 			sourceTree = "<group>";
@@ -320,7 +364,7 @@
 		};
 		429678486EC63ED928CF9FB130A29306 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42236F9B0BCB8A35A6EB4353F464B364 /* TBXML.xcconfig */;
+			baseConfigurationReference = FA686C623CEB08822F90A6B2FCE3088B /* TBXML.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/TBXML/TBXML-prefix.pch";
@@ -394,7 +438,7 @@
 		};
 		A8F31F6852148DBC2D0251F885DA15B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42236F9B0BCB8A35A6EB4353F464B364 /* TBXML.xcconfig */;
+			baseConfigurationReference = FA686C623CEB08822F90A6B2FCE3088B /* TBXML.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/TBXML/TBXML-prefix.pch";

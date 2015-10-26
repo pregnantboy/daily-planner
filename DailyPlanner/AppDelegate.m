@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 @import GoogleMaps;
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -19,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [GMSServices provideAPIKey:@"AIzaSyCD8G7snbkI2WqVOss2lGj-dItM3w7wl94"];
+    [Fabric with:@[[Crashlytics class]]];
     return YES;
 }
 
