@@ -11,6 +11,7 @@
 @interface EventEditView () {
     EventViewController *_vc;
     EventObject *_event;
+    BOOL _hasChanged;
 }
 @end
 
@@ -24,7 +25,7 @@ int _datePickerForWhich;
         if ([vc isKindOfClass:[EventViewController class]]) {
             _vc = (EventViewController *)vc;
         }
-        _event = event;
+        _event = [[GoogleEventObject alloc] initWithEvent:(GoogleEventObject *)event];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                        initWithTarget:self
@@ -40,6 +41,7 @@ int _datePickerForWhich;
         [self.minutes addTarget:self
                          action:@selector(textFieldDidChange:)
                forControlEvents:UIControlEventEditingChanged];
+        _hasChanged = NO;
     }
     return self;
 }
@@ -53,12 +55,15 @@ int _datePickerForWhich;
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
+    _hasChanged = YES;
+
     if (textView == self.details) {
         [_event setDetails:textView.text];
     }
 }
 
 - (void)textFieldDidChange:(UITextField *) textField {
+    _hasChanged = YES;
     if (textField == self.title) {
         [_event setTitle:textField.text];
         NSLog(@"%@",textField.text);
@@ -67,8 +72,27 @@ int _datePickerForWhich;
         [_event setLocation:textField.text];
     }
     if (textField == self.minutes) {
+        if (![self isNumeric:textField.text]) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Invalid Input!" message: @"Input is not an integer." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+                self.minutes.text = @"";
+            }];
+            [alert addAction: okButton];
+            [_vc presentViewController:alert animated:YES completion:nil];
+        }
         [_event setMinutes:textField.text.integerValue];
     }
+}
+
+// Checks if String is Numeric
+- (BOOL)isNumeric:(NSString *)input {
+    for (int i = 0; i < [input length]; i++) {
+        char c = [input characterAtIndex:i];
+        if (!(c >= '0' && c <= '9')) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 - (void)dismissKeyboard {
@@ -88,6 +112,7 @@ int _datePickerForWhich;
 // Need to move scroll view up when keyboard whos but no need if demoing on simulator
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if (textField == self.startTime) {
+        _hasChanged = YES;
         _datePickerForWhich = 1;
         self.datePicker.minimumDate = [NSDate date];
         if ([_event startTime]){
@@ -99,6 +124,7 @@ int _datePickerForWhich;
         return NO;
     }
     if (textField == self.endTime) {
+        _hasChanged = YES;
         _datePickerForWhich = 2;
         if ([_event startTime]){
             self.datePicker.minimumDate = [_event startTime];
@@ -150,6 +176,10 @@ int _datePickerForWhich;
 
 - (EventObject *)eventObject {
     return _event;
+}
+
+- (BOOL)hasChanged {
+    return _hasChanged;
 }
 
 #pragma mark - MapViewControllerDelegate

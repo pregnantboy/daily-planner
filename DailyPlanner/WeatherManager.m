@@ -34,7 +34,7 @@ static NSString *nowcastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d80
 static NSString *forecastUrl = @"http://api.wunderground.com/api/04955c68ad1e9d80/hourly/q/SG/Singapore.json";
 static NSString *const ForecastLastUpdatedUserDefault = @"ForecastLastUpdatedUserDefault";
 static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserDefault";
-
+NSString *const weatherReceivedNotification = @"WeatherReceivedNotification";
 
 @implementation WeatherManager
 
@@ -181,6 +181,7 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
         
         [_prettyForecast addObject:hourDict];
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:weatherReceivedNotification object:nil];
 }
 
 - (void)parseNowcast {
@@ -189,6 +190,7 @@ static NSString *const NowcastLastUpdatedUserDefault = @"NowcastLastUpdatedUserD
     [_prettyNowcast setObject:[conditions objectForKey:@"temp_c"] forKey:@"temp"];
     WeatherObject *weatherObj = [self weatherObjectForString:[conditions objectForKey:@"icon"]];
     [_prettyNowcast setObject:weatherObj forKey:@"weather"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:weatherReceivedNotification object:nil];
 }
 
 #pragma mark - Public API

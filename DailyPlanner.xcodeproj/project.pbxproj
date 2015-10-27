@@ -226,40 +226,11 @@
 		3C060ECC1B9E9FEA003AE123 /* DailyPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				3C060ED11B9E9FEA003AE123 /* AppDelegate.h */,
-				3C060ED21B9E9FEA003AE123 /* AppDelegate.m */,
-				3C479FA41BA47B2E0034D10E /* EventManager.h */,
-				3C479FA51BA47B2E0034D10E /* EventManager.m */,
-				3C36202C1BB113FD00240340 /* EventObject.h */,
-				3C36202D1BB113FD00240340 /* EventObject.m */,
-				4068DAB71BD733D9003D1F72 /* GoogleEventObject.h */,
-				4068DAB81BD733D9003D1F72 /* GoogleEventObject.m */,
-				409025221BD24BBD004253D7 /* EventDetailedView.h */,
-				409025231BD24BBD004253D7 /* EventDetailedView.m */,
-				4090252C1BD2B48D004253D7 /* EventEditView.h */,
-				4090252D1BD2B48D004253D7 /* EventEditView.m */,
+				3CB94F791BDF3ECD002D2952 /* Control */,
+				3CB94F781BDF3EB0002D2952 /* Boundary */,
+				3CB94F731BDF3EA6002D2952 /* Entity */,
 				409025251BD24C27004253D7 /* EventDetailedView.xib */,
 				409025271BD24C3D004253D7 /* EventEditView.xib */,
-				3C64BCE01BA15CCF0058F42A /* EventTableViewCell.h */,
-				3C64BCE11BA15CCF0058F42A /* EventTableViewCell.m */,
-				3C64BCC01BA0AC1B0058F42A /* EventViewController.h */,
-				3C64BCC11BA0AC1B0058F42A /* EventViewController.m */,
-				3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */,
-				3C64BCDA1BA134E90058F42A /* GTLCalendar.h */,
-				3C64BCE31BA1A0960058F42A /* WeatherManager.h */,
-				3C64BCE41BA1A0960058F42A /* WeatherManager.m */,
-				3C64BCBD1BA08E410058F42A /* WeatherObject.h */,
-				3C64BCBE1BA08E410058F42A /* WeatherObject.m */,
-				3C060F0B1B9F01A5003AE123 /* WeatherTableViewCell.h */,
-				3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */,
-				3C060EF91B9EA1E3003AE123 /* WeatherViewController.h */,
-				3C060EFA1B9EA1E3003AE123 /* WeatherViewController.m */,
-				4014DE1B1BCF6BD000C9AA88 /* LocationManager.h */,
-				4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */,
-				4014DE1D1BCF6BD000C9AA88 /* LocationObject.h */,
-				4014DE1E1BCF6BD000C9AA88 /* LocationObject.m */,
-				4014DE1F1BCF6BD000C9AA88 /* MapViewController.h */,
-				4014DE201BCF6BD000C9AA88 /* MapViewController.m */,
 				3C060EDA1B9E9FEA003AE123 /* Images.xcassets */,
 				3C060EDC1B9E9FEA003AE123 /* LaunchScreen.xib */,
 				3C060ED71B9E9FEA003AE123 /* Main.storyboard */,
@@ -271,6 +242,10 @@
 		3C060ECD1B9E9FEA003AE123 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C060ED11B9E9FEA003AE123 /* AppDelegate.h */,
+				3C060ED21B9E9FEA003AE123 /* AppDelegate.m */,
+				3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */,
+				3C64BCDA1BA134E90058F42A /* GTLCalendar.h */,
 				409025171BD244E4004253D7 /* add-icon.png */,
 				3C1BBC211BD81A1700C900F2 /* greentick.png */,
 				409025181BD244E4004253D7 /* cancel-icon.png */,
@@ -326,6 +301,55 @@
 				3C64BCD11BA12CDE0058F42A /* DevelopmentTestTool */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3CB94F731BDF3EA6002D2952 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3C36202C1BB113FD00240340 /* EventObject.h */,
+				3C36202D1BB113FD00240340 /* EventObject.m */,
+				4068DAB71BD733D9003D1F72 /* GoogleEventObject.h */,
+				4068DAB81BD733D9003D1F72 /* GoogleEventObject.m */,
+				4014DE1D1BCF6BD000C9AA88 /* LocationObject.h */,
+				4014DE1E1BCF6BD000C9AA88 /* LocationObject.m */,
+				3C64BCBD1BA08E410058F42A /* WeatherObject.h */,
+				3C64BCBE1BA08E410058F42A /* WeatherObject.m */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		3CB94F781BDF3EB0002D2952 /* Boundary */ = {
+			isa = PBXGroup;
+			children = (
+				409025221BD24BBD004253D7 /* EventDetailedView.h */,
+				409025231BD24BBD004253D7 /* EventDetailedView.m */,
+				4090252C1BD2B48D004253D7 /* EventEditView.h */,
+				4090252D1BD2B48D004253D7 /* EventEditView.m */,
+				3C64BCE01BA15CCF0058F42A /* EventTableViewCell.h */,
+				3C64BCE11BA15CCF0058F42A /* EventTableViewCell.m */,
+				3C060F0B1B9F01A5003AE123 /* WeatherTableViewCell.h */,
+				3C060F0C1B9F01A5003AE123 /* WeatherTableViewCell.m */,
+			);
+			name = Boundary;
+			sourceTree = "<group>";
+		};
+		3CB94F791BDF3ECD002D2952 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				3C479FA41BA47B2E0034D10E /* EventManager.h */,
+				3C479FA51BA47B2E0034D10E /* EventManager.m */,
+				4014DE1B1BCF6BD000C9AA88 /* LocationManager.h */,
+				4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */,
+				3C64BCE31BA1A0960058F42A /* WeatherManager.h */,
+				3C64BCE41BA1A0960058F42A /* WeatherManager.m */,
+				3C64BCC01BA0AC1B0058F42A /* EventViewController.h */,
+				3C64BCC11BA0AC1B0058F42A /* EventViewController.m */,
+				3C060EF91B9EA1E3003AE123 /* WeatherViewController.h */,
+				3C060EFA1B9EA1E3003AE123 /* WeatherViewController.m */,
+				4014DE1F1BCF6BD000C9AA88 /* MapViewController.h */,
+				4014DE201BCF6BD000C9AA88 /* MapViewController.m */,
+			);
+			name = Control;
 			sourceTree = "<group>";
 		};
 		A860B62091663CC3F1DEDE78 /* Frameworks */ = {

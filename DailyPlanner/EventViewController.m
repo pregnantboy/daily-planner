@@ -180,6 +180,7 @@
 
 # pragma mark - PopupView
 - (void) showPopupWithView:(UIView *)view {
+    _currentEventEditView = NULL;
     [self resetPopup];
     _closePopUpButton.hidden = NO;
     self.popupView.hidden = NO;
@@ -233,6 +234,29 @@
 
 
 - (void)closePopUpViews {
+    [self.view endEditing:YES];
+    if (_currentEventEditView != NULL) {
+        if ([_currentEventEditView hasChanged]) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning!" message: @"Discard all changes?" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *yesButton = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
+                [self forceClosePopUpViews];
+            }];
+            UIAlertAction *noButton = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault handler:nil];
+            
+            [alert addAction:yesButton];
+            [alert addAction:noButton];
+            [self presentViewController:alert animated:YES completion:nil];
+
+        } else {
+            [self forceClosePopUpViews];
+        }
+    } else {
+        [self forceClosePopUpViews];
+    }
+}
+
+- (void)forceClosePopUpViews {
+    [self.view endEditing:YES];
     _selectedRowIndex = -1;
     [self.addNewButton setImage:[UIImage imageNamed:@"add-icon.png"] forState:UIControlStateNormal];
     self.popupView.hidden = YES;
@@ -240,7 +264,7 @@
     _saveButton.hidden = YES;
     _closePopUpButton.hidden = YES;
     _closePopUpButton.alpha = 0.0;
-    [self.view endEditing:YES];
+    _currentEventEditView = NULL;
 }
 
 # pragma mark - edit/add event
@@ -257,7 +281,7 @@
     } else if (_selectedRowIndex < [_events count]){
         [_eventManager updateEventWithEvent:currEvent];
     } 
-    [self closePopUpViews];
+    [self forceClosePopUpViews];
 }
 
 #pragma mark - public API
@@ -270,7 +294,7 @@
     if (_selectedRowIndex >=0 && _selectedRowIndex < [_events count] ) {
         [_eventManager deleteEvent:[_events objectAtIndex:_selectedRowIndex]];
     }
-    [self closePopUpViews];
+    [self forceClosePopUpViews];
 }
 
 - (void)updateEventWithEvent:(EventObject *)event {

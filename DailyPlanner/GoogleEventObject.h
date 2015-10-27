@@ -12,6 +12,7 @@
 @interface GoogleEventObject : EventObject <NSCoding>
 
 - (id) initWithGoogleEvent:(GTLCalendarEvent *)gEvent;
+- (id)initWithEvent:(GoogleEventObject *)event;
 - (void)updateGoogleCalendarEvent;
 - (id) initWithNewEvent;
 - (GTLCalendarEvent *) gEvent;

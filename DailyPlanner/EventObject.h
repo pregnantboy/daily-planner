@@ -20,6 +20,7 @@ reminderMinutes:(NSInteger)minutes;
 - (id)initWithNotLoggedIn;
 - (id)initWithLoading;
 - (id)initWithNoUpcomingEvents;
+- (id)initWithEvent: (EventObject *)event;
 
 - (NSString *)title;
 - (NSString *)startString;

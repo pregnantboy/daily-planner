@@ -39,6 +39,14 @@
     return self;
 }
 
+- (id)initWithEvent:(GoogleEventObject *)event {
+    self = [super initWithEvent:event];
+    if (self) {
+        _gEvent = [event gEvent];
+    }
+    return self;
+}
+
 - (id) initWithNewEvent {
     self = [super init];
     if (self) {

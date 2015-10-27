@@ -23,5 +23,6 @@
 
 - (id) initWithEventObject:(EventObject *)event withViewController:(UIViewController *)vc;
 - (EventObject *) eventObject;
+- (BOOL)hasChanged;
 
 @end

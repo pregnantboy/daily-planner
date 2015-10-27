@@ -11,6 +11,8 @@
 
 #import "WeatherObject.h"
 
+extern NSString *const weatherReceivedNotification;
+
 @interface WeatherManager : NSObject
 
 + (id)sharedManager;

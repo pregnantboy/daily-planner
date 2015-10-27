@@ -43,6 +43,21 @@ reminderMinutes:(NSInteger)minutes{
     return self;
 }
 
+- (id)initWithEvent: (EventObject *)event {
+    self = [super init];
+    if (self) {
+        _title = [event title];
+        _startTime = [event startTime];
+        _endTime = [event endTime];
+        _location = [event location];
+        _details = [event details];
+        _minutes = [event minutes];
+        _isEvent = [event isEvent];
+        _minutes = [event minutes];
+    }
+    return self;
+}
+
 - (id)initWithNotLoggedIn {
     self = [super init];
     if (self) {
