@@ -53,7 +53,7 @@
     [_closePopUpButton addSubview:self.saveButton];
     
     // Close all pop ups on load
-    [self closePopUpViews];
+    [self forceClosePopUpViews];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
