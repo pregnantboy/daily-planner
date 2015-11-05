@@ -52,13 +52,18 @@
     if (self) {
         _gEvent = [GTLCalendarEvent object];
         self = [super initWithTitle:@""
-                          startTime:[NSDate date]
-                            endTime:[NSDate dateWithTimeIntervalSinceNow:60*60]
+                          startTime:[GoogleEventObject dateWithZeroSeconds:[NSDate date]]
+                            endTime:[GoogleEventObject dateWithZeroSeconds:[NSDate dateWithTimeIntervalSinceNow:60*60]]
                            location:@""
                             details:nil
                     reminderMinutes:-1];
     }
     return self;
+}
+
++ (NSDate *)dateWithZeroSeconds:(NSDate *)date {
+    NSTimeInterval time = floor([date timeIntervalSinceReferenceDate] / 60.0) * 60.0;
+    return  [NSDate dateWithTimeIntervalSinceReferenceDate:time];
 }
 
 - (void)updateGoogleCalendarEvent {

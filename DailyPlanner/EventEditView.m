@@ -114,7 +114,6 @@ int _datePickerForWhich;
     if (textField == self.startTime) {
         _hasChanged = YES;
         _datePickerForWhich = 1;
-        self.datePicker.minimumDate = [NSDate date];
         if ([_event startTime]){
             [self.datePicker setDate:[_event startTime] animated:NO];
         } else {
@@ -126,9 +125,9 @@ int _datePickerForWhich;
     if (textField == self.endTime) {
         _hasChanged = YES;
         _datePickerForWhich = 2;
-        if ([_event startTime]){
-            self.datePicker.minimumDate = [_event startTime];
-        }
+//        if ([_event startTime]){
+//            self.datePicker.minimumDate = [_event startTime];
+//        }
         if ([_event endTime]){
             [self.datePicker setDate:[_event endTime] animated:NO];
         } else {
@@ -155,8 +154,16 @@ int _datePickerForWhich;
 - (IBAction)dateSetButton:(id)sender {
     if (_datePickerForWhich == 1) {
         [_event setStartTime:self.datePicker.date];
+        if  (([[_event startTime] compare:[_event endTime]] == NSOrderedDescending ) || ([[_event startTime] compare:[_event endTime]] == NSOrderedSame)) {
+            [self showAlertForTime];
+            [_event setEndTime:[NSDate dateWithTimeInterval:60*60 sinceDate:[_event startTime]]];
+        }
     } else if (_datePickerForWhich == 2) {
-        [_event setEndTime:self.datePicker.date];
+        if  (([[_event startTime] compare:self.datePicker.date] == NSOrderedDescending ) || ([[_event startTime] compare:self.datePicker.date] == NSOrderedSame)) {
+            [self showAlertForTime];
+        } else {
+            [_event setEndTime:self.datePicker.date];
+        }
     }
     _datePickerForWhich = 0;
     [self updateView];
@@ -171,6 +178,13 @@ int _datePickerForWhich;
     }];
     [alert addAction:yesButton];
     [alert addAction:noButton];
+    [_vc presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)showAlertForTime {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning!" message: @"Start time must be earlier than end time." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:okButton];
     [_vc presentViewController:alert animated:YES completion:nil];
 }
 
