@@ -156,7 +156,10 @@
     UIAlertAction *loginButton = [UIAlertAction actionWithTitle:@"Login" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         [_eventManager loginGoogle];
     }];
-    UIAlertAction *switchAccountButton = [UIAlertAction actionWithTitle:@"Switch Account" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    UIAlertAction *switchAccountButton = [UIAlertAction actionWithTitle:@"Switch Account" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [_eventManager logoutGoogle];
+        [_eventManager loginGoogle];
+    }];
     if ([_eventManager isLoggedIn]) {
         [self.popupSettings addAction:switchAccountButton];
         [self.popupSettings addAction:logoutButton];

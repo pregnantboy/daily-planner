@@ -19,9 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView) name:weatherReceivedNotification object:nil];
+    // Updates view upon receiving notification from WeatherManager
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeatherView) name:weatherReceivedNotification object:nil];
     
     // set up clock label
     [self updateClock];
@@ -34,7 +34,7 @@
     _weatherManager = [WeatherManager sharedManager];
     [_weatherManager tryUpdate];
     [self updateNowcast];
-    [self updateView];
+    [self updateWeatherView];
 }
 
 #pragma mark - Main Clock
@@ -105,7 +105,8 @@
     return cell;
 }
 
-- (void)updateView {
+- (void)updateWeatherView {
+    NSLog(@"view getting updated");
     _weatherForecast = [_weatherManager prettyForecast];
     [self.weatherTable reloadData];
     [self updateLastUpdatedString];
@@ -114,9 +115,6 @@
 #pragma mark - IBAction handler
 - (IBAction)refresh:(id)sender {
     [_weatherManager forceUpdate];
-    [self updateNowcast];
-    [self updateLastUpdatedString];
-    [_weatherTable reloadData];
 }
 
 #pragma mark - Last Updated String

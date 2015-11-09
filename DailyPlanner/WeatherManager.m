@@ -90,6 +90,7 @@ NSString *const weatherReceivedNotification = @"WeatherReceivedNotification";
         [_rawForecast writeToFile:_forecastPath atomically:YES];
         _forecastLastUpdated = [NSDate date];
         [_defaults setObject:_forecastLastUpdated forKey:ForecastLastUpdatedUserDefault];
+        [self parseForecast];
     }
 }
 
@@ -105,6 +106,7 @@ NSString *const weatherReceivedNotification = @"WeatherReceivedNotification";
         [_rawNowcast writeToFile:_nowcastPath atomically:YES];
         _nowcastLastUpdated = [NSDate date];
         [_defaults setObject:_nowcastLastUpdated forKey:NowcastLastUpdatedUserDefault];
+        [self parseNowcast];
     }
 }
 

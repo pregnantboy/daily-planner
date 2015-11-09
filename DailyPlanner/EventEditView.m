@@ -99,7 +99,7 @@ int _datePickerForWhich;
     [self endEditing:YES];
 }
 
-- (void) updateView{
+- (void)updateView{
     NSLog(@"in update view %@", [_event title]);
     self.title.text = [_event title];
     self.location.text = [_event location];
@@ -115,6 +115,7 @@ int _datePickerForWhich;
         _hasChanged = YES;
         _datePickerForWhich = 1;
         if ([_event startTime]){
+            self.datePicker.minimumDate = [NSDate date];
             [self.datePicker setDate:[_event startTime] animated:NO];
         } else {
             [self.datePicker setDate:[NSDate date] animated:NO];        }
@@ -125,9 +126,6 @@ int _datePickerForWhich;
     if (textField == self.endTime) {
         _hasChanged = YES;
         _datePickerForWhich = 2;
-//        if ([_event startTime]){
-//            self.datePicker.minimumDate = [_event startTime];
-//        }
         if ([_event endTime]){
             [self.datePicker setDate:[_event endTime] animated:NO];
         } else {
