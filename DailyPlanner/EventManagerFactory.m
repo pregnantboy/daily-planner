@@ -9,15 +9,18 @@
 #import "EventManagerFactory.h"
 
 @implementation EventManagerFactory
-//
-//+ (EventManager)createEventManager:(CalType)calendarType withViewController:(UIViewController *)vc {
-//    EventManager
-//    switch(calendarType) {
-//        case CalGoogle:
-//            
-//            
-//            
-//    }
-//}
+
++ (id)createEventManager:(CalType)calendarType withViewController:(UIViewController *)vc {
+    switch(calendarType) {
+        case CalGoogle:
+            return [[GoogleEventManager alloc] initWithViewController:vc];
+        case CalExchange:
+            NSLog(@"Exchange calendar not added yet");
+            return nil;
+        default:
+            NSLog(@"New calendars to be added");
+            return nil;
+    }
+}
 
 @end

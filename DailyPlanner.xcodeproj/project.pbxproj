@@ -25,7 +25,7 @@
 		3C1BBC1C1BD7EF6400C900F2 /* setButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C1BBC1B1BD7EF6400C900F2 /* setButton.png */; };
 		3C1BBC221BD81A1700C900F2 /* greentick.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C1BBC211BD81A1700C900F2 /* greentick.png */; };
 		3C36202E1BB113FD00240340 /* EventObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C36202D1BB113FD00240340 /* EventObject.m */; };
-		3C479FA61BA47B2E0034D10E /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C479FA51BA47B2E0034D10E /* EventManager.m */; };
+		3C479FA61BA47B2E0034D10E /* GoogleEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C479FA51BA47B2E0034D10E /* GoogleEventManager.m */; };
 		3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCBE1BA08E410058F42A /* WeatherObject.m */; };
 		3C64BCC21BA0AC1B0058F42A /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64BCC11BA0AC1B0058F42A /* EventViewController.m */; };
 		3C64BCD21BA12D1B0058F42A /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C64BCCD1BA12CDE0058F42A /* libGTLTouchStaticLib.a */; };
@@ -44,7 +44,7 @@
 		3C71AEEA1BDAD1140065F5CD /* trashbin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C71AEE91BDAD1140065F5CD /* trashbin.png */; };
 		3C71AEEC1BDB87C10065F5CD /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C71AEEB1BDB87C10065F5CD /* back_button.png */; };
 		3CF4C0581BF0F3100097C22D /* EventManagerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4C0571BF0F3100097C22D /* EventManagerFactory.m */; };
-		3CF4C05F1BF0F5980097C22D /* EventManagerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4C05E1BF0F5980097C22D /* EventManagerInterface.m */; };
+		3CF4C0621BF100570097C22D /* EventManagerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4C0611BF100570097C22D /* EventManagerInterface.m */; };
 		4014DE211BCF6BD000C9AA88 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */; };
 		4014DE221BCF6BD000C9AA88 /* LocationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4014DE1E1BCF6BD000C9AA88 /* LocationObject.m */; };
 		4014DE231BCF6BD000C9AA88 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4014DE201BCF6BD000C9AA88 /* MapViewController.m */; };
@@ -127,8 +127,8 @@
 		3C1BBC211BD81A1700C900F2 /* greentick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greentick.png; sourceTree = "<group>"; };
 		3C36202C1BB113FD00240340 /* EventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventObject.h; sourceTree = "<group>"; };
 		3C36202D1BB113FD00240340 /* EventObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventObject.m; sourceTree = "<group>"; };
-		3C479FA41BA47B2E0034D10E /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
-		3C479FA51BA47B2E0034D10E /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
+		3C479FA41BA47B2E0034D10E /* GoogleEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleEventManager.h; sourceTree = "<group>"; };
+		3C479FA51BA47B2E0034D10E /* GoogleEventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleEventManager.m; sourceTree = "<group>"; };
 		3C64BCBD1BA08E410058F42A /* WeatherObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherObject.h; sourceTree = "<group>"; };
 		3C64BCBE1BA08E410058F42A /* WeatherObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherObject.m; sourceTree = "<group>"; };
 		3C64BCC01BA0AC1B0058F42A /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 		3C71AEEB1BDB87C10065F5CD /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
 		3CF4C0561BF0F3100097C22D /* EventManagerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManagerFactory.h; sourceTree = "<group>"; };
 		3CF4C0571BF0F3100097C22D /* EventManagerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManagerFactory.m; sourceTree = "<group>"; };
-		3CF4C05D1BF0F5980097C22D /* EventManagerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManagerInterface.h; sourceTree = "<group>"; };
-		3CF4C05E1BF0F5980097C22D /* EventManagerInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManagerInterface.m; sourceTree = "<group>"; };
+		3CF4C0601BF100570097C22D /* EventManagerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManagerInterface.h; sourceTree = "<group>"; };
+		3CF4C0611BF100570097C22D /* EventManagerInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManagerInterface.m; sourceTree = "<group>"; };
 		4014DE1B1BCF6BD000C9AA88 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		4014DE1D1BCF6BD000C9AA88 /* LocationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationObject.h; sourceTree = "<group>"; };
@@ -339,14 +339,14 @@
 		3CB94F791BDF3ECD002D2952 /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				3C479FA41BA47B2E0034D10E /* EventManager.h */,
-				3C479FA51BA47B2E0034D10E /* EventManager.m */,
 				3CF4C0561BF0F3100097C22D /* EventManagerFactory.h */,
 				3CF4C0571BF0F3100097C22D /* EventManagerFactory.m */,
-				3CF4C05D1BF0F5980097C22D /* EventManagerInterface.h */,
-				3CF4C05E1BF0F5980097C22D /* EventManagerInterface.m */,
+				3CF4C0601BF100570097C22D /* EventManagerInterface.h */,
+				3CF4C0611BF100570097C22D /* EventManagerInterface.m */,
 				3C64BCC01BA0AC1B0058F42A /* EventViewController.h */,
 				3C64BCC11BA0AC1B0058F42A /* EventViewController.m */,
+				3C479FA41BA47B2E0034D10E /* GoogleEventManager.h */,
+				3C479FA51BA47B2E0034D10E /* GoogleEventManager.m */,
 				4014DE1B1BCF6BD000C9AA88 /* LocationManager.h */,
 				4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */,
 				4014DE1F1BCF6BD000C9AA88 /* MapViewController.h */,
@@ -611,7 +611,7 @@
 				4014DE221BCF6BD000C9AA88 /* LocationObject.m in Sources */,
 				3C64BCBF1BA08E410058F42A /* WeatherObject.m in Sources */,
 				3C64BCDB1BA134E90058F42A /* GTLCalendar_Sources.m in Sources */,
-				3C479FA61BA47B2E0034D10E /* EventManager.m in Sources */,
+				3C479FA61BA47B2E0034D10E /* GoogleEventManager.m in Sources */,
 				3C36202E1BB113FD00240340 /* EventObject.m in Sources */,
 				3C64BCE21BA15CCF0058F42A /* EventTableViewCell.m in Sources */,
 				3CF4C0581BF0F3100097C22D /* EventManagerFactory.m in Sources */,
@@ -621,7 +621,7 @@
 				3C060EFB1B9EA1E3003AE123 /* WeatherViewController.m in Sources */,
 				3C060ED01B9E9FEA003AE123 /* main.m in Sources */,
 				4090252E1BD2B48D004253D7 /* EventEditView.m in Sources */,
-				3CF4C05F1BF0F5980097C22D /* EventManagerInterface.m in Sources */,
+				3CF4C0621BF100570097C22D /* EventManagerInterface.m in Sources */,
 				4014DE231BCF6BD000C9AA88 /* MapViewController.m in Sources */,
 				409025241BD24BBD004253D7 /* EventDetailedView.m in Sources */,
 			);

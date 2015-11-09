@@ -20,7 +20,7 @@
 
 @interface EventViewController() {
     NSArray *_events;
-    EventManager *_eventManager;
+    EventManagerInterface *_eventManager;
     UIView *_closePopUpButton;
     NSInteger _selectedRowIndex;
     EventEditView *_currentEventEditView;
@@ -37,8 +37,7 @@
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateClock) userInfo:nil repeats:YES];
     
     // Instantiate managers
-    _eventManager = [[EventManager alloc] initWithViewController:self];
-    
+    _eventManager = [EventManagerFactory createEventManager:CalGoogle withViewController:self];
     
     // Notification Center Observer
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newEventsData) name:eventsReceivedNotification object:nil];
@@ -151,14 +150,14 @@
     self.popupSettings = [UIAlertController alertControllerWithTitle:@"Google Account Settings" message: nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *defaultButton = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
     UIAlertAction *logoutButton = [UIAlertAction actionWithTitle:@"Logout" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
-        [_eventManager logoutGoogle];
+        [_eventManager logoutCalendar];
     }];
     UIAlertAction *loginButton = [UIAlertAction actionWithTitle:@"Login" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        [_eventManager loginGoogle];
+        [_eventManager loginCalendar];
     }];
     UIAlertAction *switchAccountButton = [UIAlertAction actionWithTitle:@"Switch Account" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        [_eventManager logoutGoogle];
-        [_eventManager loginGoogle];
+        [_eventManager logoutCalendar];
+        [_eventManager loginCalendar];
     }];
     if ([_eventManager isLoggedIn]) {
         [self.popupSettings addAction:switchAccountButton];
@@ -278,7 +277,6 @@
 - (IBAction)saveEvent:(id)sender {
     // do something im giving up on you
     EventObject *currEvent = [_currentEventEditView eventObject];
-    // VERY weak check but meh~
     if (_selectedRowIndex <0) {
         [_eventManager addEventWithObject:currEvent];
     } else if (_selectedRowIndex < [_events count]){
@@ -293,7 +291,6 @@
 }
 
 - (void)deleteEventforSelectedEvent {
-    // VERY weak check but meh~
     if (_selectedRowIndex >=0 && _selectedRowIndex < [_events count] ) {
         [_eventManager deleteEvent:[_events objectAtIndex:_selectedRowIndex]];
     }

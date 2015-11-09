@@ -9,20 +9,20 @@
 @import Foundation;
 #import "GTMOAuth2ViewControllerTouch.h"
 #import "GTLCalendar.h"
-#import "EventObject.h"
 #import "GoogleEventObject.h"
+#import "EventManagerInterface.h"
 
 extern NSString *const eventsReceivedNotification;
 
-@interface EventManager : NSObject
+@interface GoogleEventManager : EventManagerInterface
 // google calendar api
 @property (nonatomic, strong) GTLServiceCalendar *service;
 
 - (id)initWithViewController:(UIViewController *)viewController;
 - (void)viewDidAppear;
 - (void)dismissLoginPage;
-- (void)loginGoogle;
-- (void)logoutGoogle;
+- (void)loginCalendar;
+- (void)logoutCalendar;
 - (BOOL)isLoggedIn;
 - (NSDate *)lastUpdated;
 - (NSArray *)events;
@@ -32,6 +32,6 @@ extern NSString *const eventsReceivedNotification;
 
 - (void)addEventWithObject:(EventObject *)event;
 - (void)updateEventWithEvent:(EventObject *)event;
-- (void)deleteEvent:(GTLCalendarEvent *)event;
+- (void)deleteEvent:(EventObject *)event;
 
 @end

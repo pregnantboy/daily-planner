@@ -8,7 +8,8 @@
 
 @import UIKit;
 #import "EventTableViewCell.h"
-#import "EventManager.h"
+#import "EventManagerFactory.h"
+#import "EventManagerInterface.h"
 #import "WeatherManager.h"
 
 @interface EventViewController : UIViewController

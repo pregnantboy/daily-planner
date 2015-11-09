@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EventManager.h"
+#import "GoogleEventManager.h"
 
 typedef NS_ENUM(NSUInteger, CalType) {
     CalGoogle,
@@ -15,5 +15,7 @@ typedef NS_ENUM(NSUInteger, CalType) {
 };
 
 @interface EventManagerFactory : NSObject
+
++ (id)createEventManager:(CalType)calendarType withViewController:(UIViewController *)vc;
 
 @end

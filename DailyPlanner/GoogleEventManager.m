@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Ian Chen. All rights reserved.
 //
 
-#import "EventManager.h"
+#import "GoogleEventManager.h"
 
-@interface EventManager() {
+@interface GoogleEventManager() {
     UIViewController *_viewController;
     NSMutableArray *_events;
     NSDate *_lastUpdated;
@@ -34,7 +34,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
 #endif
 
 
-@implementation EventManager
+@implementation GoogleEventManager
 
 #pragma mark - Object Lifecycle
 - (id)initWithViewController:(UIViewController *)viewController {
@@ -173,7 +173,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
     if (![self isLoggedIn] && !loginPageDismissed && shouldShowLoginPageOnLoad) {
         // Not yet authorized, request authorization by pushing the login UI onto the UI stack.
         [self postLoggedOutNotification];
-        [self loginGoogle];
+        [self loginCalendar];
     } else {
         if (loginPageDismissed) {
             [self postLoggedOutNotification];
@@ -194,12 +194,12 @@ static BOOL shouldShowLoginPageOnLoad = NO;
     loginPageDismissed = YES;
 }
 
-- (void)loginGoogle {
+- (void)loginCalendar {
     loginPageDismissed = NO;
     [_viewController presentViewController:[self createAuthController] animated:YES completion:nil];
 }
 
-- (void)logoutGoogle {
+- (void)logoutCalendar {
     NSLog(@"logging out");
     self.service.authorizer= NULL;
     [GTMOAuth2ViewControllerTouch removeAuthFromKeychainForName:kKeychainItemName];
@@ -322,7 +322,7 @@ static BOOL shouldShowLoginPageOnLoad = NO;
     }
 }
 
-- (void)deleteEvent:(GTLCalendarEvent *)event{
+- (void)deleteEvent:(EventObject *)event{
     if ([event isKindOfClass:[GoogleEventObject class]]){
         GTLCalendarEvent *gEvent = [(GoogleEventObject *)event gEvent];
          GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsDeleteWithCalendarId:@"primary" eventId:[gEvent identifier]];
