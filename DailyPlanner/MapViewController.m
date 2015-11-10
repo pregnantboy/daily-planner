@@ -41,7 +41,7 @@ BOOL locationUpdated_;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self goToPosition:CLLocationCoordinate2DMake(1.318078, 103.85673)];
+    //[self goToPosition:CLLocationCoordinate2DMake(1.318078, 103.85673)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -175,7 +175,7 @@ BOOL locationUpdated_;
 
 - (void) goToPosition:(CLLocationCoordinate2D)coord {
     [self.map moveCamera:[GMSCameraUpdate setTarget:coord]];
-    [self.map moveCamera:[GMSCameraUpdate zoomTo:13.2]];
+    [self.map moveCamera:[GMSCameraUpdate zoomTo:14.2]];
 }
 
 - (IBAction)categorySelector:(UISegmentedControl *)sender {

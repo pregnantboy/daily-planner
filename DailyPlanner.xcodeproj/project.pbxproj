@@ -43,6 +43,7 @@
 		3C71AEE41BDACED00065F5CD /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C71AEE31BDACED00065F5CD /* pencil.png */; };
 		3C71AEEA1BDAD1140065F5CD /* trashbin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C71AEE91BDAD1140065F5CD /* trashbin.png */; };
 		3C71AEEC1BDB87C10065F5CD /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C71AEEB1BDB87C10065F5CD /* back_button.png */; };
+		3C8141471BF1B572004BFFA3 /* Geylang, SG.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3C8141461BF1B572004BFFA3 /* Geylang, SG.gpx */; };
 		3CF4C0581BF0F3100097C22D /* EventManagerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4C0571BF0F3100097C22D /* EventManagerFactory.m */; };
 		3CF4C0621BF100570097C22D /* EventManagerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4C0611BF100570097C22D /* EventManagerInterface.m */; };
 		4014DE211BCF6BD000C9AA88 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4014DE1C1BCF6BD000C9AA88 /* LocationManager.m */; };
@@ -151,6 +152,7 @@
 		3C71AEE31BDACED00065F5CD /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
 		3C71AEE91BDAD1140065F5CD /* trashbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trashbin.png; sourceTree = "<group>"; };
 		3C71AEEB1BDB87C10065F5CD /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
+		3C8141461BF1B572004BFFA3 /* Geylang, SG.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Geylang, SG.gpx"; sourceTree = "<group>"; };
 		3CF4C0561BF0F3100097C22D /* EventManagerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManagerFactory.h; sourceTree = "<group>"; };
 		3CF4C0571BF0F3100097C22D /* EventManagerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManagerFactory.m; sourceTree = "<group>"; };
 		3CF4C0601BF100570097C22D /* EventManagerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManagerInterface.h; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 		3C060ECD1B9E9FEA003AE123 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C8141461BF1B572004BFFA3 /* Geylang, SG.gpx */,
 				3C060ED11B9E9FEA003AE123 /* AppDelegate.h */,
 				3C060ED21B9E9FEA003AE123 /* AppDelegate.m */,
 				3C64BCD91BA134E90058F42A /* GTLCalendar_Sources.m */,
@@ -519,6 +522,7 @@
 				3C060F041B9EB452003AE123 /* partlyCloudy.png in Resources */,
 				3C060F031B9EB452003AE123 /* cloudy.png in Resources */,
 				3C060F051B9EB452003AE123 /* rainy.png in Resources */,
+				3C8141471BF1B572004BFFA3 /* Geylang, SG.gpx in Resources */,
 				3C1BBC221BD81A1700C900F2 /* greentick.png in Resources */,
 				3C060F071B9EB452003AE123 /* thunderstorm.png in Resources */,
 				3C64BCF01BA325E80058F42A /* hazy.png in Resources */,

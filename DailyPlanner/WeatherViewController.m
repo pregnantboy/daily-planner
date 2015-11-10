@@ -26,6 +26,7 @@
     // set up clock label
     [self updateClock];
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateClock) userInfo:nil repeats:YES];
+    [self refresh:self];
 
 }
 
